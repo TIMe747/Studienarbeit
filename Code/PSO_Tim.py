@@ -1,13 +1,7 @@
-
-# demo of particle swarm optimization (PSO)
-# solves Rastrigin's function
-
 import random
 import math  # cos() for Rastrigin
 import copy  # array-copying convenience
 import sys  # max float
-
-# ------------------------------------
 
 def show_vector(vector):
     for i in range(len(vector)):
@@ -19,8 +13,10 @@ def show_vector(vector):
         print(" ", end="")
     print("\n")
 
-# ------------------------------------
 
+#Berechnung der Abweichung reduziert auf eine Dimension
+#f(xi) = 10*1(Anzahl Dimensionen) + ((xi*xi)-(10*cos(2*pi*xi)))
+#f(xi) = err
 def error(position):
     err = 0.0
     for i in range(len(position)):
@@ -28,35 +24,31 @@ def error(position):
         err += (xi * xi) - (10 * math.cos(2 * math.pi * xi)) + 10
     return err
 
-# ------------------------------------
-
+#Defintion eines Partikels
+#Jeder Partikel kann sich an seine beste Position bzw. Abweichung erinnern
 class Particle:
-    def __init__(self, dim, minx, maxx, seed):
-        self.rnd = random.Random(seed)
+    def __init__(self, dim, minxyz, maxxyz):
+        self.rnd = random.Random()
         self.position = [0.0 for i in range(dim)]
         self.velocity = [0.0 for i in range(dim)]
         self.best_part_pos = [0.0 for i in range(dim)]
 
         for i in range(dim):
-            self.position[i] = ((maxx - minx) *
-                                self.rnd.random() + minx)
-            self.velocity[i] = ((maxx - minx) *
-                                self.rnd.random() + minx)
+            self.position[i] = ((maxxyz - minxyz) *
+                                self.rnd.random() + minxyz)
+            self.velocity[i] = ((maxxyz - minxyz) *
+                                self.rnd.random() + minxyz)
 
-        self.error = error(self.position)  # curr error
+        self.error = error(self.position)
         self.best_part_pos = copy.copy(self.position)
-        self.best_part_err = self.error  # best error
-
-# ------------------------------------
+        self.best_part_err = self.error
 
 def Solve(max_epochs, n, dim, minx, maxx):
 
-    rnd = random.Random()
-
-    # create n random particles
-    swarm = [Particle(dim, minx, maxx, i) for i in range(n)]
-    best_swarm_pos = [0.0 for i in range(dim)]  # not necess.
-    best_swarm_err = sys.float_info.max  # swarm best
+    # Erschaffen von n Partikeln
+    swarm = [Particle(dim, minx, maxx) for i in range(n)]
+    best_swarm_pos = [0.0 for i in range(dim)]
+    best_swarm_err = sys.float_info.max
     for i in range(n):  # check each particle
         if swarm[i].error < best_swarm_err:
             best_swarm_err = swarm[i].error
@@ -68,35 +60,28 @@ def Solve(max_epochs, n, dim, minx, maxx):
     c2 = 1.49445  # social (swarm)
 
     while epoch < max_epochs:
-
-        if epoch % 10 == 0 and epoch > 1:
-            print("Epoch = " + str(epoch) +
-                  " best error = %.3f" % best_swarm_err)
-
-        for i in range(n):  # process each particle
-
-            # compute new velocity of curr particle
+        # Prüfung jedes Partikels
+        for i in range(n):
+            # Berechne neue Velocity für jeden Partikel bisher [0,0,0]
             for k in range(dim):
-                r1 = rnd.random()  # randomizations
-                r2 = rnd.random()
-
+                r1 = random.random()
+                r2 = random.random()
+                #siehe Buch Advances in Swarm Intelligence Seite 41
+                #velocity = w * velocity + c1 * r1 * (beste Partikelposition - derzeitige Partikelposition) + c2 * r2* (beste Schwarmposition - dezeitige Partikelposition)
                 swarm[i].velocity[k] = ((w * swarm[i].velocity[k]) +
                                         (c1 * r1 * (swarm[i].best_part_pos[k] -
                                                     swarm[i].position[k])) +
                                         (c2 * r2 * (best_swarm_pos[k] -
                                                     swarm[i].position[k])))
-
+                #Eingrenzung der Velocity für jeden Partikel auf den maximalen Funktionsraum
                 if swarm[i].velocity[k] < minx:
                     swarm[i].velocity[k] = minx
                 elif swarm[i].velocity[k] > maxx:
                     swarm[i].velocity[k] = maxx
 
-            # compute new position using new velocity
+            # Berechnung der neuen Position eines Partikels mit der neuen Velocity
             for k in range(dim):
                 swarm[i].position[k] += swarm[i].velocity[k]
-
-            # compute error of new position
-            swarm[i].error = error(swarm[i].position)
 
             # is new position a new best for the particle?
             if swarm[i].error < swarm[i].best_part_err:
@@ -108,11 +93,9 @@ def Solve(max_epochs, n, dim, minx, maxx):
                 best_swarm_err = swarm[i].error
                 best_swarm_pos = copy.copy(swarm[i].position)
 
-        # for-each particle
         epoch += 1
-    # while
+
     return best_swarm_pos
-# end Solve
 
 print("\nBegin particle swarm optimization using Python demo\n")
 dim = 3
@@ -122,8 +105,8 @@ for i in range(dim-1):
   print("0, ", end="")
 print("0)")
 
-num_particles = 100
-max_epochs = 200
+num_particles = 1000
+max_epochs = 15000
 
 print("Setting num_particles = " + str(num_particles))
 print("Setting max_epochs    = " + str(max_epochs))
