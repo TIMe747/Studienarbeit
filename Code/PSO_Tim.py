@@ -112,7 +112,9 @@ def Solve(max_epochs, n, dim, minx, maxx):
                 ys = swarm[i].position[1]
                 zs = swarm[i].position[2]
                 ax.scatter(xs, ys, zs, c=c, marker=m)
-
+                ax.set_xlim(-10, 10)
+                ax.set_ylim(-10, 10)
+                ax.set_zlim(-10, 10)
                 ax.set_xlabel('X Label')
                 ax.set_ylabel('Y Label')
                 ax.set_zlabel('Z Label')
@@ -131,7 +133,7 @@ for i in range(dim-1):
   print("0, ", end="")
 print("0)")
 
-num_particles = 10
+num_particles = 1000
 max_epochs = 3
 
 print("Setting num_particles = " + str(num_particles))
