@@ -101,23 +101,23 @@ def Solve(max_epochs, n, dim, minx, maxx):
                 best_swarm_err = swarm[i].error
                 best_swarm_pos = copy.copy(swarm[i].position)
 
-            fig = plt.figure()
-            ax = fig.add_subplot(111, projection='3d')
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
 
-            # For each set of style and range settings, plot n random points in the box
-            # defined by x in [23, 32], y in [0, 100], z in [zlow, zhigh].
-            for c, m, zlow, zhigh in [('r', 'o', -10, 10), ('b', '^', -10, 10)]:
-                for i in range(n):
-                    xs = swarm[i].position[0]
-                    ys = swarm[i].position[1]
-                    zs = swarm[i].position[2]
-                    ax.scatter(xs, ys, zs, c=c, marker=m)
+        # For each set of style and range settings, plot n random points in the box
+        # defined by x in [23, 32], y in [0, 100], z in [zlow, zhigh].
+        for c, m, zlow, zhigh in [('r', 'o', -10, 10), ('b', '^', -10, 10)]:
+            for i in range(n):
+                xs = swarm[i].position[0]
+                ys = swarm[i].position[1]
+                zs = swarm[i].position[2]
+                ax.scatter(xs, ys, zs, c=c, marker=m)
 
-                    ax.set_xlabel('X Label')
-                    ax.set_ylabel('Y Label')
-                    ax.set_zlabel('Z Label')
+                ax.set_xlabel('X Label')
+                ax.set_ylabel('Y Label')
+                ax.set_zlabel('Z Label')
 
-                plt.show()
+            plt.show()
 
         epoch += 1
 
