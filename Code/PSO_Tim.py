@@ -134,7 +134,7 @@ for i in range(dim-1):
 print("0)")
 
 num_particles = 1000
-max_epochs = 3
+max_epochs = 10
 
 print("Setting num_particles = " + str(num_particles))
 print("Setting max_epochs    = " + str(max_epochs))
