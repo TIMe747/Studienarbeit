@@ -1,5 +1,6 @@
 %Art des Dokuments%
 \documentclass[a4paper, 11pt]{article}
+
 %Packete
 \usepackage{ifxetex,ifluatex}
 \usepackage{etoolbox}
@@ -20,18 +21,20 @@
 \xetexorluatexfalse
 \fi
 \fi
+%
 \ifxetexorluatex
 \usepackage{fontspec}
-\usepackage{libertine}
-\newfontfamily\quotefont[Ligatures=TeX]{Linux Libertine O}
+\usepackage{libertine} % or use \setmainfont to choose any font on your system
+\newfontfamily\quotefont[Ligatures=TeX]{Linux Libertine O} % selects Libertine as the quote font
 \else
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{libertine} 
-\newcommand*\quotefont{\fontfamily{LinuxLibertineT-LF}}
+\usepackage{libertine} % or any other font package
+\newcommand*\quotefont{\fontfamily{LinuxLibertineT-LF}} % selects Libertine as the quote font
 \fi
 
-\newcommand*\quotesize{60}
+\newcommand*\quotesize{60} % if quote size changes, need a way to make shifts relative
+% Make commands for the quotes
 \newcommand*{\openquote}
 {\tikz[remember picture,overlay,xshift=-4ex,yshift=-2.5ex]
 	\node (OQ) {\quotefont\fontsize{\quotesize}{\quotesize}\selectfont``};\kern0pt}
@@ -40,9 +43,12 @@
 {\tikz[remember picture,overlay,xshift=4ex,yshift={#1}]
 	\node (CQ) {\quotefont\fontsize{\quotesize}{\quotesize}\selectfont''};}
 
+% select a colour for the shading
 \colorlet{shadecolor}{Azure}
 
-\newcommand*\shadedauthorformat{\emph}
+\newcommand*\shadedauthorformat{\emph} % define format for the author argument
+
+% Now a command to allow left, right and centre alignment of the author
 \newcommand*\authoralign[1]{%
 	\if#1l
 	\def\authorfill{}\def\quotefill{\hfill}
@@ -56,7 +62,9 @@
 	\fi
 	\fi
 	\fi}
-
+% wrap everything in its own environment which takes one argument (author) and one optional argument
+% specifying the alignment [l, r or c]
+%
 \newenvironment{shadequote}[2][l]%
 {\authoralign{#1}
 	\ifblank{#2}
@@ -67,6 +75,7 @@
 
 
 \usepackage[ngerman]{babel}
+%\usepackage[latin1]{inputenc}
 \usepackage{color}
 \usepackage[a4paper, lmargin={4cm}, rmargin={2cm}, tmargin={2,5cm}, bmargin={2,5cm}]{geometry}
 \usepackage{graphicx}
@@ -86,22 +95,23 @@
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage[framemethod=TikZ]{mdframed}
-
+%mdframed Einstellungen%
 \newenvironment{theo}[2][]{%
 	\refstepcounter{theo}
 	
+	% Code for box design goes here.
 	
 	\begin{mdframed}[]\relax}{%
 \end{mdframed}}
 \ifstrempty{#1}%
-
+% if condition (without title)
 {\mdfsetup{%
 		frametitle={%
 			\tikz[baseline=(current bounding box.east),outer sep=0pt]
 			\node[anchor=east,rectangle,fill=blue!20]
 			{\strut Definition~\thetheo};}
 	}%
-
+	% else condition (with title)
 }{\mdfsetup{%
 		frametitle={%
 			\tikz[baseline=(current bounding box.east),outer sep=0pt]
@@ -109,13 +119,13 @@
 			{\strut Definition~\thetheo};}%
 	}%
 }%
-
+% Both conditions
 \mdfsetup{%
 	innertopmargin=10pt,linecolor=blue!20,%
 	linewidth=2pt,topline=true,%
 	frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
 }
-
+%Umlaute und Kommandos%
 
 \newcommand*{\theadtext}[1]{{\tiny #1}}
 \newcommand*{\thead}[1]{\multicolumn1{@{}c@{}}{\theadtext{#1}}}
@@ -130,7 +140,7 @@
 \newcommand{\Autor}{Tim Saupp}
 \newcommand{\MatrikelNummer}{2742603}
 \newcommand{\Kursbezeichnung}{TINF15B3}
-
+\newcommand{\FirmenLogoDeckblatt}{\fbox{\includegraphics[width=3cm]{dhbw-logo}}}
 \newcommand{\Was}{Studienarbeit}
 \newcommand{\Titel}{Titel ausstehend}
 \newcommand{\AbgabeDatum}{18.09.2017}
@@ -194,15 +204,15 @@
 %Umbenennung der Zusammenfassung zu Abstract%
 \addto\captionsngerman{\renewcommand{\abstractname}{Abstract}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Tim Saupp Studienarbeit 2017-2018 5.& 6. Semester %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Tim Saupp Studienarbeit 2017-2018 5.& 6. Semester%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Anfang des Dokuments%
 \begin{document}
 \begin{titlepage}
 	\begin{center}
 		\vspace*{-2cm}
-		\hfill\includegraphics[width=5cm]{dhbw-logo}\\[2cm]
+		\FirmenLogoDeckblatt\hfill\includegraphics[width=5cm]{logo.jpg}\\[2cm]
 		{\Huge \Titel}\\[2cm]
 		{\Huge\scshape \Was}\\[2cm]
 		{\large für die Prüfung zum}\\[0.5cm]
@@ -265,7 +275,7 @@ Hier Abstract.
 \newpage
 \section*{\Large \textbf Abkürzungsverzeichnis}  
 \begin{acronym}[Bash]
-	\acro{DUMMY}{DUMMY}
+	\acro{DUM}{DUMMY}
 \end{acronym}
 \newpage
 \pagenumbering{arabic} 
@@ -273,44 +283,22 @@ Hier Abstract.
 \subsection{Motivation}
 \subsection{Ziel der Arbeit}
 \subsection{Kapitelübersicht}
-\section{Grundlagen \& Begriffe}
-\subsection{Emergente Superorgansimen}
-\subsection{Metaheuristik}
-\subsection{Symmetrisch verteilte Algorithmen}
-\subsection{Agentenbasierte Modellierung}
-\subsection{Schwarmintelligente Algorithmen}
-\subsubsection{Particle Swarm Optimization}
-\subsubsection{Ant Colony Optimization}
-\subsubsection{Bee Colony Optimization}
-\subsection{Optimierungsproblem}
-\section{Anforderungsanalyse}
-\section{Entwurf \& Design}
-\subsection{Softwarearchitektur}
-\subsubsection{Model View Controller}
-\subsubsection{Klassendiagramm}
-\section{Implementierung}
-\subsection{Simulator}
-\subsubsection{Particle Swarm Optimization}
-\subsubsection{Ant Colony Optimization}
-\subsubsection{Bee Colony Optimization}
-\section{Fazit}
-\section{Ausblick}
-
-
-
-
-
+\section{Grundlagen}
+\subsection{Evaluation von Software}
+\subsection{Softwarequalität}
+\subsection{Statische Programmcodeanalyse}
+\subsection{Analytical Hierarchy Process}
+\section{Inhalt}
 \newpage
 \begin{thebibliography}{sotief}
-	\bibitem{1}DUMMY
+	\bibitem{1}A.Neumann. ASQF-Umfrage: Grundsätzlich positive Stimmung durch Fachkräftemangel getrübt. Weblink:
+	https://www.heise.de/developer/meldung/ASQF-Umfrage-Grundsaetzlich-positive-Stimmung-durch-Fachkraeftemangel-getruebt-2198155.html, EJ: 2014. Einsichtnahme: 12.07.2017
 \end{thebibliography}
 \newpage
 \appendix
 \appendixtoc
 \newpage
 \section{Anhang 1} 
-\subsection{Software Requirements Specification}
-\subsection{Quellcode}
 \end{document}
 
 
