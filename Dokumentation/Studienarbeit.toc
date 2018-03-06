@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {2}Grundlagen}{2}
 \contentsline {subsection}{\numberline {2.1}Schwarmintelligente Superorganismen}{2}
 \contentsline {subsubsection}{\numberline {2.1.1}Begriffsdefintion}{2}
-\contentsline {subsubsection}{\numberline {2.1.2}Ameisen}{2}
+\contentsline {subsubsection}{\numberline {2.1.2}Ameisen}{3}
 \contentsline {subsubsection}{\numberline {2.1.3}Bienen}{3}
 \contentsline {subsection}{\numberline {2.2}Agentenbasierte Modellierung}{3}
 \contentsline {subsection}{\numberline {2.3}Schwarmintelligente Algorithmen}{3}

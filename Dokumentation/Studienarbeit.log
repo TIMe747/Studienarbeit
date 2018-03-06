@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  26 FEB 2018 08:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  27 FEB 2018 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1500,30 +1500,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--291
 
  []
 
+<schwarmintelligenz.png, id=39, 670.00313pt x 424.58624pt>
+File: schwarmintelligenz.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--295
+<use schwarmintelligenz.png>
+Package pdftex.def Info: schwarmintelligenz.png used on input line 296.
+(pdftex.def)             Requested size: 426.79135pt x 270.45796pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--295
+Underfull \hbox (badness 10000) in paragraph at lines 291--299
 
  []
 
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 296.
+ input line 300.
 (/usr/share/texmf/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 296.
- [2] [3]
-[4]
+(Font)              scaled to size 10.95pt on input line 300.
+ [2 <./schwarmintelligenz.png (PNG copy)>] [3] [4]
 ! Undefined control sequence.
 \appendix ...on {\@Alph \c@section }\if@openright 
                                                   \cleardoublepage \else \cl...
-l.320 \appendix
+l.324 \appendix
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1534,14 +1539,14 @@ and I'll forget about whatever was undefined.
 ! Extra \else.
 \appendix ...\if@openright \cleardoublepage \else 
                                                   \clearpage \fi \addtoconte...
-l.320 \appendix
+l.324 \appendix
                
 I'm ignoring this; it doesn't match any \if.
 
 ! Extra \fi.
 \appendix ...cleardoublepage \else \clearpage \fi 
                                                   \addtocontents {toc}{\prot...
-l.320 \appendix
+l.324 \appendix
                
 I'm ignoring this; it doesn't match any \if.
 
@@ -1554,13 +1559,13 @@ I'm ignoring this; it doesn't match any \if.
 
 ] [6] (./Studienarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 27203 strings out of 493014
- 521821 string characters out of 6141613
- 576526 words of memory out of 5000000
- 30260 multiletter control sequences out of 15000+600000
+ 27208 strings out of 493014
+ 521950 string characters out of 6141613
+ 574526 words of memory out of 5000000
+ 30264 multiletter control sequences out of 15000+600000
  84701 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,73p,10430b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,73p,10430b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_n
 aooyc.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texmf/fonts/enc/
@@ -1568,10 +1573,10 @@ dvips/libertine/lbtn_ncsllp.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbt
 n_76gpa5.enc}</usr/share/texmf/fonts/type1/public/libertine/LinLibertineT.pfb><
 /usr/share/texmf/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/te
 xmf/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on Studienarbeit.pdf (14 pages, 721057 bytes).
+Output written on Studienarbeit.pdf (14 pages, 774062 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
