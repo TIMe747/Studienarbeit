@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  27 FEB 2018 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  7 MAR 2018 11:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1477,7 +1477,13 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (./Studienarbeit.toc
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 2.
-) [2] (./Studienarbeit.lof)
+) [2] (./Studienarbeit.lof
+Overfull \hbox (4.30064pt too wide) in paragraph at lines 2--2
+ [][] []\T1/LinuxLibertineT-TLF/m/n/10.95 Entstehungsbedingungen und De-fi-ni-t
+io-nen kol-lek-ti-ver In-tel-li-genz bei Tier-schwär- 
+ []
+
+)
 \tf@lof=\write7
 \openout7 = `Studienarbeit.lof'.
 
@@ -1485,8 +1491,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 \tf@lot=\write8
 \openout8 = `Studienarbeit.lot'.
 
-
-[4] [5] [1]
+ [4] [5] [1]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 290.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
@@ -1507,24 +1512,36 @@ File: schwarmintelligenz.png Graphic file (type png)
 Package pdftex.def Info: schwarmintelligenz.png used on input line 296.
 (pdftex.def)             Requested size: 426.79135pt x 270.45796pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--299
+Underfull \hbox (badness 10000) in paragraph at lines 291--300
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--299
+Underfull \hbox (badness 10000) in paragraph at lines 291--300
 
  []
 
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 300.
+ input line 301.
 (/usr/share/texmf/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 300.
+(Font)              scaled to size 10.95pt on input line 301.
  [2 <./schwarmintelligenz.png (PNG copy)>] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 320--322
+[]\T1/LinuxLibertineT-TLF/m/n/10.95 W.M. Whee-ler. The Ant Co-lony as an Or-ga-
+nism. Jour-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--322
+\T1/LinuxLibertineT-TLF/m/n/10.95 of Mor-pho-lo-gy Vo-lu-me 22, Is-sue 2, Sei-t
+e 307-325. We-b-link:
+ []
+
+[5]
 ! Undefined control sequence.
 \appendix ...on {\@Alph \c@section }\if@openright 
                                                   \cleardoublepage \else \cl...
@@ -1554,18 +1571,18 @@ I'm ignoring this; it doesn't match any \if.
 \tf@toc=\write9
 \openout9 = `Studienarbeit.toc'.
 
- [5
+ [6
 
 
-] [6] (./Studienarbeit.aux) ) 
+] [7] (./Studienarbeit.aux) ) 
 Here is how much of TeX's memory you used:
  27208 strings out of 493014
  521950 string characters out of 6141613
- 574526 words of memory out of 5000000
+ 576526 words of memory out of 5000000
  30264 multiletter control sequences out of 15000+600000
  84701 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,73p,10430b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,73p,10430b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_n
 aooyc.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texmf/fonts/enc/
@@ -1573,10 +1590,10 @@ dvips/libertine/lbtn_ncsllp.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbt
 n_76gpa5.enc}</usr/share/texmf/fonts/type1/public/libertine/LinLibertineT.pfb><
 /usr/share/texmf/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/te
 xmf/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on Studienarbeit.pdf (14 pages, 774062 bytes).
+Output written on Studienarbeit.pdf (15 pages, 775225 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
