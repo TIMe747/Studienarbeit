@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/itext-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jcommon-1.0.21.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jfreechart-1.0.17.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jmf.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/portfolio.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
