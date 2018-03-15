@@ -27,7 +27,10 @@ public class Ant extends OvalPortrayal2D implements Steppable
         
     Int2D last;
         
-    public Ant(double initialReward) { reward = initialReward; }
+    public Ant(double initialReward)
+    {
+    	reward = initialReward;
+    }
         
         
     // at present we have only one algorithm: value iteration.  I might
@@ -35,7 +38,7 @@ public class Ant extends OvalPortrayal2D implements Steppable
         
         
     public void depositPheromone( final SimState state)
-        {
+    {
         final AntsForage af = (AntsForage)state;
                 
         Int2D location = af.buggrid.getObjectLocation(this);

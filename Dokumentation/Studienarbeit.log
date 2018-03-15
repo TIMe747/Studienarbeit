@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  8 MAR 2018 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  14 MAR 2018 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1529,14 +1529,24 @@ LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 301.
- [2 <./schwarmintelligenz.png (PNG copy)>] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 320--322
+ [2 <./schwarmintelligenz.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 313--316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--316
+
+ []
+
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 328--330
 []\T1/LinuxLibertineT-TLF/m/n/10.95 W.M. Whee-ler. The Ant Co-lony as an Or-ga-
 nism. Jour-nal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--322
+Underfull \hbox (badness 10000) in paragraph at lines 328--330
 \T1/LinuxLibertineT-TLF/m/n/10.95 of Mor-pho-lo-gy Vo-lu-me 22, Is-sue 2, Sei-t
 e 307-325. We-b-link:
  []
@@ -1545,7 +1555,7 @@ e 307-325. We-b-link:
 ! Undefined control sequence.
 \appendix ...on {\@Alph \c@section }\if@openright 
                                                   \cleardoublepage \else \cl...
-l.324 \appendix
+l.332 \appendix
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1556,14 +1566,14 @@ and I'll forget about whatever was undefined.
 ! Extra \else.
 \appendix ...\if@openright \cleardoublepage \else 
                                                   \clearpage \fi \addtoconte...
-l.324 \appendix
+l.332 \appendix
                
 I'm ignoring this; it doesn't match any \if.
 
 ! Extra \fi.
 \appendix ...cleardoublepage \else \clearpage \fi 
                                                   \addtocontents {toc}{\prot...
-l.324 \appendix
+l.332 \appendix
                
 I'm ignoring this; it doesn't match any \if.
 
@@ -1590,7 +1600,7 @@ dvips/libertine/lbtn_ncsllp.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbt
 n_76gpa5.enc}</usr/share/texmf/fonts/type1/public/libertine/LinLibertineT.pfb><
 /usr/share/texmf/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/te
 xmf/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on Studienarbeit.pdf (15 pages, 775505 bytes).
+Output written on Studienarbeit.pdf (15 pages, 776031 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream

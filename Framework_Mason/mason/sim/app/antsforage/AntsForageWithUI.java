@@ -14,6 +14,7 @@ import javax.swing.*;
 
 public class AntsForageWithUI extends GUIState
     {
+	
     public Display2D display;
     public JFrame displayFrame;
 
@@ -24,9 +25,9 @@ public class AntsForageWithUI extends GUIState
     SparseGridPortrayal2D bugPortrayal = new SparseGridPortrayal2D();
                 
     public static void main(String[] args)
-        {
-        new AntsForageWithUI().createController();
-        }
+    {
+    	new AntsForageWithUI().createController();
+    }
     
     public AntsForageWithUI() { super(new AntsForage(System.currentTimeMillis())); }
     public AntsForageWithUI(SimState state) { super(state); }
@@ -34,7 +35,7 @@ public class AntsForageWithUI extends GUIState
     // allow the user to inspect the model
     public Object getSimulationInspectedObject() { return state; }  // non-volatile
 
-    public static String getName() { return "Ant Foraging"; }
+    public static String getName() { return "AntColonyAlgorithm"; }
     
     public void setupPortrayals()
         {
@@ -48,6 +49,7 @@ public class AntsForageWithUI extends GUIState
                 // home pheromones are beneath all, just make them opaque
                 Color.white, //new Color(0,255,0,0),
                 new Color(0,255,0,255) )
+        
             { public double filterLevel(double level) { return Math.sqrt(Math.sqrt(level)); } } );  // map with custom level filtering
         foodPheromonePortrayal.setField(af.toFoodGrid);
         foodPheromonePortrayal.setMap(new sim.util.gui.SimpleColorMap(
@@ -55,6 +57,7 @@ public class AntsForageWithUI extends GUIState
                 AntsForage.LIKELY_MAX_PHEROMONE,
                 new Color(0,0,255,0),
                 new Color(0,0,255,255) )
+        
             { public double filterLevel(double level) { return Math.sqrt(Math.sqrt(level)); } } );  // map with custom level filtering
         sitesPortrayal.setField(af.sites);
         sitesPortrayal.setMap(new sim.util.gui.SimpleColorMap(
@@ -62,6 +65,7 @@ public class AntsForageWithUI extends GUIState
                 1,
                 new Color(0,0,0,0),
                 new Color(255,0,0,255) ));
+        
         obstaclesPortrayal.setField(af.obstacles);
         obstaclesPortrayal.setMap(new sim.util.gui.SimpleColorMap(
                 0,

@@ -11,7 +11,7 @@ import sim.field.grid.*;
 import sim.util.*;
 
 
-public /*strictfp*/ class AntsForage extends SimState
+public class AntsForage extends SimState
     {
     private static final long serialVersionUID = 1;
 
@@ -32,8 +32,6 @@ public /*strictfp*/ class AntsForage extends SimState
     public static final int ONE_OBSTACLE = 1;
     public static final int TWO_OBSTACLES = 2;
     public static final int ONE_LONG_OBSTACLE = 3;
-
-    public static final int OBSTACLES = TWO_OBSTACLES;
         
     public static final int ALGORITHM_VALUE_ITERATION = 1;
     public static final int ALGORITHM_TEMPORAL_DIFERENCE = 2;
@@ -45,7 +43,7 @@ public /*strictfp*/ class AntsForage extends SimState
     public static final int HOME = 1;
     public static final int FOOD = 2;
         
-        
+    public int numObstacles = 2;
     public int numAnts = 1000;
     public double evaporationConstant = 0.999;
     public double reward = 1.0;
@@ -54,12 +52,17 @@ public /*strictfp*/ class AntsForage extends SimState
     public double computeDiagonalCutDown() { return Math.pow(updateCutDown, Math.sqrt(2)); }
     public double momentumProbability = 0.8;
     public double randomActionProbability = 0.1;
+
         
         
     // some properties
     public int getNumAnts() { return numAnts; }
     public void setNumAnts(int val) {if (val > 0) numAnts = val; }
-        
+    
+    public int getNumObstacles() {return numObstacles; }
+    public void setNumObstacles(int val) {if (val >= 0 && val <= 2) numObstacles = val; }
+    public Object domNumObstacles() { return new Interval(0, 2); }
+    
     public double getEvaporationConstant() { return evaporationConstant; }
     public void setEvaporationConstant(double val) {if (val >= 0 && val <= 1.0) evaporationConstant = val; }
 
@@ -98,11 +101,10 @@ public /*strictfp*/ class AntsForage extends SimState
         sites = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
         toFoodGrid = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
         toHomeGrid = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
-        //valgrid2 = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT, 0);
         buggrid = new SparseGrid2D(GRID_WIDTH, GRID_HEIGHT);
         obstacles = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT, 0);
 
-        switch( OBSTACLES )
+        switch(numObstacles)
             {
             case NO_OBSTACLES:
                 break;
@@ -126,16 +128,6 @@ public /*strictfp*/ class AntsForage extends SimState
                             obstacles.field[x][y] = 1;
                         if( ((x-35)*0.707+(y-70)*0.707)*((x-35)*0.707+(y-70)*0.707)/36+
                             ((x-35)*0.707-(y-70)*0.707)*((x-35)*0.707-(y-70)*0.707)/1024 <= 1 )
-                            obstacles.field[x][y] = 1;
-                        }
-                break;
-            case ONE_LONG_OBSTACLE:
-                for( int x = 0 ; x < GRID_WIDTH ; x++ )
-                    for( int y = 0 ; y < GRID_HEIGHT ; y++ )
-                        {
-                        obstacles.field[x][y] = 0;
-                        if( (x-60)*(x-60)/1600+
-                            (y-50)*(y-50)/25 <= 1 )
                             obstacles.field[x][y] = 1;
                         }
                 break;
