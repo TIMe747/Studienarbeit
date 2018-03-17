@@ -4,7 +4,7 @@
   See the file "LICENSE" for more information
 */
 
-package sim.app.ant;
+package sim.app.antsforage;
 
 import sim.field.grid.*;
 import sim.portrayal.*;
