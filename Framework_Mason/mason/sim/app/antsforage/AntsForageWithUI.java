@@ -72,6 +72,7 @@ public class AntsForageWithUI extends GUIState
                 1,
                 new Color(0,0,0,0),
                 new Color(128,64,64,255) ));
+        
         bugPortrayal.setField(af.buggrid);
             
         // reschedule the displayer
