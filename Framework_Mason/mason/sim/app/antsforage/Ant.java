@@ -16,10 +16,12 @@ import java.awt.*;
 public class Ant extends OvalPortrayal2D implements Steppable
     {
     private static final long serialVersionUID = 1;
-
+    public boolean getHasDanced() {return hasDanced; }
     public boolean getHasFoodItem() { return hasFoodItem; }
     public void setHasFoodItem(boolean val) { hasFoodItem = val; }
+    public void setHasDanced(boolean val) {hasDanced = val; }
     public boolean hasFoodItem = false;
+    public boolean hasDanced = false;
     double reward = 0;
         
     int x;
@@ -57,6 +59,7 @@ public class Ant extends OvalPortrayal2D implements Steppable
                         int _x = dx+x;
                         int _y = dy+y;
                         if (_x < 0 || _y < 0 || _x >= AntsForage.GRID_WIDTH || _y >= AntsForage.GRID_HEIGHT) continue;  // nothing to see here
+                        
                         double m = af.toFoodGrid.field[_x][_y] * 
                             (dx * dy != 0 ? // diagonal corners
                             af.diagonalCutDown : af.updateCutDown) +
@@ -65,7 +68,8 @@ public class Ant extends OvalPortrayal2D implements Steppable
                         }
                 af.toFoodGrid.field[x][y] = max;
                 }
-            else
+            
+            else //drop home pheromone
                 {
                 double max = af.toHomeGrid.field[x][y];
                 for(int dx = -1; dx < 2; dx++)
@@ -86,6 +90,9 @@ public class Ant extends OvalPortrayal2D implements Steppable
         reward = 0.0;
         }
 
+    
+    
+    
     public void act( final SimState state )
         {
         final AntsForage af = (AntsForage)state;
@@ -93,7 +100,8 @@ public class Ant extends OvalPortrayal2D implements Steppable
         Int2D location = af.buggrid.getObjectLocation(this);
         int x = location.x;
         int y = location.y;
-                
+
+        
         if (hasFoodItem)  // follow home pheromone
             {
             double max = AntsForage.IMPOSSIBLY_BAD_PHEROMONE;
@@ -101,64 +109,80 @@ public class Ant extends OvalPortrayal2D implements Steppable
             int max_y = y;
             int count = 2;
             
-           
-
-            for(int dx = -1; dx < 2; dx++)
-                for(int dy = -1; dy < 2; dy++)
-                    {
-                    int _x = dx+x;
-                    int _y = dy+y;
-                    if ((dx == 0 && dy == 0) ||
-                        _x < 0 || _y < 0 ||
-                        _x >= AntsForage.GRID_WIDTH || _y >= AntsForage.GRID_HEIGHT || 
-                        af.obstacles.field[_x][_y] == 1) continue;  // nothing to see here
-                    
-                    double m = af.toHomeGrid.field[_x][_y];
-                    if (m > max)
-                        {
-                        count = 2;
-                        }
-                    // no else, yes m > max is repeated
-                    if (m > max || (m == max && state.random.nextBoolean(1.0 / count++)))  // this little magic makes all "==" situations equally likely
-                        {
-                        max = m;
-                        max_x = _x;
-                        max_y = _y;
-                        }
-                    }
-            if (max == 0 && last != null)  // nowhere to go!  Maybe go straight
-                {
-                if (state.random.nextBoolean(af.momentumProbability))
-                    {
-                    int xm = x + (x - last.x);
-                    int ym = y + (y - last.y);
-                    if (xm >= 0 && xm < AntsForage.GRID_WIDTH && ym >= 0 && ym < AntsForage.GRID_HEIGHT && af.obstacles.field[xm][ym] == 0)
-                        { max_x = xm; max_y = ym; }
-                    }
-                }
-            else if (state.random.nextBoolean(af.randomActionProbability))  // Maybe go randomly
-                {
-                int xd = (state.random.nextInt(3) - 1);
-                int yd = (state.random.nextInt(3) - 1);
-                int xm = x + xd;
-                int ym = y + yd;
-                if (!(xd == 0 && yd == 0) && xm >= 0 && xm < AntsForage.GRID_WIDTH && ym >= 0 && ym < AntsForage.GRID_HEIGHT && af.obstacles.field[xm][ym] == 0)
-                    { max_x = xm; max_y = ym; }
-                }
-            af.buggrid.setObjectLocation(this, new Int2D(max_x, max_y));
-            
-            if (af.sites.field[max_x][max_y] == AntsForage.HOME)  // reward me next time!  And change my status
-            	{
-            		reward = af.reward; hasFoodItem = ! hasFoodItem; 
-            	}
+            if(hasDanced && x == 75 && y == 75)
+            {
+            	reward = af.reward; hasFoodItem = ! hasFoodItem;
+            	hasDanced = ! hasDanced;
             }
+            
 
+            else if (x == 75 && y == 75)  // reward me next time!  And change my status
+        	{
+                af.buggrid.setObjectLocation(this, 90, 90);
+                hasDanced = ! hasDanced;
+        	}
+            
+            else {
+
+
+	            for(int dx = -1; dx < 2; dx++)
+	                for(int dy = -1; dy < 2; dy++)
+	                    {
+	                    int _x = dx+x;
+	                    int _y = dy+y;
+	                    
+	                    if ((dx == 0 && dy == 0) ||
+	                        _x < 0 || _y < 0 ||
+	                        _x >= AntsForage.GRID_WIDTH || _y >= AntsForage.GRID_HEIGHT || 
+	                        af.obstacles.field[_x][_y] == 1) continue;  // nothing to see here
+	                    
+	                    double m = af.toHomeGrid.field[_x][_y];
+	                    
+	                    if (m > max)
+	                        {
+	                        count = 2;
+	                        }
+	                    
+	                    // no else, yes m > max is repeated
+	                    if (m > max || (m == max && state.random.nextBoolean(1.0 / count++)))  // this little magic makes all "==" situations equally likely
+	                        {
+	                        max = m;
+	                        max_x = _x;
+	                        max_y = _y;
+	                        }
+	                    }
+	            
+	            if (max == 0 && last != null)  // nowhere to go!  Maybe go straight
+	                {
+	                if (state.random.nextBoolean(af.momentumProbability))
+	                    {
+	                    int xm = x + (x - last.x);
+	                    int ym = y + (y - last.y);
+	                    if (xm >= 0 && xm < AntsForage.GRID_WIDTH && ym >= 0 && ym < AntsForage.GRID_HEIGHT && af.obstacles.field[xm][ym] == 0)
+	                        { max_x = xm; max_y = ym; }
+	                    }
+	                }
+	            else if (state.random.nextBoolean(af.randomActionProbability))  // Maybe go randomly
+	                {
+	                int xd = (state.random.nextInt(3) - 1);
+	                int yd = (state.random.nextInt(3) - 1);
+	                int xm = x + xd;
+	                int ym = y + yd;
+	                if (!(xd == 0 && yd == 0) && xm >= 0 && xm < AntsForage.GRID_WIDTH && ym >= 0 && ym < AntsForage.GRID_HEIGHT && af.obstacles.field[xm][ym] == 0)
+	                    { max_x = xm; max_y = ym; }
+	                }
+	            
+	            af.buggrid.setObjectLocation(this, new Int2D(max_x, max_y));
+	            
+	            }
+            }
         else
             {
             double max = AntsForage.IMPOSSIBLY_BAD_PHEROMONE;
             int max_x = x;
             int max_y = y;
             int count = 2;
+            
             for(int dx = -1; dx < 2; dx++)
                 for(int dy = -1; dy < 2; dy++)
                     {
