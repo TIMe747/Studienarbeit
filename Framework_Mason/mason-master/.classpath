@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="foragingBee/src/|hypercycle/src/" kind="src" path="contrib/app"/>
+	<classpathentry kind="src" path="contrib/app/foragingBee/src"/>
+	<classpathentry kind="src" path="contrib/app/hypercycle/src"/>
+	<classpathentry kind="src" path="contrib/geomason"/>
+	<classpathentry kind="src" path="contrib/jung"/>
+	<classpathentry kind="src" path="contrib/physics2d"/>
+	<classpathentry kind="src" path="contrib/socialnets"/>
+	<classpathentry kind="src" path="mason"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jfreechart-1.0.17.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/itext-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jcommon-1.0.21.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jmf.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/portfolio.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/vecmath-1.5.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
