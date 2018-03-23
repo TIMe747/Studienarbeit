@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jfreechart-1.0.17.jar"/>
 	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/jmf.jar"/>
 	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/portfolio.jar"/>
+	<classpathentry kind="lib" path="/home/xdmg/Schreibtisch/Studienarbeit.git/Framework_Mason/libraries/vecmath-1.5.2.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

@@ -4,7 +4,6 @@
 package de.thinktel.foragingBee.masonGlue;
 
 import java.awt.Color;
-
 import de.thinktel.foragingBee.simulation.IVisualAgent;
 
 /**

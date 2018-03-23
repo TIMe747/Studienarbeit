@@ -1,0 +1,14 @@
+/MovingBee.class
+/AbstractMovingBee.class
+/Bee.class
+/Bee$State.class
+/FoodSource.class
+/Hive.class
+/HiveEntrance.class
+/BeeLocator.class
+/VisualBee.class
+/Obstacle.class
+/AbstractMovingAgent.class
+/IAgentLocator.class
+/IMovingAgent.class
+/IVisualAgent.class
