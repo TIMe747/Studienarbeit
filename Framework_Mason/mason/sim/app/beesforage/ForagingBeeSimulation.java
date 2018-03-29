@@ -131,8 +131,6 @@ public abstract class ForagingBeeSimulation extends SimState implements
 		
 		switch(numObstacles)
         {
-		case 0: 
-			break;	
         case 1:
         	Obstacle o;
     		o = new Obstacle(this, new Point3d(155, 130, MIDDLE_LENGTH),
@@ -295,7 +293,7 @@ public abstract class ForagingBeeSimulation extends SimState implements
 	}
 	
 	public Interval domNumberOfObstacles() {
-		return new Interval(0, 2);
+		return new Interval(1, 2);
 	}
 
 	public boolean getAvoidObstacles() {
