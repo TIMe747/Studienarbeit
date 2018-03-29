@@ -108,25 +108,9 @@ public class Ant extends OvalPortrayal2D implements Steppable
             int max_x = x;
             int max_y = y;
             int count = 2;
-            
-            if(hasDanced && x == 75 && y == 75)
-            {
-            	reward = af.reward; hasFoodItem = ! hasFoodItem;
-            	hasDanced = ! hasDanced;
-            }
-            
 
-            else if (x == 75 && y == 75)  // reward me next time!  And change my status
-        	{
-                af.buggrid.setObjectLocation(this, 90, 90);
-                hasDanced = ! hasDanced;
-        	}
-            
-            else {
-
-
-	            for(int dx = -1; dx < 2; dx++)
-	                for(int dy = -1; dy < 2; dy++)
+	        for(int dx = -1; dx < 2; dx++)
+	             for(int dy = -1; dy < 2; dy++)
 	                    {
 	                    int _x = dx+x;
 	                    int _y = dy+y;
@@ -174,8 +158,11 @@ public class Ant extends OvalPortrayal2D implements Steppable
 	            
 	            af.buggrid.setObjectLocation(this, new Int2D(max_x, max_y));
 	            
+	            if (af.sites.field[max_x][max_y] == AntsForage.HOME)  // reward me next time!  And change my status
+                { reward = af.reward ; hasFoodItem = ! hasFoodItem; }
+            
 	            }
-            }
+            
         else
             {
             double max = AntsForage.IMPOSSIBLY_BAD_PHEROMONE;

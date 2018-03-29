@@ -47,9 +47,9 @@ public class Obstacle extends AbstractMovingAgent {
 	 * @param size
 	 *            The size (diameter) of the obstacle.
 	 */
-	public Obstacle(ForagingBeeSimulation simulation, boolean is3dMode, Point3d location,
+	public Obstacle(ForagingBeeSimulation simulation, Point3d location,
 			double size) {
-		super(simulation, is3dMode, location, new Vector3d(), size, STD_COLOR);
+		super(simulation, location, new Vector3d(), size, STD_COLOR);
 	}
 
 	/**

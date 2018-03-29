@@ -10,6 +10,7 @@ import sim.app.beesforage.InterfaceObjectVisualization;
 import sim.app.beesforage.simulation.Bee;
 import sim.app.beesforage.simulation.IMovingAgent;
 import sim.app.beesforage.simulation.IVisualAgent;
+import sim.app.beesforage.simulation.Obstacle;
 import sim.field.continuous.Continuous2D;
 import sim.util.Bag;
 import sim.util.Double2D;
@@ -42,8 +43,8 @@ public class SimulationVisualization extends ForagingBeeSimulation {
 	 * @param seed The seed for the random number generator.
 	 * @param is3dMode Set to true if this simulation runs in 3d (usually false).
 	 */
-	public SimulationVisualization(long seed, boolean is3dMode) {
-		super(seed, is3dMode);
+	public SimulationVisualization(long seed) {
+		super(seed);
 	}
 
 	/**
@@ -77,8 +78,12 @@ public class SimulationVisualization extends ForagingBeeSimulation {
 		if (agent instanceof Bee) {
 			return new ObjectVisualizationBee(agent);
 		}
+		if(agent instanceof Obstacle) {
+			return new ObjectVisualizationObstacle(agent);
+		}
+		
 
-		return new ObjectVisualizationHiveFoodObstacle(agent);
+		return new ObjectVisualizationHiveFood(agent);
 	}
 
 	/**

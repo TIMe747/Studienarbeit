@@ -4,7 +4,6 @@
 package sim.app.beesforage.beevisualization;
 
 import java.awt.Color;
-
 import sim.app.beesforage.ForagingBeeGUI;
 import sim.app.beesforage.ForagingBeeSimulation;
 import sim.display.Controller;
@@ -34,8 +33,7 @@ public class ForagingBeeGUI2D extends ForagingBeeGUI {
 
 
 	public ForagingBeeGUI2D() {
-		super(new SimulationVisualization(System.currentTimeMillis(),
-				false));
+		super(new SimulationVisualization(System.currentTimeMillis()));
 	}
 
 	/**
@@ -77,7 +75,6 @@ public class ForagingBeeGUI2D extends ForagingBeeGUI {
 	 */
 	public void quit() {
 		super.quit();
-
 		display = null;
 	}
 }

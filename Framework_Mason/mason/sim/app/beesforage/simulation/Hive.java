@@ -62,9 +62,8 @@ public class Hive extends AbstractMovingAgent {
 	 * @param honey
 	 *            The initial amount of honey the hive contains.
 	 */
-	public Hive(ForagingBeeSimulation simulation, boolean is3dMode,
-			Point3d location, double size, double honey) {
-		super(simulation, is3dMode, location, new Vector3d(), size, STD_COLOR);
+	public Hive(ForagingBeeSimulation simulation, Point3d location, double size, double honey) {
+		super(simulation, location, new Vector3d(), size, STD_COLOR);
 		setHoneyAmount(honey);
 	}
 

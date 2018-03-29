@@ -6,6 +6,7 @@ import sim.display.GUIState;
 
 public class BeesForageWithUI {
 
+	/*Einstiegspunkt*/
 	public static void main(String[] args) {
 		
 		Console c;

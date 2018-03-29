@@ -218,9 +218,8 @@ public class Bee extends AbstractMovingAgent {
 	 * @param location
 	 *            The current position of the bee.
 	 */
-	public Bee(ForagingBeeSimulation simulation, boolean is3dMode,
-			Hive hive, Point3d location) {
-		super(simulation, is3dMode, location, new Vector3d(), 2, Color.black);
+	public Bee(ForagingBeeSimulation simulation, Hive hive, Point3d location) {
+		super(simulation, location, new Vector3d(), 2, Color.black);
 
 		// the hive (home) of this bee
 		this.hive = hive;
@@ -364,6 +363,7 @@ public class Bee extends AbstractMovingAgent {
 	 * the bee has contact to a dancing bee.
 	 */
 	protected void doStateInHiveWithoutInfo() {
+		System.out.println("Ich bin im Bienenstock ohne Informationen");
 		setColor(Color.yellow);
 		receptive = true;
 		double colonyNectarNeed = getSimulation().colonyNectarNeed;
@@ -780,7 +780,7 @@ public class Bee extends AbstractMovingAgent {
 		} else {
 			if (checkBoundaries) {
 				boolean boundCollisionXY = getSimulation().isOutsideXY(this);
-				boolean boundCollisionZ = is3dMode()
+				boolean boundCollisionZ = false
 						& getSimulation().isOutsideZ(this);
 
 				double turnAzimuth = 0.0d;
@@ -858,8 +858,7 @@ public class Bee extends AbstractMovingAgent {
 
 		// get all agents excluding myself in the given distance
 		IMovingAgent[] agents = this.getObjectsWithinMyDistance(
-				observationRadius, useMyRadius, useTheirRadius, getSimulation()
-						.getMaxSphereRadius(), false, null);
+				observationRadius, useMyRadius, useTheirRadius, Double.MIN_VALUE, false, null);
 
 		// get all objects in a direction of +/- 90 degrees that are to be
 		// avoided and compute an avoidance vector
@@ -917,10 +916,7 @@ public class Bee extends AbstractMovingAgent {
 
 							sphericVector.azimuth += (azimuth > 0.0) ? Geometric.MINUS_PI_HALF
 									: Geometric.PI_HALF;
-							if (is3dMode())
-								sphericVector.elevation += (elevation > 0.0) ? Geometric.MINUS_PI_HALF
-										: Geometric.PI_HALF;
-
+							
 							Vector3d v1 = new Vector3d(sphericVector
 									.toCartesian());
 
@@ -943,10 +939,7 @@ public class Bee extends AbstractMovingAgent {
 
 		// add some noise to the avoidance vector for elevation but only if this
 		// bee is in 3d mode
-		if (is3dMode()) {
-			angleNoise = Math.toRadians(10 * r.nextGaussian());
-			v.elevation = Geometric.clampAngleRadians(v.elevation + angleNoise);
-		}
+
 		avoidVector = new Vector3d(v.toCartesian());
 		Geometric.normalize(avoidVector);
 

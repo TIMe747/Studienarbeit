@@ -61,7 +61,6 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 * Determine if this agent is running in a 3D simulation environment. Some
 	 * methods may behave differently according to this flag.
 	 */
-	private boolean is3dMode = false;
 
 	/**
 	 * The object that is used for visualizing this agent. The simulation
@@ -112,9 +111,6 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 * 
 	 * @param simulation
 	 *            The simulation the agent resides in.
-	 * @param is3dMode
-	 *            Determine if the agent is running in a 3d simulation
-	 *            environment (if it is set to true).
 	 * @param location
 	 *            The current location of the agent.
 	 * @param velocity
@@ -125,9 +121,8 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 *            The color of the agent.
 	 */
 	public AbstractMovingAgent(ForagingBeeSimulation simulation,
-			boolean is3dMode, Point3d location, Vector3d velocity, double size,
+			Point3d location, Vector3d velocity, double size,
 			Color color) {
-		setIs3dMode(is3dMode);
 		/*
 		 * Set the values which will not affect any other classes.
 		 */
@@ -164,9 +159,6 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 * 
 	 * @return True, if the agent is running in a 3d simulation environment.
 	 */
-	public final boolean is3dMode() {
-		return is3dMode;
-	}
 
 	/**
 	 * Set the flag if the agent is running in a 3d simulation environment.
@@ -175,9 +167,7 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 *            True, if the agent is running in a 3d simulation environment;
 	 *            false otherwise.
 	 */
-	private final void setIs3dMode(boolean value) {
-		is3dMode = value;
-	}
+
 
 	/**
 	 * Return the sphere radius the agent fills in.
@@ -250,11 +240,8 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 * 
 	 */
 	public void setLocation(double x, double y, double z) {
-		if (is3dMode)
-			this.location.set(x, y, z);
-		else {
-			this.location.set(x, y, 0);
-		}
+
+		this.location.set(x, y, 0);
 		updateLocation();
 	}
 
@@ -387,8 +374,7 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 */
 	public final void forward(Vector3d direction) {
 		location.add(direction);
-		if (!is3dMode)
-			location.z = 0.0d;
+		location.z = 0.0d;
 		updateLocation();
 	}
 
@@ -419,7 +405,7 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 			boolean useMySphere, boolean useTheirSpheres, boolean includeMySelf) {
 
 		return getObjectsWithinMyDistance(radius, useMySphere, useTheirSpheres,
-				getSimulation().getMaxSphereRadius(), includeMySelf, null);
+				Double.MIN_VALUE, includeMySelf, null);
 	}
 
 	/**
@@ -596,8 +582,7 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 	 *            The angle in radians the agent will elevate from the xy-pane.
 	 */
 	public final void turnTo(double azimuth, double elevation) {
-		if (!is3dMode)
-			elevation = 0.0d;
+		elevation = 0.0d;
 		heading.azimuth = Geometric.clampAngleRadians(azimuth);
 		heading.elevation = Geometric.clampAngleRadians(elevation);
 		velocity.set(heading.toCartesian());

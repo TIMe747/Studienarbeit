@@ -1,57 +1,50 @@
 package sim.app.beesforage;
 
 import javax.swing.JFrame;
-
-import sim.app.beesforage.simulation.FoodSource;
-import sim.app.beesforage.simulation.Hive;
 import sim.display.GUIState;
 import sim.engine.SimState;
 
 public abstract class ForagingBeeGUI extends GUIState {
-
-	FoodSource foodSources[];
-	Hive hives[];
-
+	
+	/*Display der Simulation*/
 	public JFrame displayFrame;
-
+	
+	/*Hält alle Informationen der Simulation*/
 	public ForagingBeeGUI(ForagingBeeSimulation sim) {
 		super(sim);
 		sim.prepareSimulation();
 	}
-
+	
+	/*Visualisierung der Simulation*/
 	public ForagingBeeGUI(SimState state) {
 		super(state);
 	}
-
+	
+	/*Erlaubt das Inspizieren von Objekten*/
 	public Object getSimulationInspectedObject() {
 		return state;
 	}
 
-	/**
-	 * The name of the simulation.
-	 * 
-	 * @return The string containing the name of the simulation.
-	 */
+	/*Titel der Simulation*/
 	public static String getName() {
-		return "Foraging Bee Simulation in 2D";
+		return "Foraging Bee Simulation";
 	}
-
+	
+	/*Konfiguration des Displays der Simulation*/
 	public abstract void setupPortrayals();
 
 	public void start() {
 		super.start();
 		setupPortrayals();
-
-		ForagingBeeSimulation bs = (ForagingBeeSimulation) state;
-		foodSources = new FoodSource[bs.foodSources.size()];
-		hives = new Hive[bs.hives.size()];
 	}
 
+	/*Wird von der Konsole aufgerufen um die Simulation in einen neuen Zustand zu versetzen*/
 	public void load(SimState state) {
 		super.load(state);
 		setupPortrayals();
 	}
-
+	
+	/*Aufräumen*/
 	public void quit() {
 		super.quit();
 

@@ -15,13 +15,13 @@ import sim.portrayal.DrawInfo2D;
  * @author hoehne
  * 
  */
-public class ObjectVisualizationHiveFoodObstacle extends ObjectVisualization {
+public class ObjectVisualizationHiveFood extends ObjectVisualization {
 	/**
 	 * The constructor that takes a visual agent interface as an argument.
 	 * 
 	 * @param agent
 	 */
-	public ObjectVisualizationHiveFoodObstacle(IVisualAgent agent) {
+	public ObjectVisualizationHiveFood(IVisualAgent agent) {
 		super(agent);
 	}
 

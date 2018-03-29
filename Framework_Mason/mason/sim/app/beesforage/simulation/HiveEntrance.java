@@ -54,8 +54,8 @@ public class HiveEntrance extends AbstractMovingAgent {
 	 *            outer rim of the hive.
 	 */
 	public HiveEntrance(ForagingBeeSimulation simulation,
-			boolean is3dMode, Hive hive, double direction) {
-		super(simulation, is3dMode, new Point3d(), new Vector3d(), 10,
+			Hive hive, double direction) {
+		super(simulation, new Point3d(), new Vector3d(), 10,
 				STD_COLOR);
 		this.hive = hive;
 

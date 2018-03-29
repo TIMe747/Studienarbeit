@@ -86,9 +86,8 @@ public class FoodSource extends AbstractMovingAgent {
 	 * @param concentration
 	 *            The concentration of the nectar in this food source.
 	 */
-	public FoodSource(ForagingBeeSimulation simulation, boolean is3dMode,
-			Point3d location, double size, Color color, double concentration) {
-		super(simulation, is3dMode, location, new Vector3d(), size, color);
+	public FoodSource(ForagingBeeSimulation simulation, Point3d location, double size, Color color, double concentration) {
+		super(simulation, location, new Vector3d(), size, color);
 
 		sizeFactor = 1 / getSize();
 		initialConcentration = concentration;
