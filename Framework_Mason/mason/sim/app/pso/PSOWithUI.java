@@ -65,7 +65,7 @@ public class PSOWithUI extends GUIState
         {
         PSO swarm = (PSO)state;
         final SimpleColorMap map = new SimpleColorMap(
-            swarm.fitnessFunctionLowerBound[swarm.fitnessFunction], 1000, Color.blue, Color.red);
+            swarm.fitnessFunctionLowerBound[swarm.fitnessFunction], 1000, Color.red, Color.red);
          
         swarmPortrayal.setField(swarm.space);
         for(int x=0;x<swarm.space.allObjects.numObjs;x++)

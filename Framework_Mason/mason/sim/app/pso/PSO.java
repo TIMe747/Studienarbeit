@@ -6,7 +6,6 @@
 
 package sim.app.pso;
 
-import ec.util.MersenneTwisterFast;
 import sim.engine.Schedule;
 import sim.engine.SimState;
 import sim.engine.Steppable;
@@ -49,20 +48,12 @@ public class PSO extends SimState
     public void setFitnessFunction(int val) { fitnessFunction = val; }
     public Object domFitnessFunction() 
         { 
-        return new String[] { "Booth", "Rastrigin", "Griewangk", "Rosenbrock" };
+        return new String[] {"Rastrigin"};
         }
             
     private Evaluatable mapFitnessFunction(int val)
         {
-        switch (val)
-            {
-            case 0: return new Booth();
-            case 1: return new Rastrigin();
-            case 2: return new Griewangk();
-            case 3: return new Rosenbrock();
-            }
-        
-        return new Booth();
+        	return new Rastrigin();
         }
 
     public double[] fitnessFunctionLowerBound = 
@@ -174,10 +165,9 @@ public class PSO extends SimState
             });             
         }
 
-    public static void main(String[] args) 
-        {
+    public static void main(String[] args) {
         doLoop(PSO.class, args);
         System.exit(0);
-        }
-
     }
+
+}

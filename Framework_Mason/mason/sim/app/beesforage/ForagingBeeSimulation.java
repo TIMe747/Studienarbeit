@@ -99,9 +99,8 @@ public abstract class ForagingBeeSimulation extends SimState implements
 					
 		FoodSource f1 = new FoodSource(this, new Point3d(300, 300,
 				MIDDLE_LENGTH), 20, new Color(0xd0, 0x00, 0x00), 100);
+		addAgent(f1);
 		
-		
-//		addAgent(f1);
 //		FoodSource f2 = new FoodSource(this, new Point3d(50, 350,
 //				MIDDLE_LENGTH), 15, new Color(0xc0, 0xc0, 0x00), 200);
 //		addAgent(f2);

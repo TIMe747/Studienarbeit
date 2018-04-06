@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  15 MAR 2018 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  6 APR 2018 01:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1470,9 +1470,9 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 239.
  [1] [2]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 266.
+(Font)              scaled to size 10.0pt on input line 268.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 266.
+(Font)              scaled to size 10.0pt on input line 268.
  [1]
 (./Studienarbeit.toc
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
@@ -1493,124 +1493,97 @@ io-nen kol-lek-ti-ver In-tel-li-genz bei Tier-schwär-
 
  [4] [5] [1]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 290.
+(Font)              scaled to size 10.95pt on input line 296.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 290.
+(Font)              scaled to size 8.0pt on input line 296.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 290.
+(Font)              scaled to size 9.0pt on input line 296.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 290.
+(Font)              scaled to size 6.0pt on input line 296.
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
-
- []
-
-<schwarmintelligenz.png, id=39, 670.00313pt x 424.58624pt>
+<schwarmintelligenz.png, id=39, 682.80093pt x 434.37282pt>
 File: schwarmintelligenz.png Graphic file (type png)
 
 <use schwarmintelligenz.png>
-Package pdftex.def Info: schwarmintelligenz.png used on input line 296.
-(pdftex.def)             Requested size: 426.79135pt x 270.45796pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--300
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--300
-
- []
-
+Package pdftex.def Info: schwarmintelligenz.png used on input line 299.
+(pdftex.def)             Requested size: 426.79135pt x 271.51547pt.
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 301.
+ input line 305.
+
 (/usr/share/texmf/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 301.
- [2 <./schwarmintelligenz.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 313--316
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--316
-
- []
-
-[3]
-Overfull \hbox (3.57135pt too wide) in paragraph at lines 319--320
+(Font)              scaled to size 10.95pt on input line 305.
+ [2 <./schwarmintelligenz.png (PNG copy)>] [3]
+Overfull \hbox (3.57135pt too wide) in paragraph at lines 322--323
 []\T1/LinuxLibertineT-TLF/b/n/10.95 Agenten-Umgebung: \T1/LinuxLibertineT-TLF/m
 /n/10.95 Agen-ten in-ter-a-gie-ren in-ner-halb ei-ner Um-ge-bung mit an-de-ren 
 Agen-
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 334--336
-[]\T1/LinuxLibertineT-TLF/m/n/10.95 W.M. Whee-ler. The Ant Co-lony as an Or-ga-
-nism. Jour-nal
- []
+Package acronym Info: Label `acro:PSO' newly defined as it shall be overridden
+although it is yet undefined on input line 334.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--336
-\T1/LinuxLibertineT-TLF/m/n/10.95 of Mor-pho-lo-gy Vo-lu-me 22, Is-sue 2, Sei-t
-e 307-325. We-b-link:
- []
+Package acronym Warning: Acronym `PSO' is not defined on input line 334.
+
+
+Package acronym Warning: Acronym `PSO' is not defined on input line 334.
+
+
+Package acronym Warning: Acronym `PSO' is not defined on input line 334.
+
+
+Package acronym Warning: Acronym `PSO' is not defined on input line 334.
 
 [5]
-! Undefined control sequence.
-\appendix ...on {\@Alph \c@section }\if@openright 
-                                                  \cleardoublepage \else \cl...
-l.338 \appendix
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 358--360
 
-! Extra \else.
-\appendix ...\if@openright \cleardoublepage \else 
-                                                  \clearpage \fi \addtoconte...
-l.338 \appendix
-               
-I'm ignoring this; it doesn't match any \if.
+ []
 
-! Extra \fi.
-\appendix ...cleardoublepage \else \clearpage \fi 
-                                                  \addtocontents {toc}{\prot...
-l.338 \appendix
-               
-I'm ignoring this; it doesn't match any \if.
 
-(./Studienarbeit.toc)
+Underfull \hbox (badness 10000) in paragraph at lines 358--360
+\T1/LinuxLibertineT-TLF/m/n/10.95 Weblink: http://www3.interscience.wiley.com/j
+ournal/109914213/abstract. . Ein-
+ []
+
+[6] (./Studienarbeit.toc)
 \tf@toc=\write9
 \openout9 = `Studienarbeit.toc'.
 
- [6
-
-
-] [7] (./Studienarbeit.aux) ) 
+ [7] [8] (./Studienarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 27208 strings out of 493014
- 521950 string characters out of 6141613
- 576526 words of memory out of 5000000
- 30264 multiletter control sequences out of 15000+600000
+ 27213 strings out of 493014
+ 521992 string characters out of 6141613
+ 575525 words of memory out of 5000000
+ 30269 multiletter control sequences out of 15000+600000
  84701 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,73p,10430b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_n
-aooyc.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texmf/fonts/enc/
-dvips/libertine/lbtn_ncsllp.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbt
-n_76gpa5.enc}</usr/share/texmf/fonts/type1/public/libertine/LinLibertineT.pfb><
-/usr/share/texmf/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/te
-xmf/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on Studienarbeit.pdf (15 pages, 776627 bytes).
+ 55i,10n,73p,10430b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/libertine/lbt
+n_naooyc.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/
+share/texmf/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texmf/fonts/e
+nc/dvips/libertine/lbtn_ncsllp.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/
+lbtn_76gpa5.enc}</usr/share/texmf/fonts/type1/public/libertine/LinLibertineT.pf
+b></usr/share/texmf/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share
+/texmf/fonts/type1/public/libertine/LinLibertineTI.pfb>
+Output written on Studienarbeit.pdf (16 pages, 781511 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -27,7 +27,7 @@ public abstract class ForagingBeeGUI extends GUIState {
 
 	/*Titel der Simulation*/
 	public static String getName() {
-		return "Foraging Bee Simulation";
+		return "BCO";
 	}
 	
 	/*Konfiguration des Displays der Simulation*/

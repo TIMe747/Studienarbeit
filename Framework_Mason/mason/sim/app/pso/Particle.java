@@ -1,17 +1,8 @@
-/*
-  Copyright 2006 by Ankur Desai, Sean Luke, and George Mason University
-  Licensed under the Academic Free License version 3.0
-  See the file "LICENSE" for more information
-*/
-
 package sim.app.pso;
 
 import sim.util.Double2D;
 import sim.util.MutableDouble2D;
 
-/**
-   @author Ankur Desai and Joey Harrison
-*/
 public class Particle
     {       
     private static final long serialVersionUID = 1;
@@ -24,15 +15,14 @@ public class Particle
                 
     PSO pso;
     Evaluatable fitnessFunction;
-    int index;  // this kludge is necessary because the particles are individually scheduled
+    int index;
         
-    public Particle() 
-        {
+    public Particle() {
         super();
-        }
+    }
         
-    public Particle(double x, double y, double vx, double vy, PSO pso, Evaluatable f, int index)
-        {
+    public Particle(double x, double y, double vx, double vy, PSO pso, Evaluatable f, int index) {
+    	
         super();
 
         this.position.setTo(x, y);
@@ -42,31 +32,27 @@ public class Particle
         this.fitnessFunction = f;
         pso.space.setObjectLocation(this,new Double2D(position));
         this.index = index;
-        }
+        
+    }
 
-    public void updateBest(double currVal, double currX, double currY)
-        {
-        if (currVal > bestVal)
-            {
+    public void updateBest(double currVal, double currX, double currY) {
+        if (currVal > bestVal){
             bestVal = currVal;
-            bestPosition.setTo(currX, currY);
-                        
+            bestPosition.setTo(currX, currY);          
             pso.updateBest(currVal, currX, currY);
-            }
         }
+    }
         
-    public double getFitness()
-        {
+    public double getFitness() {
         return fitnessFunction.calcFitness(position.x,position.y);
-        }
+    }
         
-    public void stepUpdateFitness()
-        {
+    public void stepUpdateFitness() {
         updateBest(getFitness(), position.x, position.y);
-        }
+    }
 
-    public void stepUpdateVelocity()
-        {
+    public void stepUpdateVelocity() {
+    	
         double x = position.x;
         double y = position.y;
                 
@@ -74,6 +60,7 @@ public class Particle
         pso.getNeighborhoodBest(index, nBestPos);       // updates the location of nBestPos
                 
         // calc new velocity
+        
         // calc x component
         double inertia = velocity.x;
         double pDelta = bestPosition.x - x;

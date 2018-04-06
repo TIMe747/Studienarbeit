@@ -40,6 +40,7 @@ public class ForagingBeeGUI2D extends ForagingBeeGUI {
 	 * Setting up the visuals.
 	 */
 	public void init(Controller c) {
+		
 		super.init(c);
 
 		// make the displayer, using the maximum values of the simulation (if
@@ -48,7 +49,7 @@ public class ForagingBeeGUI2D extends ForagingBeeGUI {
 				ForagingBeeSimulation.HEIGHT, this);
 
 		displayFrame = display.createFrame();
-		displayFrame.setTitle("Honey bee playground");
+		displayFrame.setTitle("BCO");
 		c.registerFrame(displayFrame); // register the frame so it appears in
 		// the "Display" list
 		displayFrame.setVisible(true);
@@ -59,6 +60,7 @@ public class ForagingBeeGUI2D extends ForagingBeeGUI {
 	 * Set up the displays.
 	 */
 	public void setupPortrayals() {
+		
 		SimulationVisualization beeSimulation = (SimulationVisualization) state;
 		// tell the portrayals what to portray and how to portray them
 		vidPortrayal.setField(beeSimulation.environment);
