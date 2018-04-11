@@ -1,5 +1,7 @@
 package sim.app.antsforage;
 
+
+
 import sim.engine.*;
 import sim.field.grid.*;
 import sim.util.*;
@@ -7,7 +9,7 @@ import sim.util.*;
 public class AntsForage extends SimState {
 	
     private static final long serialVersionUID = 1;
-
+    
     public static final int GRID_HEIGHT = 100;
     public static final int GRID_WIDTH = 100;
 
@@ -20,6 +22,8 @@ public class AntsForage extends SimState {
     public static final int FOOD_XMAX = 25;
     public static final int FOOD_YMIN = 25;
     public static final int FOOD_YMAX = 25;
+    public static int FOODUNITS = 10000;
+    public static int STEPS = -1;
 
     public static final int NO_OBSTACLES = 0;
     public static final int ONE_OBSTACLE = 1;
@@ -135,8 +139,12 @@ public class AntsForage extends SimState {
         }
 
 	    schedule.scheduleRepeating(Schedule.EPOCH,1, new Steppable() {
-		    public void step(SimState state) { 
-		    	toFoodGrid.multiply(evaporation); toHomeGrid.multiply(evaporation); 
+		    public void step(SimState state) {
+		    	STEPS = STEPS+1;
+		    	System.out.println(STEPS);
+		    	toFoodGrid.multiply(evaporation); 
+		    	toHomeGrid.multiply(evaporation); 
+		    	
 		    }
 	    }, 1);
 

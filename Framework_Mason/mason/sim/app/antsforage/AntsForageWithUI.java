@@ -4,10 +4,13 @@ import sim.engine.*;
 import sim.display.*;
 import sim.portrayal.grid.*;
 import java.awt.*;
+
+
 import javax.swing.*;
 
 public class AntsForageWithUI extends GUIState {
 	
+    public static long startnanoseconds = 0;
     public Display2D display;
     public JFrame displayFrame;
 
@@ -56,6 +59,7 @@ public class AntsForageWithUI extends GUIState {
     public void start() {
         super.start();
         setupPortrayals();
+        startnanoseconds = System.nanoTime();
     }
             
     public void load(SimState state) {

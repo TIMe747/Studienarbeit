@@ -5,18 +5,20 @@ import sim.portrayal.simple.*;
 import sim.util.*;
 import sim.engine.*;
 import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 
 public class Ant extends OvalPortrayal2D implements Steppable {
 	
 	    private static final long serialVersionUID = 1;
 	    
-	    public boolean getHasDanced() {return hasDanced; }
+
 	    public boolean getHasFoodItem() { return hasFoodItem; }
 	    public void setHasFoodItem(boolean val) { hasFoodItem = val; }
-	    public void setHasDanced(boolean val) {hasDanced = val; }
 	    public boolean hasFoodItem = false;
-	    public boolean hasDanced = false;
-	    
+
 	    double reward = 0;
 	        
 	    int x;
@@ -200,6 +202,7 @@ public class Ant extends OvalPortrayal2D implements Steppable {
 	            af.buggrid.setObjectLocation(this, new Int2D(max_x, max_y));
 	            
 	            if (af.sites.field[max_x][max_y] == AntsForage.FOOD){
+	            	AntsForage.FOODUNITS = AntsForage.FOODUNITS - 1;
 	            	reward = af.reward; hasFoodItem = ! hasFoodItem; 
 	            }
 	        }
@@ -207,8 +210,16 @@ public class Ant extends OvalPortrayal2D implements Steppable {
 	    }
 	
 	    public void step( final SimState state ) {
+	    	
+	    	if(AntsForage.FOODUNITS == 0) {
+	    		int numberOfStepsNeeded = AntsForage.STEPS;
+	    		System.out.println(numberOfStepsNeeded);
+		    	System.exit(0);
+	    	}
+	    	
 	    	depositPheromone(state);
 		    act(state);
+		    
 	    }
 	
 

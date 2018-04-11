@@ -16,9 +16,10 @@
 \contentsline {subsection}{\numberline {3.1}Particle Swarm Optimization}{5}
 \contentsline {subsubsection}{\numberline {3.1.1}Suchraum}{5}
 \contentsline {subsubsection}{\numberline {3.1.2}Partikel}{5}
-\contentsline {subsection}{\numberline {3.2}Ant Colony Optimization}{5}
-\contentsline {subsection}{\numberline {3.3}Bee Colony Optimization}{5}
-\contentsline {section}{\numberline {4}Modellplanung und Framework}{5}
-\contentsline {section}{\numberline {5}Implementierung}{5}
-\contentsline {section}{\numberline {6}Zusammenfassung}{5}
-\contentsline {section}{\numberline {7}Anhang 1}{8}
+\contentsline {subsubsection}{\numberline {3.1.3}Algorithmus}{6}
+\contentsline {subsection}{\numberline {3.2}Ant Colony Optimization}{7}
+\contentsline {subsection}{\numberline {3.3}Bee Colony Optimization}{7}
+\contentsline {section}{\numberline {4}Modellplanung und Framework}{7}
+\contentsline {section}{\numberline {5}Implementierung}{7}
+\contentsline {section}{\numberline {6}Zusammenfassung}{7}
+\contentsline {section}{\numberline {7}Anhang 1}{10}
