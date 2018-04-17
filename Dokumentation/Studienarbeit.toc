@@ -18,8 +18,11 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Partikel}{5}
 \contentsline {subsubsection}{\numberline {3.1.3}Algorithmus}{6}
 \contentsline {subsection}{\numberline {3.2}Ant Colony Optimization}{7}
-\contentsline {subsection}{\numberline {3.3}Bee Colony Optimization}{7}
-\contentsline {section}{\numberline {4}Modellplanung und Framework}{7}
-\contentsline {section}{\numberline {5}Implementierung}{7}
-\contentsline {section}{\numberline {6}Zusammenfassung}{7}
-\contentsline {section}{\numberline {7}Anhang 1}{10}
+\contentsline {subsubsection}{\numberline {3.2.1}Suchraum}{7}
+\contentsline {subsubsection}{\numberline {3.2.2}Modellierte Ameise}{7}
+\contentsline {subsubsection}{\numberline {3.2.3}Algorithmus}{7}
+\contentsline {subsection}{\numberline {3.3}Bee Colony Optimization}{8}
+\contentsline {section}{\numberline {4}Modell und Framework}{8}
+\contentsline {section}{\numberline {5}Implementierung}{8}
+\contentsline {section}{\numberline {6}Zusammenfassung}{8}
+\contentsline {section}{\numberline {7}Anhang 1}{11}

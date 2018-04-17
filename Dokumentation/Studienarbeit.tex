@@ -10,6 +10,10 @@
 \usepackage{tcolorbox}
 \usepackage{framed}
 \usepackage[]{algorithm2e}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
 
 % conditional for xetex or luatex
 \newif\ifxetexorluatex
@@ -268,9 +272,6 @@
 %Umbenennung Abstract zu Zusammenfassung
 \renewcommand{\abstractname}{Zusammenfassung}
 \begin{abstract}
-Im Rahmen dieser Studienarbeit werden schwarmintelligente Algorithmen vorgestellt und mittels agentenbasierter Modellierung, in einer Simulation, veranschaulicht und untersucht. 
-
-Schwarmintelligente Algorithmen orientieren sich an in der Natur beobachteten Phänomenen zur Selbstorganisation eines Tierschwarms ohne zentrale Lenkung oder hierarchischer Befehlskette.
 \end{abstract}
 \newpage
 \maintoc           % Inhaltsverzeichnis hier ausgeben%
@@ -281,6 +282,7 @@ Schwarmintelligente Algorithmen orientieren sich an in der Natur beobachteten Ph
 \newpage
 \section*{\Large \textbf Abkürzungsverzeichnis}  
 \begin{acronym}[Bash]
+	\acro{ACO}{Ameisenkolonieoptimierung}
 	\acro{PSO}{Partikelschwarmoptimierung}
 \end{acronym}
 \newpage
@@ -332,13 +334,12 @@ Zwischen den Systemelementen bestehen Interaktionsbeziehungen. Die technischen V
 Nach S. Russell und P. Norvig\footnote{S. Russel, P. Norvig (1995)} muss eine geeignete Agenten-Umgebung zugänglich, deterministisch, dynamisch, kontrollierbar und teleologisch sein. Eine zugängliche Umgebung erlaubt den Agenten Zugriff auf ihren Zustand. In der Regel beschränkt sich dieser Zugriff jedoch auf den lokalen Wahrnehmungsbereich eines Agenten und erlaubt somit nur Zugriff auf einen Ausschnitt der Umgebung. Deterministisch ist die Umgebung, sobald der Folgezustand vollständig durch den aktuellen Umgebungszustand und die aktuelle Aktion des Agenten bestimmt ist. Kann sich der Zustand der Umgebung durch Aktionen der Agenten ändern, so handelt es sich um eine dynamische und kontrollierbare Umgebung.
 \newpage
 \section{Schwarmintelligente Algorithmen}
-
 \subsection{Particle Swarm Optimization}
-Die klassische \ac{PSO} wurde erstmals im Jahr 1995 von J. Kennedy und R. Ebert beschrieben. Die \acs{PSO} stellt ein, auf der Abfolge von abstrakten Schritten basiertes, Verfahren zur näherungsweisen Lösung von Optimierungsproblemen dar. Zur Lösung des Optimierungsproblems wird eine Population von Partikeln, so lange durch einen Suchraum bewegt, bis eine hinreichende Lösung in einer angemessenen Zeit gefunden wird. Dabei stellt die Position eines Partikels eine potentielle Lösung dar und wird in jedem Zeitschritt neu berechnet. Um die \acs{PSO} auf ein mathematisches Problem anwenden zu können, muss zunächst der Suchraum und die Partikel definiert werden.
+Die klassische \ac{PSO} wurde erstmals im Jahr 1995 von J. Kennedy und R. Ebert beschrieben. Die \acs{PSO} stellt ein, auf der Abfolge von abstrakten Schritten basiertes, Verfahren zur näherungsweisen Lösung von Optimierungsproblemen dar. Zur Lösung des Optimierungsproblems wird eine Population von Partikeln, so lange durch einen Suchraum bewegt, bis eine hinreichende Lösung in einer angemessenen Zeit gefunden wird. Dabei stellt die Position eines Partikels eine potentielle Lösung dar und wird in jedem Zeitschritt neu berechnet\footnote{Y. Liu (2014)}. Um die \acs{PSO} auf ein mathematisches Problem anwenden zu können, muss zunächst der Suchraum und die Partikel definiert werden\footnote{E. Konstantinos, N. Michael (2010)}.
 \subsubsection{Suchraum}
 Der Suchraum $S \subset \mathbb{R}^n$ ist ein n-dimensionaler Raum, in dem sich die gesamte Population $X=\{x_{1},x_{2},...,x_{n}\}$ der Partikel bewegt. Damit eine Lösung gefunden werden kann beschränkt sich der Suchraum auf eine endliche Anzahl an möglichen Positionen, die von den Partikeln besucht werden können.
 \subsubsection{Partikel}
-Jedes Partikel $x_{i}$ besitzt dabei folgende Eigenschaften im Suchraum $S$ zum Zeitpunkt $t$:
+Jedes Partikel $x_{i}$ besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpunkt $t$:
 \begin{itemize}
 	\item Position $x_{i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{i}(t))$: Die aktuelle Position des Partikels $x_{i}$ zum Zeitpunkt $t$ repräsentiert eine potentielle Lösung des Optimierungsproblems. Der dazugehörende Funktionswert $f(x_{i}(t))$ beschreibt die Güte der potentiellen Lösung.
 	\item Position $x_{b,i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{b,i}(t))$: Die Position $x_{b,i}$ ist die bisher beste Position des Partikels $x_{i}$ zum Zeitpunkt $t$.
@@ -356,6 +357,7 @@ Der Trägheitskoeffizient $w$ und die Vertrauenskoeffizienten $a_{l}$ und $a_{g}
 		Initialisiere Partikelschwarm $X$ im Suchraum $S$\;
 		\While{Maximale Iterationen nicht erreicht}{
 			Bestimme für jeden Partikel Position $x_{i}(t)$\;
+			Bestimme für jeden Partikel Geschwindigkeit 
 			Berechne für jeden Partikel den Funktionswert $f(x_{i}(t))$\;
 			\lIf{$f(x_{i}(t))$ besser als $f(x_{b,i}(t))$)}{
 				Setze $x_{b,i}(t)$ = $x_{i}(t)$
@@ -363,30 +365,72 @@ Der Trägheitskoeffizient $w$ und die Vertrauenskoeffizienten $a_{l}$ und $a_{g}
 			\lIf{$f(x_{i}(t))$ besser als $f(x_{g}(t))$}{
 				Setze $x_{g}(t))$ = $x_{i}(t)$
 			}
-			Berechne Geschwindigkeit vi(t) des Partikels xi\;
-			Berechne neue Position xi(t+1) des Partikels xi\;
+			Berechne neue Geschwindigkeit $v_{i}(t+1)$ des Partikels $x_{i}$\;
+			Berechne neue Position $x_{i}(t+1)$ des Partikels $x_{i}$\;
 		}
-		\caption{PSO Algorithmus}
+		\caption{\acs{PSO} Algorithmus}
 		\label{psoalgo}
 	\end{algorithm}
 \end{framed}
-Der abgebildete Algorithmus zeigt den Ablauf der klassischen \acs{PSO} anhand von Pseudocode. Im ersten Schritt wird die Population $X$ mit zufälligen Positionen $x_{i}$ im Suchraum $S$ initialisiert. Bis die Anzahl an maximalen Iterationen nicht erreicht ist wird für jeden Partikel geprüft ob der Funktionswert $f(x_{i}(t))$ für die Position $x_{i}$ besser ist als der Funktionswert $f(x_{i}(t-1))$ im vorherigen Schritt an der Position $x_{i}(t-1)$. Ist der Funktionswert $f(x_{i}(t))$ für die Position $x-{i}(t)$ des Partikels besser, wird die bisher beste Position des Partikels $x_{b,i}(t)$ zu $x_{i}(t)$. Zudem wird für jeden Partikel $x_{i}$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$ des Partikels besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t) zu x_{i}(t)$. Aus diesem Grund wurden in Weiterentwicklungen des Algorithmus Nachbarschaftsbeziehungen entwickelt. Es gibt viele Möglichkeiten die Nachbarschaftsbeziehungen zu realisieren. Im Rahmen dieser Studienarbeit wird darauf verzichtet. Für die nächste Iteration wird die Geschwindigkeit $v_{i}(t+1)$ und die neue Position $x_{i}(t+1)$ des Partikels nach folgenden Formeln berechnet:
-\begin{eqnarray}
-v_{i}(t+1) = wv_{i}(t) + a_{l}r_{1}(x_{b,i}(t) - x_{i}(t)) + a_{g}r_{2}(x_{g}(t) - x_{i}(t)) \\
+Der abgebildete Algorithmus zeigt den Ablauf der klassischen \acs{PSO} anhand von Pseudocode. Im ersten Schritt wird die Population $X$ mit zufälligen Positionen $x_{i}$ im Suchraum $S$ initialisiert. Bis die Anzahl an maximalen Iterationen nicht erreicht ist wird für jeden Partikel geprüft ob der Funktionswert $f(x_{i}(t))$ für die Position $x_{i}(t)$ besser ist als der Funktionswert $f(x_{i}(t-1))$ im vorherigen Schritt an der Position $x_{i}(t-1)$. Ist der Funktionswert $f(x_{i}(t))$ für die Position $x-{i}(t)$ des Partikels besser, wird die bisher beste Position des Partikels $x_{b,i}(t)$ zu $x_{i}(t)$. Zudem wird für jeden Partikel $x_{i}$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$ des Partikels besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t) zu x_{i}(t)$. Aus diesem Grund wurden in Weiterentwicklungen des Algorithmus Nachbarschaftsbeziehungen entwickelt. Es gibt viele Möglichkeiten die Nachbarschaftsbeziehungen zu realisieren. Im Rahmen dieser Studienarbeit wird darauf verzichtet. Für die nächste Iteration wird die Geschwindigkeit $v_{i}(t+1)$ und die neue Position $x_{i}(t+1)$ des Partikels nach folgenden Formeln berechnet:
+\begin{equation}
+v_{i}(t+1) = wv_{i}(t) + a_{l}r_{1}(x_{b,i}(t) - x_{i}(t)) + a_{g}r_{2}(x_{g}(t) - x_{i}(t))
+\end{equation} 
+\begin{equation}
 x_{i}(t+1) = x_{i}(t) + v_{i}(t+1)
-\end{eqnarray}
-\par Bei der Berechnung der neuen Geschwindigkeit $v_{i}(t+1)$ wird die Entfernung der Position  $x_{g}(t)$ zur Position $x_{b,i}(t)$ berechnet. Dabei fallen die Zufallszahlen $r_{1}$, $r_{2} \subset \subset \mathbb{R}$ ins Gewicht, sowie die Konstanten $w$, $a_{l}$, $a_{g}$, mit denen das Verhalten des Schwarms verändert wird. Gilt $a_{l} > a_{g}$, dann streben die Partikel in Richtung von $x_{b,i}(t)$. Ist $a_{g} > a_{l}$, dann konvergieren die Partikel zur Position $x_{g}(t)$. Abbildung 2 zeigt in grafischer Darstellung die Berechnung der neuen Geschwindigkeit $v_{i}(t+1)$ und der neuen Position $x_{i}(t+1)$.
+\end{equation}
+\par Bei der Berechnung der neuen Geschwindigkeit $v_{i}(t+1)$ wird die Entfernung der Position  $x_{g}(t)$ zur Position $x_{b,i}(t)$ berechnet. Dabei fallen die Zufallszahlen $r_{1}$, $r_{2} \subset \mathbb{R}$ ins Gewicht, sowie die Konstanten $w$, $a_{l}$, $a_{g}$, mit denen das Verhalten des Schwarms verändert wird. Gilt $a_{l} > a_{g}$, dann streben die Partikel in Richtung von $x_{b,i}(t)$. Ist $a_{g} > a_{l}$, dann konvergieren die Partikel zur Position $x_{g}(t)$. Abbildung 2 zeigt in grafischer Darstellung die Berechnung der neuen Geschwindigkeit $v_{i}(t+1)$ und der neuen Position $x_{i}(t+1)$.
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.55\textwidth]{pso}
+		\includegraphics[width=0.50\textwidth]{pso}
 	\end{center}
-	\hspace{1in}\parbox{4in}{\caption[Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$]{Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$}}
+	\hspace{1in}\parbox{4in}{\caption[\acs{PSO}, Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$]{Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$}}
 	\label{psoabb}
 \end{figure}
+\newpage
 \subsection{Ant Colony Optimization}
+Die im Jahr 1991 von M. Dorigo vorgestellte \ac{ACO} dient, wie die Partikelschwarmoptimierung, zur Lösung von Optimierungsproblemen. Zur näherungsweisen Lösung des Optimierungsproblems wird bei der /acs{ACO} eine Population an modellierten Ameisen instanziiert. Die Position der modellierten Ameisen repräsentieren mögliche Lösungen. Darüber hinaus ist jede Position im Suchraum mit einem Pheromonniveau markiert. Je höher das jeweilige Pheromonniveau, desto höher ist die Wahrscheinlichkeit, dass sich eine Ameise entscheidet zur markierten Position zu bewegen.
+\subsubsection{Suchraum}
+Der Suchraum $S \subset \mathbb{R}^n$ ist ein n-dimensionaler Raum, in dem sich die gesamte Population $X=\{x_{1},x_{2},...,x_{n}\}$ der modellierten Ameisen bewegt. Damit eine Lösung gefunden werden kann beschränkt sich der Suchraum auf eine endliche Anzahl an möglichen Positionen $P=\{p_{1},p_{2},....,p_{n}\}$ die von den modellierten Ameisen besucht werden können. Jeder Position $P$ im Suchraum $S$ ist ein Wert $\tau_{i}$ zugeordnet, der das Pheromonniveau der Position beschriebt.
+\subsubsection{Modellierte Ameise}
+Jede modellierte Ameise besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpunkt $t$:
+\begin{itemize}
+	\item Position $x_{i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{i}(t))$: Die aktuelle Position der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ repräsentiert eine potentielle Lösung des Optimierungsproblems. Der dazugehörende Funktionswert $f(x_{i}(t))$ beschreibt die Güte der potentiellen Lösung.
+	\item Teillösungen $C=\{c_{n}(t),c_{no}(t),c_{o}(t),c_{so}(t),c_{s}(t),c_{sw}(t),c_{w}(t),c_{nw}(t)\}$
+	\item Wahrscheinlichkeiten $W=\{w_{n}(t),w_{no}(t),w_{o}(t),w_{os}(t),w_{s}(t),w_{sw}(t),w_{w}(t),w_{wn}(t)\}$  zur Wahl von $x_{i}(t+1)$: 	
+	\item Parameter $\alpha$: Der Trägheitskoeffizient $w$ bestimmt die Gewichtung der Geschwindigkeit $v_{i}(t)$ zum Zeitpunkt $t+1$.
+	\item Parameter $\beta$: Der lokale Vertrauenskoeffizient $a_{l}$ bestimmt die Gewichtung der lokalen Attraktion, bei der Berechnung der Geschwindigkeit $v_{i}(t+1)$.
+\end{itemize}
+\subsubsection{Algorithmus}
+\begin{framed}
+	\begin{algorithm}[H]
+		Initialisiere Ameisenkolonie $X$ im Suchraum $S$\;
+		\While{Maximale Iterationen nicht erreicht}{
+			Berechne für jede modellierte Ameise die Wahrscheinlichkeiten $W$ für die Teillösungen $Z$\;
+			Bestimme für jede modellierte Ameise neue Position $x_{i}(t+1)$\;
+			
+			Berechne für jede gewählte Teillösung aus $Z$ die neue Pheromonmarkierung $\tau_{i}(t+1)$ für Position $P$ im Suchraum $S$\;
+		}
+		\caption{\acs{ACO} Algorithmus}
+		\label{acoalgo}
+	\end{algorithm}
+\end{framed}
+Im ersten Schritt des abgebildeten Algorithmus wird die Population $X$ an einer bestimmten Position $P$ im Suchraum $S$ initialisiert. Bis die Anzahl an maximalen Iterationen nicht erreicht ist berechnet jede Ameise die Wahrscheinlichkeiten $W$ für die ihr zur Verfügung stehenden Teillösungen $Z$ mit der Formel:
+\begin{equation}
+W(C|x_{i}(t)) = \frac{\tau_{C}^\alpha(t) \cdot [f(C(t))]^\beta}{\sum_{} c \in C\; \tau_{C}(t)^\alpha \cdot [f(C(t))]^\beta}
+\end{equation}
+Sind die Wahrscheinlichkeiten $W$ für alle Teillösungen $C$ berechnet, entscheidet sich die modellierte Ameise für die Teillösung aus $C$ mit der höchsten Wahrscheinlichkeit.
+Die gewählte Teillösung aus $C$ entspricht der neuen Position $x_{i}(t+1)$.
+
+\begin{equation}
+\tau_{i}(t+1) = (1 - \rho) \tau_{i}(t) + \sum_{x_{i} \in X}\ \Delta \tau_{i}(t)^C
+\end{equation}
+
+
+
 
 \subsection{Bee Colony Optimization}
-\section{Modellplanung und Framework}
+\section{Modell und Framework}
 \section{Implementierung}
 \section{Zusammenfassung}
 
