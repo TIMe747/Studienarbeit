@@ -1,9 +1,3 @@
-/*
-  Copyright 2006 by Ankur Desai, Sean Luke, and George Mason University
-  Licensed under the Academic Free License version 3.0
-  See the file "LICENSE" for more information
-*/
-
 package sim.app.pso;
 
 import sim.engine.Schedule;
@@ -12,9 +6,6 @@ import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
 import sim.util.MutableDouble2D;
 
-/**
-   @author Ankur Desai and Joey Harrison
-*/
 public class PSO extends SimState 
     {       
     private static final long serialVersionUID = 1;

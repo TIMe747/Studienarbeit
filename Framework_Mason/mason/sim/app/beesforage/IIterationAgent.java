@@ -4,7 +4,6 @@ import sim.engine.Steppable;
 
 public interface IIterationAgent extends Steppable {
 	
-	Object getSchedulerInformation();
-	
+	Object getSchedulerInformation();	
 	void setSchedulerInformation(Object o);
 }

@@ -13,16 +13,16 @@ public class AntsForage extends SimState {
     public static final int GRID_HEIGHT = 100;
     public static final int GRID_WIDTH = 100;
 
-    public static final int HOME_XMIN = 75;
-    public static final int HOME_XMAX = 75;
-    public static final int HOME_YMIN = 75;
-    public static final int HOME_YMAX = 75;
+    public static final int HOME_XMIN = 25;
+    public static final int HOME_XMAX = 25;
+    public static final int HOME_YMIN = 25;
+    public static final int HOME_YMAX = 25;
 
-    public static final int FOOD_XMIN = 25;
-    public static final int FOOD_XMAX = 25;
-    public static final int FOOD_YMIN = 25;
-    public static final int FOOD_YMAX = 25;
-    public static int FOODUNITS = 10000;
+    public static final int FOOD_XMIN = 75;
+    public static final int FOOD_XMAX = 75;
+    public static final int FOOD_YMIN = 75;
+    public static final int FOOD_YMAX = 75;
+    public static int FOODUNITS = 0;
     public static int STEPS = -1;
 
     public static final int NO_OBSTACLES = 0;
@@ -141,7 +141,6 @@ public class AntsForage extends SimState {
 	    schedule.scheduleRepeating(Schedule.EPOCH,1, new Steppable() {
 		    public void step(SimState state) {
 		    	STEPS = STEPS+1;
-		    	System.out.println(STEPS);
 		    	toFoodGrid.multiply(evaporation); 
 		    	toHomeGrid.multiply(evaporation); 
 		    	

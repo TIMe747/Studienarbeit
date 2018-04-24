@@ -5,10 +5,6 @@ import sim.portrayal.simple.*;
 import sim.util.*;
 import sim.engine.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-
 
 public class Ant extends OvalPortrayal2D implements Steppable {
 	
@@ -202,7 +198,7 @@ public class Ant extends OvalPortrayal2D implements Steppable {
 	            af.buggrid.setObjectLocation(this, new Int2D(max_x, max_y));
 	            
 	            if (af.sites.field[max_x][max_y] == AntsForage.FOOD){
-	            	AntsForage.FOODUNITS = AntsForage.FOODUNITS - 1;
+	            	AntsForage.FOODUNITS = AntsForage.FOODUNITS + 1;
 	            	reward = af.reward; hasFoodItem = ! hasFoodItem; 
 	            }
 	        }
@@ -211,9 +207,8 @@ public class Ant extends OvalPortrayal2D implements Steppable {
 	
 	    public void step( final SimState state ) {
 	    	
-	    	if(AntsForage.FOODUNITS == 0) {
-	    		int numberOfStepsNeeded = AntsForage.STEPS;
-	    		System.out.println(numberOfStepsNeeded);
+	    	if(AntsForage.STEPS == 5000) {
+	    		System.out.println(AntsForage.FOODUNITS);
 		    	System.exit(0);
 	    	}
 	    	

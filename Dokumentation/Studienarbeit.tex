@@ -11,6 +11,7 @@
 \usepackage{framed}
 \usepackage[]{algorithm2e}
 \usepackage{chngcntr}
+\usepackage{amsmath}
 
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
@@ -372,7 +373,7 @@ Der Trägheitskoeffizient $w$ und die Vertrauenskoeffizienten $a_{l}$ und $a_{g}
 		\label{psoalgo}
 	\end{algorithm}
 \end{framed}
-Der abgebildete Algorithmus zeigt den Ablauf der klassischen \acs{PSO} anhand von Pseudocode. Im ersten Schritt wird die Population $X$ mit zufälligen Positionen $x_{i}$ im Suchraum $S$ initialisiert. Bis die Anzahl an maximalen Iterationen nicht erreicht ist wird für jeden Partikel geprüft ob der Funktionswert $f(x_{i}(t))$ für die Position $x_{i}(t)$ besser ist als der Funktionswert $f(x_{i}(t-1))$ im vorherigen Schritt an der Position $x_{i}(t-1)$. Ist der Funktionswert $f(x_{i}(t))$ für die Position $x-{i}(t)$ des Partikels besser, wird die bisher beste Position des Partikels $x_{b,i}(t)$ zu $x_{i}(t)$. Zudem wird für jeden Partikel $x_{i}$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$ des Partikels besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t) zu x_{i}(t)$. Aus diesem Grund wurden in Weiterentwicklungen des Algorithmus Nachbarschaftsbeziehungen entwickelt. Es gibt viele Möglichkeiten die Nachbarschaftsbeziehungen zu realisieren. Im Rahmen dieser Studienarbeit wird darauf verzichtet. Für die nächste Iteration wird die Geschwindigkeit $v_{i}(t+1)$ und die neue Position $x_{i}(t+1)$ des Partikels nach folgenden Formeln berechnet:
+Der abgebildete Algorithmus zeigt den Ablauf der klassischen \acs{PSO} anhand von Pseudocode. Im ersten Schritt wird die Population $X$ mit zufälligen Positionen $x_{i}$ im Suchraum $S$ initialisiert. Bis die Anzahl an maximalen Iterationen nicht erreicht ist wird für jeden Partikel geprüft ob der Funktionswert $f(x_{i}(t))$ für die Position $x_{i}(t)$ besser ist als der Funktionswert $f(x_{i}(t-1))$ im vorherigen Schritt an der Position $x_{i}(t-1)$. Ist der Funktionswert $f(x_{i}(t))$ für die Position $x-{i}(t)$ des Partikels besser, wird die bisher beste Position des Partikels $x_{b,i}(t)$ zu $x_{i}(t)$. Zudem wird für jeden Partikel $x_{i}$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$ des Partikels besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t)$ zu $x_{i}(t)$. Aus diesem Grund wurden in Weiterentwicklungen des Algorithmus Nachbarschaftsbeziehungen entwickelt. Es gibt viele Möglichkeiten die Nachbarschaftsbeziehungen zu realisieren. Im Rahmen dieser Studienarbeit wird darauf verzichtet. Für die nächste Iteration wird die Geschwindigkeit $v_{i}(t+1)$ und die neue Position $x_{i}(t+1)$ des Partikels nach folgenden Formeln berechnet:
 \begin{equation}
 v_{i}(t+1) = wv_{i}(t) + a_{l}r_{1}(x_{b,i}(t) - x_{i}(t)) + a_{g}r_{2}(x_{g}(t) - x_{i}(t))
 \end{equation} 
@@ -396,8 +397,9 @@ Der Suchraum $S \subset \mathbb{R}^n$ ist ein n-dimensionaler Raum, in dem sich 
 Jede modellierte Ameise besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpunkt $t$:
 \begin{itemize}
 	\item Position $x_{i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{i}(t))$: Die aktuelle Position der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ repräsentiert eine potentielle Lösung des Optimierungsproblems. Der dazugehörende Funktionswert $f(x_{i}(t))$ beschreibt die Güte der potentiellen Lösung.
+	\item Position $x_{g}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{g}(t))$: Die Position $x_{g}$ ist die bisher beste Position der Ameisenkolonie zum Zeitpunkt $t$.
 	\item Teillösungen $C=\{c_{n}(t),c_{no}(t),c_{o}(t),c_{so}(t),c_{s}(t),c_{sw}(t),c_{w}(t),c_{nw}(t)\}$
-	\item Wahrscheinlichkeiten $W=\{w_{n}(t),w_{no}(t),w_{o}(t),w_{os}(t),w_{s}(t),w_{sw}(t),w_{w}(t),w_{wn}(t)\}$  zur Wahl von $x_{i}(t+1)$: 	
+	\item Wahrscheinlichkeiten $W=\{w_{n}(t),w_{no}(t),w_{o}(t),w_{os}(t),w_{s}(t),w_{sw}(t),w_{w}(t),w_{wn}(t)\}$  zur Wahl von $x_{i}(t)$: 	
 	\item Parameter $\alpha$: Der Trägheitskoeffizient $w$ bestimmt die Gewichtung der Geschwindigkeit $v_{i}(t)$ zum Zeitpunkt $t+1$.
 	\item Parameter $\beta$: Der lokale Vertrauenskoeffizient $a_{l}$ bestimmt die Gewichtung der lokalen Attraktion, bei der Berechnung der Geschwindigkeit $v_{i}(t+1)$.
 \end{itemize}
@@ -406,38 +408,52 @@ Jede modellierte Ameise besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitp
 	\begin{algorithm}[H]
 		Initialisiere Ameisenkolonie $X$ im Suchraum $S$\;
 		\While{Maximale Iterationen nicht erreicht}{
-			Berechne für jede modellierte Ameise die Wahrscheinlichkeiten $W$ für die Teillösungen $Z$\;
+			Berechne für jede modellierte Ameise die Wahrscheinlichkeiten $W$ für die möglichen Teillösungen $Z$ ausgehend von Position $x_{i}(t-1)$\;
 			Bestimme für jede modellierte Ameise neue Position $x_{i}(t+1)$\;
-			
+			\lIf{$f(x_{i}(t))$ besser als $f(x_{g}(t))$}{
+				Setze $x_{g}(t))$ = $x_{i}(t)$
+			}
 			Berechne für jede gewählte Teillösung aus $Z$ die neue Pheromonmarkierung $\tau_{i}(t+1)$ für Position $P$ im Suchraum $S$\;
 		}
 		\caption{\acs{ACO} Algorithmus}
 		\label{acoalgo}
 	\end{algorithm}
 \end{framed}
-Im ersten Schritt des abgebildeten Algorithmus wird die Population $X$ an einer bestimmten Position $P$ im Suchraum $S$ initialisiert. Bis die Anzahl an maximalen Iterationen nicht erreicht ist berechnet jede Ameise die Wahrscheinlichkeiten $W$ für die ihr zur Verfügung stehenden Teillösungen $Z$ mit der Formel:
+Im ersten Schritt des abgebildeten Algorithmus wird die Population $X$ an einer bestimmten Position $P$ im Suchraum $S$ initialisiert. Solange die Anzahl an maximalen Iterationen nicht erreicht ist berechnet jede Ameise die Wahrscheinlichkeiten $W$ für die ihr zur Verfügung stehenden Teillösungen $Z$ mit der Formel:
 \begin{equation}
 W(C|x_{i}(t)) = \frac{\tau_{C}^\alpha(t) \cdot [f(C(t))]^\beta}{\sum_{} c \in C\; \tau_{C}(t)^\alpha \cdot [f(C(t))]^\beta}
 \end{equation}
-Sind die Wahrscheinlichkeiten $W$ für alle Teillösungen $C$ berechnet, entscheidet sich die modellierte Ameise für die Teillösung aus $C$ mit der höchsten Wahrscheinlichkeit.
-Die gewählte Teillösung aus $C$ entspricht der neuen Position $x_{i}(t+1)$.
-
+Die Wahrscheinlichkeit ist abhängig von dem Pheromonniveau $tau_{C}$ der jeweiligen Teillösung und der Güte der Teillösung bestimmt durch $f(C(t))$. Die Parameter $\alpha$ und $\beta$ verändern das Verhalten der modellierten Ameisen. Gilt $\alpha > \beta$ dann ist das Pheromonniveau der Teillösung ausschlaggebender als die Güte der Teillösung für die Berechnung der Wahrscheinlichkeit $W$. Sind die Wahrscheinlichkeiten $W$ für alle Teillösungen $C$ berechnet, entscheidet sich die modellierte Ameise für die Teillösung mit der höchsten Wahrscheinlichkeit. Die von der modellierten Ameise gewählte Teillösung aus $C$ entspricht der neuen Position $x_{i}(t)$. Im Anschluss wird für jede modellierte Ameise $x_{i}(t)$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$  besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t)$ zu $x_{i}(t)$. Am Ende der Iteration werden die Pheromonmarkierungen mit folgender Formel aktualisiert:
 \begin{equation}
 \tau_{i}(t+1) = (1 - \rho) \tau_{i}(t) + \sum_{x_{i} \in X}\ \Delta \tau_{i}(t)^C
 \end{equation}
-
-
-
-
+Hierbei ist $\rho$ der konstante Verdunstungsfaktor der Pheromonmarkierungen. Die an der Teillösung hinterlassene Pheromonmenge ist abhängig von $\Delta \tau_{i}(t)^C$ und berechnet sich durch die Formel:
+\begin{equation}
+\Delta \tau_{i}(t)^C = f(C(t)
+\end{equation}
+\newpage
 \subsection{Bee Colony Optimization}
-\section{Modell und Framework}
+\newpage
+\section{Modelle und Frameworks}
+\subsection{Modelle}
+\subsubsection{Finden des globalen Minimums einer Funktion mit \acs{PSO}}
+\subsubsection{Futtersuche mit \acs{ACO} \& \acs{BCO}}
+\subsection{Framework}
+\subsubsection{Anforderungen}
+\subsubsection{Übersicht}
+\paragraph{NetLogo}
+\paragraph{Repast}
+\paragraph{Mason}
+\paragraph{Swarm}
+\subsubsection{Auswahl}
+
 \section{Implementierung}
 \section{Zusammenfassung}
 
 \newpage
 \begin{thebibliography}{sotief}
-	\bibitem{1}W.M. Wheeler. The Ant Colony as an Organism. Journal of Morphology Volume 22, Issue 2, Seite 307-325. Entstehungsjahr: 1911.\newline\newline Weblink:
-	http://www3.interscience.wiley.com/journal/109914213/abstract. . Einsichtnahme: 25.02.2018
+	\bibitem{1}W.M. Wheeler. The Ant Colony as an Organism. Journal of Morphology Volume 22, Issue 2, Seite 307-325. Entstehungsjahr: 1911.\newline\newline
+	Weblink: http://www3.interscience.wiley.com/journal/109914213/abstract. Einsichtnahme: 25.02.2018
 \end{thebibliography}
 \newpage
 %\appendix

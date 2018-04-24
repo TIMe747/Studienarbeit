@@ -1,9 +1,3 @@
-/*
-  Copyright 2006 by Ankur Desai, Sean Luke, and George Mason University
-  Licensed under the Academic Free License version 3.0
-  See the file "LICENSE" for more information
-*/
-
 package sim.app.pso;
 
 import java.awt.Color;
@@ -20,9 +14,6 @@ import sim.portrayal.continuous.ContinuousPortrayal2D;
 import sim.portrayal.simple.RectanglePortrayal2D;
 import sim.util.gui.SimpleColorMap;
 
-/**
-   @author Ankur Desai and Joey Harrison
-*/
 public class PSOWithUI extends GUIState
     {
     public Display2D display;

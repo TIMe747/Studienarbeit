@@ -29,7 +29,7 @@ public class AntsForageWithUI extends GUIState {
     
     public Object getSimulationInspectedObject() { return state; }
 
-    public static String getName() { return "ACO"; }
+    public static String getName() { return "Futtersuche Ameisen"; }
     
     public void setupPortrayals() {
     	
@@ -52,7 +52,6 @@ public class AntsForageWithUI extends GUIState {
         bugPortrayal.setField(af.buggrid);
             
         display.reset();
-
         display.repaint();
     }
     
@@ -81,8 +80,6 @@ public class AntsForageWithUI extends GUIState {
         display.attach(sitesPortrayal,"Site Locations");
         display.attach(obstaclesPortrayal,"Obstacles");
         display.attach(bugPortrayal,"Agents");
-        
-        // specify the backdrop color  -- what gets painted behind the displays
         display.setBackdrop(Color.white);
     }
         
