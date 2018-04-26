@@ -12,11 +12,8 @@
 \usepackage[]{algorithm2e}
 \usepackage{chngcntr}
 \usepackage{amsmath}
-
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
-
-% conditional for xetex or luatex
 \newif\ifxetexorluatex
 \ifxetex
 \xetexorluatextrue
@@ -27,35 +24,26 @@
 \xetexorluatexfalse
 \fi
 \fi
-%
 \ifxetexorluatex
 \usepackage{fontspec}
-\usepackage{libertine} % or use \setmainfont to choose any font on your system
-\newfontfamily\quotefont[Ligatures=TeX]{Linux Libertine O} % selects Libertine as the quote font
+\usepackage{libertine}
+\newfontfamily\quotefont[Ligatures=TeX]{Linux Libertine O}
 \else
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{libertine} % or any other font package
-\newcommand*\quotefont{\fontfamily{LinuxLibertineT-LF}} % selects Libertine as the quote font
+\usepackage{libertine}
+\newcommand*\quotefont{\fontfamily{LinuxLibertineT-LF}}
 \fi
-
-\newcommand*\quotesize{60} % if quote size changes, need a way to make shifts relative
-% Make commands for the quotes
+\newcommand*\quotesize{60}
 \newcommand*{\openquote}
 {\tikz[remember picture,overlay,xshift=-4ex,yshift=-2.5ex]
 	\node (OQ) {\quotefont\fontsize{\quotesize}{\quotesize}\selectfont``};\kern0pt}
-
 \newcommand*{\closequote}[1]
 {\tikz[remember picture,overlay,xshift=4ex,yshift={#1}]
 	\node (CQ) {\quotefont\fontsize{\quotesize}{\quotesize}\selectfont''};}
-
-% select a colour for the shading
 \colorlet{shadecolor}{Azure}
-
-\newcommand*\shadedauthorformat{\emph} % define format for the author argument
-
-% Now a command to allow left, right and centre alignment of the author
-\newcommand*\authoralign[1]{%
+\newcommand*\shadedauthorformat{\emph}
+\newcommand*\authoralign[1]{
 	\if#1l
 	\def\authorfill{}\def\quotefill{\hfill}
 	\else
@@ -68,20 +56,14 @@
 	\fi
 	\fi
 	\fi}
-% wrap everything in its own environment which takes one argument (author) and one optional argument
-% specifying the alignment [l, r or c]
-%
-\newenvironment{shadequote}[2][l]%
+\newenvironment{shadequote}[2][l]
 {\authoralign{#1}
 	\ifblank{#2}
 	{\def\shadequoteauthor{}\def\yshift{-2ex}\def\quotefill{\hfill}}
 	{\def\shadequoteauthor{\par\authorfill\shadedauthorformat{#2}}\def\yshift{2ex}}
 	\begin{snugshade}\begin{quote}\openquote}
 		{\shadequoteauthor\quotefill\closequote{\yshift}\end{quote}\end{snugshade}}
-
-
 \usepackage[ngerman]{babel}
-%\usepackage[latin1]{inputenc}
 \usepackage{color}
 \usepackage[a4paper, lmargin={4cm}, rmargin={2cm}, tmargin={2,5cm}, bmargin={2,5cm}]{geometry}
 \usepackage{graphicx}
@@ -102,38 +84,30 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage[framemethod=TikZ]{mdframed}
-%mdframed Einstellungen%
-\newenvironment{theo}[2][]{%
+\newenvironment{theo}[2][]{
 	\refstepcounter{theo}
 	
-	% Code for box design goes here.
-	
-	\begin{mdframed}[]\relax}{%
+\begin{mdframed}[]\relax}{
 \end{mdframed}}
-\ifstrempty{#1}%
-% if condition (without title)
-{\mdfsetup{%
-		frametitle={%
+\ifstrempty{#1}
+{\mdfsetup{
+		frametitle={
 			\tikz[baseline=(current bounding box.east),outer sep=0pt]
 			\node[anchor=east,rectangle,fill=blue!20]
 			{\strut Definition~\thetheo};}
-	}%
-	% else condition (with title)
-}{\mdfsetup{%
-		frametitle={%
+	}
+}{\mdfsetup{
+		frametitle={
 			\tikz[baseline=(current bounding box.east),outer sep=0pt]
 			\node[anchor=east,rectangle,fill=blue!20]
-			{\strut Definition~\thetheo};}%
-	}%
-}%
-% Both conditions
-\mdfsetup{%
-	innertopmargin=10pt,linecolor=blue!20,%
-	linewidth=2pt,topline=true,%
-	frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+			{\strut Definition~\thetheo};}
+	}
 }
-%Umlaute und Kommandos%
-
+\mdfsetup{
+	innertopmargin=10pt,linecolor=blue!20,
+	linewidth=2pt,topline=true,
+	frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
 \newcommand*{\theadtext}[1]{{\tiny #1}}
 \newcommand*{\thead}[1]{\multicolumn1{@{}c@{}}{\theadtext{#1}}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
@@ -155,38 +129,36 @@
 \newcommand{\Abschluss}{Bachelor of Engineering}
 \newcommand{\Studiengang}{Informationstechnik}
 \newcommand{\BetreuerDHBW}{Prof. Dr. Lausen}
-
 \makeatletter
-\newcommand*{\maintoc}{% Hauptinhaltsverzeichnis
+\newcommand*{\maintoc}{
 	\begingroup
-	\@fileswfalse% kein neues Verzeichnis öffnen
-	\renewcommand*{\appendixattoc}{% Trennanweisung im Inhaltsverzeichnis
-		\value{tocdepth}=-10000 % lokal tocdepth auf sehr kleinen Wert setzen
-	}%
-	\tableofcontents% Verzeichnis ausgeben
+	\@fileswfalse
+	\renewcommand*{\appendixattoc}{
+		\value{tocdepth}=-10000
+	}
+	\tableofcontents
 	\endgroup
 }
-\newcommand*{\appendixtoc}{% Anhangsinhaltsverzeichnis
+\newcommand*{\appendixtoc}{
 	\begingroup
-	\edef\@alltocdepth{\the\value{tocdepth}}% tocdepth merken
-	\setcounter{tocdepth}{-10000}% Keine Verzeichniseinträge
-	\renewcommand*{\contentsname}{% Verzeichnisname ändern
-		Verzeichnis der Anh\"ange}%
-	\renewcommand*{\appendixattoc}{% Trennanweisung im Inhaltsverzeichnis
-		\setcounter{tocdepth}{\@alltocdepth}% tocdepth wiederherstellen
-	}%
-	\tableofcontents% Verzeichnis ausgeben
-	\setcounter{tocdepth}{\@alltocdepth}% tocdepth wiederherstellen
+	\edef\@alltocdepth{\the\value{tocdepth}}
+	\setcounter{tocdepth}{-10000}
+	\renewcommand*{\contentsname}{
+		Verzeichnis der Anh\"ange}
+	\renewcommand*{\appendixattoc}{
+		\setcounter{tocdepth}{\@alltocdepth}
+	}
+	\tableofcontents
+	\setcounter{tocdepth}{\@alltocdepth}
 	\endgroup
 }
-\newcommand*{\appendixattoc}{% Trennanweisung im Inhaltsverzeichnis
+\newcommand*{\appendixattoc}{
 }
-\g@addto@macro\appendix{% \appendix erweitern
-	\if@openright\cleardoublepage\else\clearpage\fi% Neue Seite
-	\addtocontents{toc}{\protect\appendixattoc}% Trennanweisung in die toc-Datei
+\g@addto@macro\appendix{
+	\if@openright\cleardoublepage\else\clearpage\fi
+	\addtocontents{toc}{\protect\appendixattoc}
 }
 \makeatother
-%Grafische Einstellungen%
 \clubpenalty = 100
 \widowpenalty = 100
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -208,13 +180,20 @@
 	numbersep=5pt,
 	numberstyle=\tiny\color{gray},
 	showstringspaces=false}
-%Umbenennung der Zusammenfassung zu Abstract%
+
 \addto\captionsngerman{\renewcommand{\abstractname}{Abstract}}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Tim Saupp Studienarbeit 2017-2018 5.& 6. Semester%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Anfang des Dokuments%
+
+
+
+
+
 \begin{document}
 \begin{titlepage}
 	\begin{center}
@@ -284,6 +263,7 @@
 \section*{\Large \textbf Abkürzungsverzeichnis}  
 \begin{acronym}[Bash]
 	\acro{ACO}{Ameisenkolonieoptimierung}
+	\acro{BCO}{Bienenkolonieoptimierung}
 	\acro{PSO}{Partikelschwarmoptimierung}
 \end{acronym}
 \newpage
@@ -296,9 +276,9 @@
 \newpage
 \section{Grundlagen}
 \subsection{Schwarmintelligente Superorganismen}
-Durch die sensuale Verbindung der Tiere wird die Futtersuche/-versorgung und das Abwehren von Gefahren ohne eine zentrale Lenkung bzw. ohne hierarchische Befehlskette bewältigt. Instinktiv verankerte Regeln sorgen dafür, dass auf bestimmte Aktionen der Tiere in vollkommen deterministischer Weise eine Reaktion erfolgt. Aus dieser dezentralen Interaktion entstehen, bei einem Kollektiv von Tieren, intelligente Resultate auf Makroebene.
+Durch die sensuale Verbindung der Tiere wird die Futtersuche und das Abwehren von Gefahren ohne eine zentrale Lenkung bzw. ohne hierarchische Befehlskette bewältigt. Instinktiv verankerte Regeln sorgen dafür, dass auf bestimmte Aktionen der Tiere in vollkommen deterministischer Weise eine Reaktion erfolgt. Aus dieser dezentralen Interaktion entstehen, bei einem Kollektiv von Tieren, intelligente Resultate auf Makroebene.
 \subsubsection{Begriffsdefintion}
-Bereits 1911 bezeichnet W. M. Wheeler, amerikanischer Ethologe mit Spezialisierung auf dem Gebiet der Erforschung sozialer Insekten, Kolonien wie die der Bienen und Ameisen als \textit{Superorganismen mit emergenten Fähigkeiten}\footnote{W.M. Wheeler (1911)}. Abbildung 1 zeigt die Definition und Entstehungsbedingungen kollektiver Intelligenz bei Tierschwärmen:\newline
+Bereits 1911 bezeichnet W. M. Wheeler, amerikanischer Ethologe mit Spezialisierung auf dem Gebiet der Erforschung sozialer Insekten, Kolonien wie die der Bienen und Ameisen als Superorganismen mit emergenten Fähigkeiten\footnote{W.M. Wheeler (1911)}. Abbildung 1 zeigt die Definition und Entstehungsbedingungen kollektiver Intelligenz bei Tierschwärmen:\newline
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[width=1\textwidth]{schwarmintelligenz}
@@ -308,17 +288,17 @@ Bereits 1911 bezeichnet W. M. Wheeler, amerikanischer Ethologe mit Spezialisieru
 \end{figure}
 \footnotetext{A. Aulinger (2013)}
 \begin{itemize}
-	\item \textbf{Interaktion:} Auf Aktion und Reaktion basierende Interaktion gilt als Grundlage bzw. Rahmenbedingung für die Definition des Begriffs Schwarmintelligenz. Anlass dafür ist der in den Tieren vorhandene Instinkt, der diese veranlasst, sich bewusst an der Gruppe zu beteiligen.
+	\item \textbf{Interaktion:} Auf Aktion und Reaktion basierende Interaktion gilt als Grundlage für die Definition des Begriffs Schwarmintelligenz. Anlass dafür ist der in den Tieren vorhandene Überlebensinstinkt, der diese veranlasst, sich bewusst an der Gruppe zu beteiligen.
 	\item \textbf{Unmittelbares Ergebnis:} Einzelne Tiere führen Handlungen aus ohne Wissen um das Schwarmergebnis. Das Resultat entsteht unmittelbar aus der Handlung des Schwarms und bedarf keiner externen Aggregation und Auswertung.
 	\item \textbf{Taktische Verbundenheit:} Sowohl die sensuale Verbindung der Tiere als auch der in den Tieren verankerte Instinkt zeugen von der taktischen Verbundenheit des Schwarms bestehend aus festen Aktions- und Reaktionsmustern. 
 \end{itemize}
-\par Zusammenfassend beschreibt der Begriff Schwarmintelligenz ein Phänomen aus dem Tierreich zur Selbstorganisation eines Schwarms, um lebensnotwendige Aufgaben gemeinsam und auf intelligente Weise zu bewältigen. Dabei vollbringen die Tiere im Schwarm Leistungen, die das Vermögen jedes Einzeltiers übersteigen.
+\par Zusammenfassend beschreibt der Begriff Schwarmintelligenz ein Phänomen aus dem Tierreich zur Selbstorganisation eines Schwarms, um lebensnotwendige Aufgaben gemeinsam auf intelligente Weise zu bewältigen. Dabei vollbringen die Tiere im Schwarm Leistungen, die das Vermögen jedes Einzeltiers übersteigen.
 \subsubsection{Ameisen}
-Ein Ameisenstaat vollbringt Erstaunliches und passt sich ständig an neue Gegebenheiten seiner Umwelt an. Ameisen bilden Staaten mit einigen hundert bis zu mehreren Millionen Individuen. Trotz dieser riesigen Anzahl funktioniert ein Ameisenstaat, da er sich selbst organisiert ohne eine hierarchische Instanz, die einen Überblick über alle Aufgaben besitzt oder diese steuert und verteilt. Stattdessen führen die Handlungen einzelner Ameisen im Zusammenspiel zu einem organisierten Staat, der für die Ameisen sorgt und Nahrung, Brutpflege und Schutz bietet. Für die Informatik besonders interessant sind die Ameisen aufgrund ihrer Fähigkeit effiziente Wege zwischen Futterquellen und dem Ameisenbau ausfindig zu machen\footnote{L. Pintscher (2008)}.
-\par Ist der Futtervorrat des Ameisenbaus erschöpft verlassen mehrere Ameisen den Ameisenbau gleichzeitig und begeben sich auf Futtersuche. Sobald eine Ameise eine Futterquelle gefunden hat, nimmt sie eine Gewichtseinheit des Futters mit und begibt sich auf den Rückweg zum Ameisenbau. Dabei setzt die Ameise Pheromone frei die mit der Zeit verfliegen, um den Weg zur Futterquelle zu markieren. Die Ameise die den kürzesten Weg zu einer Futterquelle gefunden hat legt die Strecke zwischen Ameisenbau und Futterquelle häufiger zurück.  Die Pheromonspur wird durch das häufige Zurücklegen der Strecke intensiviert und dient als sicherer Wegweiser zur Futterquelle. Mitglieder der Kolonie folgen den intensivsten Pheromonspuren. Ist die Futterquelle erschöpft, löst sich die Pheromonspur auf\footnote{R. Wehner (2001)}.
+Ein Ameisenstaat passt sich ständig an neue Gegebenheiten seiner Umwelt an. Ameisen bilden Staaten mit einigen hundert bis zu mehreren Millionen Individuen. Trotz dieser riesigen Anzahl funktioniert ein Ameisenstaat, da er sich selbst organisiert ohne eine hierarchische Instanz, die einen Überblick über alle Aufgaben besitzt oder diese steuert und verteilt. Stattdessen führen die Handlungen einzelner Ameisen im Zusammenspiel zu einem organisierten Staat, der für die Ameisen sorgt und Nahrung, Brutpflege und Schutz bietet. Für die Informatik besonders interessant sind die Ameisen aufgrund ihrer Fähigkeit effiziente Wege zwischen Futterquellen und dem Ameisenbau ausfindig zu machen\footnote{L. Pintscher (2008)}.
+\par Ist der Futtervorrat des Ameisenbaus erschöpft verlassen mehrere Ameisen den Ameisenbau gleichzeitig und begeben sich auf die Futtersuche. Sobald eine Ameise eine Futterquelle gefunden hat, nimmt sie eine Gewichtseinheit des Futters mit und begibt sich auf den Rückweg zum Ameisenbau. Dabei setzt die Ameise Pheromone frei die mit der Zeit verfliegen, um den Weg zur Futterquelle zu markieren. Die Ameise die den kürzesten Weg zu einer Futterquelle gefunden hat legt die Strecke zwischen Ameisenbau und Futterquelle häufiger zurück.  Die Pheromonspur wird durch das häufige Zurücklegen der Strecke intensiviert und dient als sicherer Wegweiser zur Futterquelle. Mitglieder der Kolonie folgen den intensivsten Pheromonspuren. Ist die Futterquelle erschöpft, löst sich die Pheromonspur auf\footnote{R. Wehner (2001)}.
 \subsubsection{Bienen}
 Um den Gesamtenergiebedarf des Schwarms zu ermitteln, orientiert sich die einzelne Sammlerin an der Wartezeit bei der Übergabe des gesammelten Nektars an die Bienen die den Nektar speichern: Je voller die Futterspeicher, desto länger müssen die Speicherbienen nach leeren Zellen suchen. Je leerer die Speicher, desto schneller wird die Abgabe des Nektars abgewickelt.
-\par Im kilometerweiten Gelände besitzt keine Biene den gesamten geographischen Überblick. Sie entscheidet nur lokal über die Rentabilität der Futterquelle. Kundschafterinnen und Sammlerinnen, die von der Futtersuche wiederkehren, führen einen Tanz auf und zeigen unbeschäftigten Bienen damit die Richtung und Entfernung zur Futterquelle. Unbeschäftigte Bienen sehen sich die Tänze der im Bienenstock eintreffenden Bienen an und entscheiden sich anschließend für ihr nächstes Ziel. Sobald eine Futterquelle erschöpft ist brauchen die Sammlerinnen länger beim Sammeln und veranlassen aufgrund der geringeren Anzahl an Tänzen weniger Bienen dazu am gleichen Ort zu sammeln.
+\par Im kilometerweiten Gelände besitzt keine Biene den gesamten geographischen Überblick. Sie entscheidet nur lokal über die Rentabilität der Futterquelle. Kundschafterinnen und Sammlerinnen, die von der Futtersuche wiederkehren, führen einen Tanz auf und zeigen unbeschäftigten Bienen damit die Richtung und Entfernung zur gefundenen Futterquelle. Unbeschäftigte Bienen sehen sich die Tänze der im Bienenstock eintreffenden Bienen an und entscheiden sich anschließend für ihr nächstes Ziel. Sobald eine Futterquelle erschöpft ist brauchen die Sammlerinnen länger beim Sammeln und veranlassen aufgrund der geringeren Anzahl an Tänzen weniger Bienen dazu am gleichen Ort zu sammeln.
 \newpage
 \subsection{Agentenbasierte Modellierung}
 Die Agentenbasierte Modellierung erlaubt eine natürliche Beschreibung von Systemen als eine Sammlung autonomer entscheidungsfähiger Agenten in einer gemeinsamen Umgebung, um emergente Phänomene zu analysieren. Das Ziel der Agentenbasierten Modellierung besteht darin, durch die Simulation einer Vielzahl an Agenten, das resultierende Systemverhalten zu untersuchen. Nach C. Macal und M. North\footnote{C. Macal, M. North (2010)} verfügt ein agentenbasiertes Modell über folgende Komponenten:
@@ -336,7 +316,7 @@ Nach S. Russell und P. Norvig\footnote{S. Russel, P. Norvig (1995)} muss eine ge
 \newpage
 \section{Schwarmintelligente Algorithmen}
 \subsection{Particle Swarm Optimization}
-Die klassische \ac{PSO} wurde erstmals im Jahr 1995 von J. Kennedy und R. Ebert beschrieben. Die \acs{PSO} stellt ein, auf der Abfolge von abstrakten Schritten basiertes, Verfahren zur näherungsweisen Lösung von Optimierungsproblemen dar. Zur Lösung des Optimierungsproblems wird eine Population von Partikeln, so lange durch einen Suchraum bewegt, bis eine hinreichende Lösung in einer angemessenen Zeit gefunden wird. Dabei stellt die Position eines Partikels eine potentielle Lösung dar und wird in jedem Zeitschritt neu berechnet\footnote{Y. Liu (2014)}. Um die \acs{PSO} auf ein mathematisches Problem anwenden zu können, muss zunächst der Suchraum und die Partikel definiert werden\footnote{E. Konstantinos, N. Michael (2010)}.
+Die klassische \ac{PSO} wurde erstmals im Jahr 1995 von J. Kennedy und R. Ebert beschrieben. Die \acs{PSO} stellt ein, auf der Abfolge von abstrakten Schritten basiertes, Verfahren zur näherungsweisen Lösung von Optimierungsproblemen dar. Zur Lösung des Optimierungsproblems wird eine Population von Partikeln, so lange durch einen Suchraum bewegt, bis eine hinreichende Lösung in einer bestimmten Zeit gefunden wird. Dabei stellt die Position eines Partikels eine potentielle Lösung dar und wird in jedem Zeitschritt neu berechnet\footnote{Y. Liu (2014)}. Um die \acs{PSO} auf ein mathematisches Problem anwenden zu können, müssen zunächst der Suchraum und die Partikel definiert werden\footnote{E. Konstantinos, N. Michael (2010)}.
 \subsubsection{Suchraum}
 Der Suchraum $S \subset \mathbb{R}^n$ ist ein n-dimensionaler Raum, in dem sich die gesamte Population $X=\{x_{1},x_{2},...,x_{n}\}$ der Partikel bewegt. Damit eine Lösung gefunden werden kann beschränkt sich der Suchraum auf eine endliche Anzahl an möglichen Positionen, die von den Partikeln besucht werden können.
 \subsubsection{Partikel}
@@ -358,7 +338,7 @@ Der Trägheitskoeffizient $w$ und die Vertrauenskoeffizienten $a_{l}$ und $a_{g}
 		Initialisiere Partikelschwarm $X$ im Suchraum $S$\;
 		\While{Maximale Iterationen nicht erreicht}{
 			Bestimme für jeden Partikel Position $x_{i}(t)$\;
-			Bestimme für jeden Partikel Geschwindigkeit 
+			Bestimme für jeden Partikel Geschwindigkeit $v_{i}(t)$\;
 			Berechne für jeden Partikel den Funktionswert $f(x_{i}(t))$\;
 			\lIf{$f(x_{i}(t))$ besser als $f(x_{b,i}(t))$)}{
 				Setze $x_{b,i}(t)$ = $x_{i}(t)$
@@ -390,49 +370,92 @@ x_{i}(t+1) = x_{i}(t) + v_{i}(t+1)
 \end{figure}
 \newpage
 \subsection{Ant Colony Optimization}
-Die im Jahr 1991 von M. Dorigo vorgestellte \ac{ACO} dient, wie die Partikelschwarmoptimierung, zur Lösung von Optimierungsproblemen. Zur näherungsweisen Lösung des Optimierungsproblems wird bei der /acs{ACO} eine Population an modellierten Ameisen instanziiert. Die Position der modellierten Ameisen repräsentieren mögliche Lösungen. Darüber hinaus ist jede Position im Suchraum mit einem Pheromonniveau markiert. Je höher das jeweilige Pheromonniveau, desto höher ist die Wahrscheinlichkeit, dass sich eine Ameise entscheidet zur markierten Position zu bewegen.
+Die im Jahr 1991 von M. Dorigo vorgestellte \ac{ACO} dient, wie die Partikelschwarmoptimierung, zur Lösung von Optimierungsproblemen. Zur näherungsweisen Lösung des Optimierungsproblems wird bei der \acs{ACO} eine Population an modellierten Ameisen instanziiert und durch den vom Optimierungsproblem definierten Suchraum bewegt. Die Positionen der modellierten Ameisen repräsentieren potentielle Lösungen des Optimierungsproblems und werden in jedem Zeitschritt neu berechnet. Darüber hinaus ist jede Position im Suchraum mit einem Pheromonniveau markiert. Je höher das jeweilige Pheromonniveau, desto höher ist die Wahrscheinlichkeit, das sich die modellierten Ameisen in Richtung der mit Pheromonen markierten Positionen bewegen.
 \subsubsection{Suchraum}
-Der Suchraum $S \subset \mathbb{R}^n$ ist ein n-dimensionaler Raum, in dem sich die gesamte Population $X=\{x_{1},x_{2},...,x_{n}\}$ der modellierten Ameisen bewegt. Damit eine Lösung gefunden werden kann beschränkt sich der Suchraum auf eine endliche Anzahl an möglichen Positionen $P=\{p_{1},p_{2},....,p_{n}\}$ die von den modellierten Ameisen besucht werden können. Jeder Position $P$ im Suchraum $S$ ist ein Wert $\tau_{i}$ zugeordnet, der das Pheromonniveau der Position beschriebt.
+Der Suchraum $S \subset \mathbb{R}^n$ ist ein n-dimensionaler Raum, in dem sich die gesamte Population $X=\{x_{1},x_{2},...,x_{n}\}$ der modellierten Ameisen bewegt. Damit eine Lösung gefunden werden kann beschränkt sich der Suchraum auf eine endliche Anzahl an möglichen Positionen $P=\{p_{1},p_{2},....,p_{n}\}$ die von den modellierten Ameisen besucht werden können. Jeder Position $P$ im Suchraum $S$ ist ein Wert $\tau_{i}$ zugeordnet, der das Pheromonniveau der Position beschreibt.
 \subsubsection{Modellierte Ameise}
 Jede modellierte Ameise besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpunkt $t$:
 \begin{itemize}
 	\item Position $x_{i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{i}(t))$: Die aktuelle Position der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ repräsentiert eine potentielle Lösung des Optimierungsproblems. Der dazugehörende Funktionswert $f(x_{i}(t))$ beschreibt die Güte der potentiellen Lösung.
 	\item Position $x_{g}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{g}(t))$: Die Position $x_{g}$ ist die bisher beste Position der Ameisenkolonie zum Zeitpunkt $t$.
-	\item Teillösungen $C=\{c_{n}(t),c_{no}(t),c_{o}(t),c_{so}(t),c_{s}(t),c_{sw}(t),c_{w}(t),c_{nw}(t)\}$
-	\item Wahrscheinlichkeiten $W=\{w_{n}(t),w_{no}(t),w_{o}(t),w_{os}(t),w_{s}(t),w_{sw}(t),w_{w}(t),w_{wn}(t)\}$  zur Wahl von $x_{i}(t)$: 	
-	\item Parameter $\alpha$: Der Trägheitskoeffizient $w$ bestimmt die Gewichtung der Geschwindigkeit $v_{i}(t)$ zum Zeitpunkt $t+1$.
-	\item Parameter $\beta$: Der lokale Vertrauenskoeffizient $a_{l}$ bestimmt die Gewichtung der lokalen Attraktion, bei der Berechnung der Geschwindigkeit $v_{i}(t+1)$.
+	\item Teillösungen $C=\{c_{1}(t),c_{2}(t),...,c_{n}(t)\}$ die der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ zur Verfügung stehen: Die modellierte Ameise $x_{i}$ wählt aus der ihr zur Verfügung stehenden Teillösungen $C$ zum Zeitpunkt $t$ eine Teillösung. Die gewählte Teillösung entspricht der nächsten Position der modellierten Ameise$x_{i}$ zum Zeitpunkt $t+1$.
+	\item Wahrscheinlichkeiten $W=\{w_{c_{1}}(t),w_{c_{2}}(t),...,w_{c_{n}}(t)\}$  zur Wahl von $x_{i}(t+1)$: Die Wahrscheinlichkeiten $W$ werden für die, der modellierten Ameise zur Verfügung stehenden, Teillösungen $C$ berechnet. Die Teillösung mit der höchsten Wahrscheinlichkeit wird von der modellierten Ameise ausgewählt.  	
+	\item Parameter $\alpha$: 
+	\item Parameter $\beta$: 
 \end{itemize}
+\newpage
 \subsubsection{Algorithmus}
 \begin{framed}
 	\begin{algorithm}[H]
 		Initialisiere Ameisenkolonie $X$ im Suchraum $S$\;
 		\While{Maximale Iterationen nicht erreicht}{
-			Berechne für jede modellierte Ameise die Wahrscheinlichkeiten $W$ für die möglichen Teillösungen $Z$ ausgehend von Position $x_{i}(t-1)$\;
+			Berechne für jede modellierte Ameise $x_{i}$ die Wahrscheinlichkeiten $W$ für die möglichen Teillösungen $C$ ausgehend von Position $x_{i}(t)$\;
 			Bestimme für jede modellierte Ameise neue Position $x_{i}(t+1)$\;
-			\lIf{$f(x_{i}(t))$ besser als $f(x_{g}(t))$}{
-				Setze $x_{g}(t))$ = $x_{i}(t)$
+			\lIf{$f(x_{i}(t+1))$ besser als $f(x_{g}(t))$}{
+				Setze $x_{g}(t))$ = $x_{i}(t+1)$
 			}
-			Berechne für jede gewählte Teillösung aus $Z$ die neue Pheromonmarkierung $\tau_{i}(t+1)$ für Position $P$ im Suchraum $S$\;
+			Berechne für jede gewählte Teillösung die neue Pheromonmarkierung $\tau_{i}(t+1)$ für Position $P$ im Suchraum $S$\;
 		}
 		\caption{\acs{ACO} Algorithmus}
 		\label{acoalgo}
 	\end{algorithm}
 \end{framed}
-Im ersten Schritt des abgebildeten Algorithmus wird die Population $X$ an einer bestimmten Position $P$ im Suchraum $S$ initialisiert. Solange die Anzahl an maximalen Iterationen nicht erreicht ist berechnet jede Ameise die Wahrscheinlichkeiten $W$ für die ihr zur Verfügung stehenden Teillösungen $Z$ mit der Formel:
+Im ersten Schritt des abgebildeten Algorithmus wird die Population $X$ an einer bestimmten Position $P$ im Suchraum $S$ initialisiert. Solange die Anzahl an maximalen Iterationen nicht erreicht ist berechnet jede Ameise die Wahrscheinlichkeiten $W$ für die ihr zur Verfügung stehenden Teillösungen $C$ mit der Formel:
 \begin{equation}
-W(C|x_{i}(t)) = \frac{\tau_{C}^\alpha(t) \cdot [f(C(t))]^\beta}{\sum_{} c \in C\; \tau_{C}(t)^\alpha \cdot [f(C(t))]^\beta}
+W(c_{i}|x_{i}(t)) = \frac{\tau_{c_{i}}^\alpha(t) \cdot [f(c_{i}(t))]^\beta}{\sum_{} c \in C\; \tau_{c}(t)^\alpha \cdot [f(c(t))]^\beta}
 \end{equation}
-Die Wahrscheinlichkeit ist abhängig von dem Pheromonniveau $tau_{C}$ der jeweiligen Teillösung und der Güte der Teillösung bestimmt durch $f(C(t))$. Die Parameter $\alpha$ und $\beta$ verändern das Verhalten der modellierten Ameisen. Gilt $\alpha > \beta$ dann ist das Pheromonniveau der Teillösung ausschlaggebender als die Güte der Teillösung für die Berechnung der Wahrscheinlichkeit $W$. Sind die Wahrscheinlichkeiten $W$ für alle Teillösungen $C$ berechnet, entscheidet sich die modellierte Ameise für die Teillösung mit der höchsten Wahrscheinlichkeit. Die von der modellierten Ameise gewählte Teillösung aus $C$ entspricht der neuen Position $x_{i}(t)$. Im Anschluss wird für jede modellierte Ameise $x_{i}(t)$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$  besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t)$ zu $x_{i}(t)$. Am Ende der Iteration werden die Pheromonmarkierungen mit folgender Formel aktualisiert:
+Die Wahrscheinlichkeit ist abhängig von dem Pheromonniveau $tau_{c_{i}}$ der jeweiligen Teillösung und der Güte der Teillösung, bestimmt durch $f(c_{i}(t))$. Die Parameter $\alpha$ und $\beta$ verändern das Verhalten der modellierten Ameisen. Gilt $\alpha > \beta$ dann ist das Pheromonniveau der Teillösung ausschlaggebender als die Güte der Teillösung für die Berechnung der Wahrscheinlichkeiten $W$. Sind die Wahrscheinlichkeiten $W$ für alle Teillösungen $C$ berechnet, entscheidet sich die modellierte Ameise für die Teillösung mit der höchsten Wahrscheinlichkeit. Die von der modellierten Ameise gewählte Teillösung entspricht der neuen Position $x_{i}(t+1)$. Im Anschluss wird für jede modellierte Ameise $x_{i}(t)$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$  besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t)$ zu $x_{i}(t)$. Am Ende der Iteration werden die Pheromonmarkierungen mit folgender Formel aktualisiert:
 \begin{equation}
 \tau_{i}(t+1) = (1 - \rho) \tau_{i}(t) + \sum_{x_{i} \in X}\ \Delta \tau_{i}(t)^C
 \end{equation}
-Hierbei ist $\rho$ der konstante Verdunstungsfaktor der Pheromonmarkierungen. Die an der Teillösung hinterlassene Pheromonmenge ist abhängig von $\Delta \tau_{i}(t)^C$ und berechnet sich durch die Formel:
+Hierbei ist $\rho$ der konstante Verdunstungsfaktor der Pheromonmarkierungen. Die an der gewählten Teillösung hinterlassene Pheromonmenge $\Delta \tau_{i}(t)^C$ berechnet sich durch die Formel:
 \begin{equation}
-\Delta \tau_{i}(t)^C = f(C(t)
+\Delta \tau_{i}(t)^C = f(c_{i}(t))
 \end{equation}
 \newpage
 \subsection{Bee Colony Optimization}
+Die im Zeitraum 1999 bis 2003 von D. Teodorovi\'{c} und P. Lu\u{c}i\'{c} entwickelte \ac{BCO} stellt, wie die \acs{PSO} und \acs{ACO}, ein metaheuristisches Verfahren zur Lösung von Optimierungsproblemen dar. Die zur näherungsweisen Lösung des Optimierungsproblems, durch den Suchraum bewegten modellierten Bienen repräsentieren potentielle Lösungen des Optimierungsproblems, über ihre Position im Suchraum. 
+\subsubsection{Suchraum}
+Der Suchraum $S$ der \acs{BCO} unterscheidet sich nicht von dem in Kapitel 3.1.1 beschriebenen Suchraum der \acs{PSO}. 
+\subsubsection{Modellierte Biene}
+Jede modellierte Biene besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpunkt $t$:
+\begin{itemize}
+	\item Position $x_{i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{i}(t))$: Die aktuelle Position der modellierten Biene $x_{i}$ zum Zeitpunkt $t$ repräsentiert eine potentielle Lösung des Optimierungsproblems. Der dazugehörende Funktionswert $f(x_{i}(t))$ beschreibt die Güte der potentiellen Lösung.
+	\item Position $x_{g}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{g}(t))$: Die Position $x_{g}$ ist die bisher beste Position der Bienenkolonie zum Zeitpunkt $t$.
+	\item Rekrutierungsbienen  $R=\{r_{1}(t),r_{2}(t),...,r_{n}(t)\}$ die der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ zur Verfügung stehen: Die modellierte Ameise $x_{i}$ wählt aus der ihr zur Verfügung stehenden Teillösungen $C$ zum Zeitpunkt $t$ eine Teillösung. Die gewählte Teillösung entspricht der nächsten Position der modellierten Ameise$x_{i}$ zum Zeitpunkt $t+1$.
+	\item Loyalitätswahrscheinlichkeiten $L=\{l_{r_{1}}(t),l_{r_{2}}(t),...,l_{r_{n}}(t)\}$  zur Wahl von $x_{i}(t+1)$: Die Wahrscheinlichkeiten $W$ werden für die, der modellierten Ameise zur Verfügung stehenden, Teillösungen $C$ berechnet. Die Teillösung mit der höchsten Wahrscheinlichkeit wird von der modellierten Ameise ausgewählt. 
+	\item Richtungsvektor $v_{i}(t)$:
+\end{itemize}
+\subsubsection{Algorithmus}
+\begin{framed}
+	\begin{algorithm}[H]
+		Initialisiere Bienenkolonie $X$ im Suchraum $S$\;
+		\While{Maximale Iterationen nicht erreicht}{
+			Bestimme für jede modellierte Biene Position $x_{i}(t)$ und berechne den Funktionswert $f(x_{i}(t))$\;
+			Bestimme $n$ Rekrutierungsbienen $R$ mit den besten Funktionswerten $f(x_{i}(t))$\;
+			Berechne für jede modellierte Biene die Loyalitätswahrscheinlichkeit $L$\;
+				\eIf{$L$ größer als Zufallszahl}{
+					Versetze Biene in den Status Loyal;
+				}
+				{
+					Versetze Biene in den Status Frei;
+				}
+				\eIf{Biene im Zustand Frei}{
+					Berechne Rekrutierungswahrscheinlichkeiten $W$ für Rekrutierungsbienen $R$ und wähle Rekrutierungsbiene $r_{i}(t)$\;
+					Bestimme Richtungsvektor $v_{i}(t)$ von Position $x_{i}(t)$ zu $r_{i}(t)$\;
+					Setze neue Position $x_{i}(t+1)$ = $x_{i}(t)$ + $v_{i}(t)$\;
+				}
+				{
+					Setze neue Position $x_{i}(t+1)$ = $x_{i}(t)$\;
+				}	
+				\lIf{$f(x_{i}(t+1))$ besser als $f(x_{g}(t))$}{
+					Setze $x_{g}(t))$ = $x_{i}(t+1)$
+				}		
+		}
+		\caption{\acs{BCO} Algorithmus}
+		\label{acoalgo}
+	\end{algorithm}
+\end{framed}
 \newpage
 \section{Modelle und Frameworks}
 \subsection{Modelle}

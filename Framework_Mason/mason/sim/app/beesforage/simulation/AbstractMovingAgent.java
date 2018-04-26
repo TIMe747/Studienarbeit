@@ -150,7 +150,6 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 		if (useTheirSpheres)
 			distanceCorrection += maxSphere;
 
-		// get all objects which centers lies within a certain distance
 		Object[] objects = simulation.getObjectsWithinDistance(this, radius
 				+ distanceCorrection);
 
@@ -162,12 +161,11 @@ public abstract class AbstractMovingAgent implements IIterationAgent,
 		for (i = 0, k = 0; i < objects.length; i++) {
 			agent = (IMovingAgent) objects[i];
 
-			// continue if the agent itself is included or the agent is not
-			// myself
+
 			if (includeMySelf || (agent != this)) {
-				// get the distance from center to center
+
 				double dist = this.distance(agent);
-				// correct the distance according to the spheres
+
 				dist -= correction;
 				if (useTheirSpheres)
 					dist -= agent.getSphereRadius();

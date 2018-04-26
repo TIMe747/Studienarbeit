@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  18 APR 2018 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  27 APR 2018 00:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1448,38 +1448,41 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 
 (/usr/share/texmf/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (./Studienarbeit.aux)
+) (./Studienarbeit.aux
+
+LaTeX Warning: Label `acoalgo' multiply defined.
+
+)
 \openout1 = `Studienarbeit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 218.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 218.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 197.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 197.
 
-
-(/usr/share/texmf/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 218.
+LaTeX Font Info:    ... okay on input line 197.
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineT-TLF on 
-input line 218.
+input line 197.
 
 (/usr/share/texmf/tex/latex/libertine/T1LinuxLibertineT-TLF.fd
 File: T1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Li
 nuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 218.
+(Font)              scaled to size 10.95pt on input line 197.
 
 (/usr/share/texmf/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1552,30 +1555,30 @@ e
 <dhbw-logo.png, id=4, 130.086pt x 62.8749pt>
 File: dhbw-logo.png Graphic file (type png)
  <use dhbw-logo.png>
-Package pdftex.def Info: dhbw-logo.png used on input line 222.
+Package pdftex.def Info: dhbw-logo.png used on input line 201.
 (pdftex.def)             Requested size: 85.35826pt x 41.25865pt.
 
 <logo.jpg, id=5, 4215.75pt x 1003.75pt>
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
-Package pdftex.def Info: logo.jpg used on input line 222.
+Package pdftex.def Info: logo.jpg used on input line 201.
 (pdftex.def)             Requested size: 142.26378pt x 33.8636pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 223.
+(Font)              scaled to size 24.88pt on input line 202.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 24.88pt on input line 224.
+(Font)              scaled to size 24.88pt on input line 203.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 225.
+(Font)              scaled to size 12.0pt on input line 204.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 226.
+(Font)              scaled to size 14.4pt on input line 205.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 231.
-LaTeX Font Info:    Try loading font information for U+msa on input line 235.
+(Font)              scaled to size 12.0pt on input line 210.
+LaTeX Font Info:    Try loading font information for U+msa on input line 214.
 
 (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 235.
+LaTeX Font Info:    Try loading font information for U+msb on input line 214.
 
 (/usr/share/texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1584,20 +1587,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./dhbw-logo.png> <./logo.j
 pg>]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 246.
+(Font)              scaled to size 14.4pt on input line 225.
  [1] [2]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 275.
+(Font)              scaled to size 10.0pt on input line 254.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 275.
+(Font)              scaled to size 10.0pt on input line 254.
  [1]
 (./Studienarbeit.toc
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 2.
-
-
-Package acronym Warning: Acronym `BCO' is not defined on input line 28.
-
 ) [2] (./Studienarbeit.lof
 Overfull \hbox (4.30064pt too wide) in paragraph at lines 2--2
  [][] []\T1/LinuxLibertineT-TLF/m/n/10.95 Entstehungsbedingungen und De-fi-ni-t
@@ -1613,100 +1612,108 @@ io-nen kol-lek-ti-ver In-tel-li-genz bei Tier-schwär-
 \openout8 = `Studienarbeit.lot'.
 
  [4] [5] [1]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 301.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 301.
+(Font)              scaled to size 8.0pt on input line 281.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 301.
+(Font)              scaled to size 9.0pt on input line 281.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 301.
+(Font)              scaled to size 6.0pt on input line 281.
 
 <schwarmintelligenz.png, id=42, 682.80093pt x 434.37282pt>
 File: schwarmintelligenz.png Graphic file (type png)
 
 <use schwarmintelligenz.png>
-Package pdftex.def Info: schwarmintelligenz.png used on input line 304.
+Package pdftex.def Info: schwarmintelligenz.png used on input line 284.
 (pdftex.def)             Requested size: 426.79135pt x 271.51547pt.
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 311.
+ input line 291.
 
 (/usr/share/texmf/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 311.
+(Font)              scaled to size 10.95pt on input line 291.
  [2 <./schwarmintelligenz.png (PNG copy)>] [3]
-Overfull \hbox (3.57408pt too wide) in paragraph at lines 328--329
+Overfull \hbox (3.57408pt too wide) in paragraph at lines 308--309
 []\T1/LinuxLibertineT-TLF/b/n/10.95 Agenten-Umgebung: \T1/LinuxLibertineT-TLF/m
 /n/10.95 Agen-ten in-ter-a-gie-ren in-ner-halb ei-ner Um-ge-bung mit an-de-ren 
 Agen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
 [4]
 Package acronym Info: Label `acro:PSO' newly defined as it shall be overridden
-although it is yet undefined on input line 339.
+although it is yet undefined on input line 319.
 
-Overfull \hbox (3.89555pt too wide) in paragraph at lines 349--350
+Overfull \hbox (3.89555pt too wide) in paragraph at lines 329--330
 []\T1/LinuxLibertineT-TLF/m/n/10.95 Trägheitskoeffizient $\OML/cmm/m/it/10.95 w
 $\T1/LinuxLibertineT-TLF/m/n/10.95 : Der Träg-heits-ko-ef-fi-zi-ent $\OML/cmm/m
 /it/10.95 w$ \T1/LinuxLibertineT-TLF/m/n/10.95 be-stimmt die Ge-wich-tung der G
 e-schwin-
  []
 
-[5] <pso.png, id=61, 466.74374pt x 279.29344pt>
+[5]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 10.95pt on input line 352.
+ <pso.png, id=60, 466.74374pt x 279.29344pt>
 File: pso.png Graphic file (type png)
  <use pso.png>
-Package pdftex.def Info: pso.png used on input line 386.
+Package pdftex.def Info: pso.png used on input line 366.
 (pdftex.def)             Requested size: 213.39568pt x 127.69238pt.
  [6 <./pso.png (PNG copy)>]
 Package acronym Info: Label `acro:ACO' newly defined as it shall be overridden
-although it is yet undefined on input line 393.
- [7] [8] [9]
+although it is yet undefined on input line 373.
+ [7] [8]
+Package acronym Info: Label `acro:BCO' newly defined as it shall be overridden
+although it is yet undefined on input line 417.
 
-Package acronym Warning: Acronym `BCO' is not defined on input line 440.
+Underfull \vbox (badness 7168) detected at line 458
+ []
 
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 455--457
+[9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 478--480
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--457
+Underfull \hbox (badness 10000) in paragraph at lines 478--480
 \T1/LinuxLibertineT-TLF/m/n/10.95 Weblink: http://www3.interscience.wiley.com/j
 ournal/109914213/abstract. Ein-sicht-
  []
 
-[11] (./Studienarbeit.toc)
+[12] (./Studienarbeit.toc)
 \tf@toc=\write9
 \openout9 = `Studienarbeit.toc'.
 
- [12] [13] (./Studienarbeit.aux) )
+ [13] [14] (./Studienarbeit.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28789 strings out of 493014
- 543958 string characters out of 6141613
- 620952 words of memory out of 5000000
- 31812 multiletter control sequences out of 15000+600000
+ 28793 strings out of 493014
+ 543991 string characters out of 6141613
+ 621968 words of memory out of 5000000
+ 31816 multiletter control sequences out of 15000+600000
  84291 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,73p,10430b,11454s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/u
-sr/share/texmf/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texmf/font
+ 55i,15n,73p,10429b,11456s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/u
+sr/share/texmf/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/share/texmf/font
 s/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texmf/fonts/enc/dvips/liberti
 ne/lbtn_ncsllp.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}
 </usr/share/texmf/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/te
@@ -1715,14 +1722,15 @@ e1/public/libertine/LinLibertineTI.pfb></usr/share/texmf/fonts/type1/public/ams
 fonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf/f
 onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb>
-Output written on Studienarbeit.pdf (21 pages, 901991 bytes).
+sfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb>
+Output written on Studienarbeit.pdf (22 pages, 914360 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
