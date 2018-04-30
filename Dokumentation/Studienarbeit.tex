@@ -378,7 +378,7 @@ Jede modellierte Ameise besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitp
 \begin{itemize}
 	\item Position $x_{i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{i}(t))$: Die aktuelle Position der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ repräsentiert eine potentielle Lösung des Optimierungsproblems. Der dazugehörende Funktionswert $f(x_{i}(t))$ beschreibt die Güte der potentiellen Lösung.
 	\item Position $x_{g}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{g}(t))$: Die Position $x_{g}$ ist die bisher beste Position der Ameisenkolonie zum Zeitpunkt $t$.
-	\item Teillösungen $C=\{c_{1}(t),c_{2}(t),...,c_{n}(t)\}$ die der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ zur Verfügung stehen: Die modellierte Ameise $x_{i}$ wählt aus der ihr zur Verfügung stehenden Teillösungen $C$ zum Zeitpunkt $t$ eine Teillösung. Die gewählte Teillösung entspricht der nächsten Position der modellierten Ameise$x_{i}$ zum Zeitpunkt $t+1$.
+	\item Teillösungen $C=\{c_{1}(t),c_{2}(t),...,c_{n}(t)\}$ die der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ zur Verfügung stehen: Die modellierte Ameise $x_{i}$ wählt aus der ihr zur Verfügung stehenden Teillösungen $C$ zum Zeitpunkt $t$ eine Teillösung. Die gewählte Teillösung entspricht der nächsten Position der modellierten Ameise $x_{i}$ zum Zeitpunkt $t+1$.
 	\item Wahrscheinlichkeiten $W=\{w_{c_{1}}(t),w_{c_{2}}(t),...,w_{c_{n}}(t)\}$  zur Wahl von $x_{i}(t+1)$: Die Wahrscheinlichkeiten $W$ werden für die, der modellierten Ameise zur Verfügung stehenden, Teillösungen $C$ berechnet. Die Teillösung mit der höchsten Wahrscheinlichkeit wird von der modellierten Ameise ausgewählt.  	
 	\item Parameter $\alpha$: 
 	\item Parameter $\beta$: 
@@ -404,11 +404,11 @@ Im ersten Schritt des abgebildeten Algorithmus wird die Population $X$ an einer 
 \begin{equation}
 W(c_{i}|x_{i}(t)) = \frac{\tau_{c_{i}}^\alpha(t) \cdot [f(c_{i}(t))]^\beta}{\sum_{} c \in C\; \tau_{c}(t)^\alpha \cdot [f(c(t))]^\beta}
 \end{equation}
-Die Wahrscheinlichkeit ist abhängig von dem Pheromonniveau $tau_{c_{i}}$ der jeweiligen Teillösung und der Güte der Teillösung, bestimmt durch $f(c_{i}(t))$. Die Parameter $\alpha$ und $\beta$ verändern das Verhalten der modellierten Ameisen. Gilt $\alpha > \beta$ dann ist das Pheromonniveau der Teillösung ausschlaggebender als die Güte der Teillösung für die Berechnung der Wahrscheinlichkeiten $W$. Sind die Wahrscheinlichkeiten $W$ für alle Teillösungen $C$ berechnet, entscheidet sich die modellierte Ameise für die Teillösung mit der höchsten Wahrscheinlichkeit. Die von der modellierten Ameise gewählte Teillösung entspricht der neuen Position $x_{i}(t+1)$. Im Anschluss wird für jede modellierte Ameise $x_{i}(t)$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$  besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t)$ zu $x_{i}(t)$. Am Ende der Iteration werden die Pheromonmarkierungen mit folgender Formel aktualisiert:
+\par Die Wahrscheinlichkeit ist abhängig von dem Pheromonniveau $tau_{c_{i}}$ der jeweiligen Teillösung und der Güte der Teillösung, bestimmt durch $f(c_{i}(t))$. Die Parameter $\alpha$ und $\beta$ verändern das Verhalten der modellierten Ameisen. Gilt $\alpha > \beta$ dann ist das Pheromonniveau der Teillösung ausschlaggebender als die Güte der Teillösung für die Berechnung der Wahrscheinlichkeiten $W$. Sind die Wahrscheinlichkeiten $W$ für alle Teillösungen $C$ berechnet, entscheidet sich die modellierte Ameise für die Teillösung mit der höchsten Wahrscheinlichkeit. Die von der modellierten Ameise gewählte Teillösung entspricht der neuen Position $x_{i}(t+1)$. Im Anschluss wird für jede modellierte Ameise $x_{i}(t)$ geprüft, ob der aktuelle Funktionswert $f(x_{i}(t))$  besser ist als der globale Funktionswert $f(x_{g}(t))$. Ist dies der Fall so wird die global beste Position $x_{g}(t)$ zu $x_{i}(t)$. Am Ende der Iteration werden die Pheromonmarkierungen mit folgender Formel aktualisiert:
 \begin{equation}
 \tau_{i}(t+1) = (1 - \rho) \tau_{i}(t) + \sum_{x_{i} \in X}\ \Delta \tau_{i}(t)^C
 \end{equation}
-Hierbei ist $\rho$ der konstante Verdunstungsfaktor der Pheromonmarkierungen. Die an der gewählten Teillösung hinterlassene Pheromonmenge $\Delta \tau_{i}(t)^C$ berechnet sich durch die Formel:
+\par Hierbei ist $\rho$ der konstante Verdunstungsfaktor der Pheromonmarkierungen. Die an der gewählten Teillösung hinterlassene Pheromonmenge $\Delta \tau_{i}(t)^C$ berechnet sich durch die Formel:
 \begin{equation}
 \Delta \tau_{i}(t)^C = f(c_{i}(t))
 \end{equation}
@@ -422,10 +422,13 @@ Jede modellierte Biene besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpu
 \begin{itemize}
 	\item Position $x_{i}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{i}(t))$: Die aktuelle Position der modellierten Biene $x_{i}$ zum Zeitpunkt $t$ repräsentiert eine potentielle Lösung des Optimierungsproblems. Der dazugehörende Funktionswert $f(x_{i}(t))$ beschreibt die Güte der potentiellen Lösung.
 	\item Position $x_{g}(t)$ im Suchraum $S$ mit einem Funktionswert $f(x_{g}(t))$: Die Position $x_{g}$ ist die bisher beste Position der Bienenkolonie zum Zeitpunkt $t$.
-	\item Rekrutierungsbienen  $R=\{r_{1}(t),r_{2}(t),...,r_{n}(t)\}$ die der modellierten Ameise $x_{i}$ zum Zeitpunkt $t$ zur Verfügung stehen: Die modellierte Ameise $x_{i}$ wählt aus der ihr zur Verfügung stehenden Teillösungen $C$ zum Zeitpunkt $t$ eine Teillösung. Die gewählte Teillösung entspricht der nächsten Position der modellierten Ameise$x_{i}$ zum Zeitpunkt $t+1$.
-	\item Loyalitätswahrscheinlichkeiten $L=\{l_{r_{1}}(t),l_{r_{2}}(t),...,l_{r_{n}}(t)\}$  zur Wahl von $x_{i}(t+1)$: Die Wahrscheinlichkeiten $W$ werden für die, der modellierten Ameise zur Verfügung stehenden, Teillösungen $C$ berechnet. Die Teillösung mit der höchsten Wahrscheinlichkeit wird von der modellierten Ameise ausgewählt. 
-	\item Richtungsvektor $v_{i}(t)$:
+	\item Loyalitätswahrscheinlichkeit $l_{i}(t)$: Die Loyalitätswahrscheinlichkeit $l_{i}(t)$ der modellierten Biene $x_{i}$ bestimmt den Status $Z$ zum Zeitpunkt $t$.
+	\item Status $Z$: Ist die Loyalitätswahrscheinlichkeit $l_{i}(t)$ größer als eine Zufallszahl so wird die modellierte Biene $x_{i}$ zum Zeitpunkt $t$ in den Status Loyal versetzt. Die modellierte Biene erhält den Status Frei sobald die Loyalitätswahrscheinlichkeit kleiner ist als die Zufallszahl.
+	\item (optional) Rekrutierungsbienen  $R=\{r_{1}(t),r_{2}(t),...,r_{n}(t)\}$ die der modellierten Biene $x_{i}$ zum Zeitpunkt $t$ zur Verfügung stehen. Die modellierte Biene $x_{i}$ wählt aus der ihr zur Verfügung stehenden Rekrutierungsbienen $R$ zum Zeitpunkt $t$ eine Rekrutierungsbiene. 
+	\item (optional) Richtung $v_{i}(t)$: Die Richtung $v_{i}(t)$ von der aktuellen Position $x_{i}(t)$ der modellierten Biene zur gewählten Rekrutierungsbiene $r_{i}(t)$.
 \end{itemize}
+Befindet sich eine modellierte Biene $x_{i}$ im Status Loyal besitzt sie zum Zeitpunkt $t$ keine Rekrutierungsbienen $R$ sondern ist ihrer Lösung $x_{i}(t)$ gegenüber loyal und wird diese nicht verändern. Ebenso besitzt sie daher keine Richtung $v_{i}(t)$.
+\newpage
 \subsubsection{Algorithmus}
 \begin{framed}
 	\begin{algorithm}[H]
@@ -433,8 +436,8 @@ Jede modellierte Biene besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpu
 		\While{Maximale Iterationen nicht erreicht}{
 			Bestimme für jede modellierte Biene Position $x_{i}(t)$ und berechne den Funktionswert $f(x_{i}(t))$\;
 			Bestimme $n$ Rekrutierungsbienen $R$ mit den besten Funktionswerten $f(x_{i}(t))$\;
-			Berechne für jede modellierte Biene die Loyalitätswahrscheinlichkeit $L$\;
-				\eIf{$L$ größer als Zufallszahl}{
+			Berechne für jede modellierte Biene die Loyalitätswahrscheinlichkeit $l_{i}(t)$\;
+				\eIf{$l_{i}(t)$ größer als Zufallszahl}{
 					Versetze Biene in den Status Loyal;
 				}
 				{
@@ -442,7 +445,7 @@ Jede modellierte Biene besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpu
 				}
 				\eIf{Biene im Zustand Frei}{
 					Berechne Rekrutierungswahrscheinlichkeiten $W$ für Rekrutierungsbienen $R$ und wähle Rekrutierungsbiene $r_{i}(t)$\;
-					Bestimme Richtungsvektor $v_{i}(t)$ von Position $x_{i}(t)$ zu $r_{i}(t)$\;
+					Bestimme Richtung $v_{i}(t)$ von Position $x_{i}(t)$ zu $r_{i}(t)$\;
 					Setze neue Position $x_{i}(t+1)$ = $x_{i}(t)$ + $v_{i}(t)$\;
 				}
 				{
@@ -456,6 +459,12 @@ Jede modellierte Biene besitzt folgende Eigenschaften im Suchraum $S$ zum Zeitpu
 		\label{acoalgo}
 	\end{algorithm}
 \end{framed}
+\begin{equation}
+l_{i}(t) = e^{-\frac{f(x_{g}(t))-f(x_{i}(t))}{u}}
+\end{equation}
+\begin{equation}
+r_{i}(t) = \frac{f(r_{i}(t)}{\sum_{r \in R}\ f(r(t))}
+\end{equation}
 \newpage
 \section{Modelle und Frameworks}
 \subsection{Modelle}

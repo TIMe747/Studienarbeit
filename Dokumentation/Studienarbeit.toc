@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {3.3}Bee Colony Optimization}{9}
 \contentsline {subsubsection}{\numberline {3.3.1}Suchraum}{9}
 \contentsline {subsubsection}{\numberline {3.3.2}Modellierte Biene}{9}
-\contentsline {subsubsection}{\numberline {3.3.3}Algorithmus}{9}
+\contentsline {subsubsection}{\numberline {3.3.3}Algorithmus}{10}
 \contentsline {section}{\numberline {4}Modelle und Frameworks}{11}
 \contentsline {subsection}{\numberline {4.1}Modelle}{11}
 \contentsline {subsubsection}{\numberline {4.1.1}Finden des globalen Minimums einer Funktion mit \acs {PSO}}{11}

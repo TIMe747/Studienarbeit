@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  27 APR 2018 00:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  30 APR 2018 21:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1676,17 +1676,13 @@ although it is yet undefined on input line 373.
  [7] [8]
 Package acronym Info: Label `acro:BCO' newly defined as it shall be overridden
 although it is yet undefined on input line 417.
-
-Underfull \vbox (badness 7168) detected at line 458
- []
-
-[9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 478--480
+ [9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 487--489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--480
+Underfull \hbox (badness 10000) in paragraph at lines 487--489
 \T1/LinuxLibertineT-TLF/m/n/10.95 Weblink: http://www3.interscience.wiley.com/j
 ournal/109914213/abstract. Ein-sicht-
  []
@@ -1707,7 +1703,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  28793 strings out of 493014
  543991 string characters out of 6141613
- 621968 words of memory out of 5000000
+ 620970 words of memory out of 5000000
  31816 multiletter control sequences out of 15000+600000
  84291 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1725,12 +1721,12 @@ onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/public/am
 sfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb><
 /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf/font
 s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/amsf
-onts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on Studienarbeit.pdf (22 pages, 914360 bytes).
+onts/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Studienarbeit.pdf (22 pages, 924001 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 148 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
