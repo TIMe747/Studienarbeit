@@ -192,8 +192,6 @@
 
 
 
-
-
 \begin{document}
 \begin{titlepage}
 	\begin{center}
@@ -312,7 +310,7 @@ M. Wooldridge und N. Jennings\footnote{M. Wooldridge, N. Jennings (1995)} weisen
 \subsubsection{Agenten-Beziehungen}
 Zwischen den Systemelementen bestehen Interaktionsbeziehungen. Die technischen Voraussetzungen für die Kommunikation werden von der Umgebung bereitgestellt. Beziehungen lassen sich einteilen in Interaktion zwischen Agenten und Umgebung, Interaktion zwischen Agenten und organisatorisch bedingte Beziehungen. Die Kommunikation zwischen Agenten kann dabei direkt durch Austausch von Nachrichten oder indirekt über die Veränderung der Umgebung erfolgen.\newline
 \subsubsection{Agenten-Umgebung}
-Nach S. Russell und P. Norvig\footnote{S. Russel, P. Norvig (1995)} muss eine geeignete Agenten-Umgebung zugänglich, deterministisch, dynamisch, kontrollierbar und teleologisch sein. Eine zugängliche Umgebung erlaubt den Agenten Zugriff auf ihren Zustand. In der Regel beschränkt sich dieser Zugriff jedoch auf den lokalen Wahrnehmungsbereich eines Agenten und erlaubt somit nur Zugriff auf einen Ausschnitt der Umgebung. Deterministisch ist die Umgebung, sobald der Folgezustand vollständig durch den aktuellen Umgebungszustand und die aktuelle Aktion des Agenten bestimmt ist. Kann sich der Zustand der Umgebung durch Aktionen der Agenten ändern, so handelt es sich um eine dynamische und kontrollierbare Umgebung.
+Nach S. Russell und P. Norvig\footnote{S. Russel, P. Norvig (2009)} muss eine geeignete Agenten-Umgebung zugänglich, deterministisch, dynamisch, kontrollierbar und teleologisch sein. Eine zugängliche Umgebung erlaubt den Agenten Zugriff auf ihren Zustand. In der Regel beschränkt sich dieser Zugriff jedoch auf den lokalen Wahrnehmungsbereich eines Agenten und erlaubt somit nur Zugriff auf einen Ausschnitt der Umgebung. Deterministisch ist die Umgebung, sobald der Folgezustand vollständig durch den aktuellen Umgebungszustand und die aktuelle Aktion des Agenten bestimmt ist. Kann sich der Zustand der Umgebung durch Aktionen der Agenten ändern, so handelt es sich um eine dynamische und kontrollierbare Umgebung.
 \newpage
 \section{Schwarmintelligente Algorithmen}
 \subsection{Particle Swarm Optimization}
@@ -456,7 +454,7 @@ Befindet sich eine modellierte Biene $x_{i}$ im Status Loyal besitzt sie zum Zei
 				}		
 		}
 		\caption{\acs{BCO} Algorithmus}
-		\label{acoalgo}
+		\label{bcoalgo}
 	\end{algorithm}
 \end{framed}
 \begin{equation}
@@ -472,20 +470,51 @@ r_{i}(t) = \frac{f(r_{i}(t)}{\sum_{r \in R}\ f(r(t))}
 \subsubsection{Futtersuche mit \acs{ACO} \& \acs{BCO}}
 \subsection{Framework}
 \subsubsection{Anforderungen}
+Die Anforderungen an das Framework zur Erstellung der in Kapitel 4.1 vorgestellten Modelle und anschließender grafischer Simulation sind:
+\begin{itemize}
+	\item \textbf{Open-Source + kostenlos:} Der Quelltext des Frameworks ist öffentlich. Zudem kann das Framework kostenlos genutzt werden.
+	\item \textbf{Aktualität:} Es ist eine aktuelle und stabile Version des Frameworks verfügbar. 
+	\item \textbf{Einsetzbarkeit:} Das Framework kann auf dem Betriebssystem Linux verwendet werden und unterstützt die Programmiersprache Java.
+	\item \textbf{Visualisierung:} Modelle werden grafisch in 2D simuliert.
+	\item \textbf{Dokumentation + Tutorial:} Das Framework ist umfangreich dokumentiert und besitzt ein Tutorial für Einsteiger.
+	\item \textbf{Ausführungsgeschwindigkeit der Simulation:} Die Ausführungsgeschwindigkeit der Simulation ist hoch trotz rechenintensiven Modellen mit vielen Agenten und Iterationen.
+\end{itemize}
 \subsubsection{Übersicht}
 \paragraph{NetLogo}
-\paragraph{Repast}
+NetLogo ist eine Open-Source-Plattform und wurde 1999 von U. Wilensky entwickelt. Die neuste Version 6.0.3 wurde im März 2018 veröffentlicht und steht für die Betriebssysteme Mac, Windows und Linux zur Verfügung. Die proprietäre funktionale Programmiersprache und die ausführliche Dokumentation machen es Einsteigern ohne Programmierkenntnisse einfach erste eigene Modelle zu implementieren. Das Fehlen objektorientierter Features schränkt die Funktionalität und Erweiterbarkeit des Frameworks jedoch ein. Darüber hinaus verfügt NetLogo über keine explizite Unterstützung für die Trennung zwischen Agenten, Agenten-Beziehungen und Agenten-Umgebung.
 \paragraph{Mason}
+Mason ist eine Java-Bibliothek, die ein breitgefächertes Repertoire an Funktionen für die agentenbasierte Modellierung bereitstellt. Die aktuelle Version 1.9 wurde im Juni 2015 veröffentlicht. Eine umfangreiche Dokumentation der Open-Source-Bibliothek und ein einsteigerfreundliches Tutorial erlauben es innerhalb weniger Stunden eine erste lauffähige Simulation zu erstellen. Kombiniert mit der JFreeChart-Bibliothek ist es zudem möglich die Simulationen in grafischer Form auszuwerten.
 \paragraph{Swarm}
-\subsubsection{Auswahl}
+Swarm ist eine der ersten ABM-Plattformen. Ursprünglich wurde Swarm 1997 am Santa Fe Institute entwickelt und veröffentlicht. Die ABM-Plattform Swarm war zuerst nur auf UNIX-basierten Betriebssystemen einsetzbar und unterstützte nur die Programmiersprache Objective-C. Heute steht Swarm für die Betriebssysteme Mac, Windows und Linux zur Verfügung und unterstützt neben Objective-C auch Java. Das Framework ist Open-Source. Version 2.4.1 wurde im April 2009 veröffentlicht.
+\paragraph{Repast}
+Repast ist eine Open-Source-Plattform für die agentenbasierte Modellierung und Simulation. Die Software ist für die Betriebssysteme Mac, Windows und Linux verfügbar. Es existieren zwei verschiedene Editionen der Plattform. Repast Simphony implementiert grundlegende und erweiterte Konzepte der agentenbasierten Modellierung. Unterstützt werden die Programmiersprachen Java, Logo und Groovy. Repast High Performance Computing ist ein agentenbasiertes Modellierungssystem speziell entwickelt für die parallele Ausführung der Simulationen auf verteilten Systemen. Zur Modellentwicklung mit dieser Edition von Repast werden umfangreiche Programmierkenntnisse in C++ vorausgesetzt. Die stabile Version 2.5 von Repast Symphonie wurde im Oktober 2017 veröffentlicht. 
+\paragraph{Zusammenfassung}
+S.F. Railsback, S.L. Lytinen und S.K. Jackson untersuchten im Jahr 2006 verschiedene Plattformen für die agentenbasierte Modellierung und Simulation. Ihre Ergebnisse über die oben genannten ABM-Plattformen können folgendermaßen zusammengefasst werden:
+\begin{itemize}
+	\item \textbf{NetLogo:} Netlogo ist einfach zu bedienen und besitzt eine umfangreiche Dokumentation. NetLogo ist eine gute Wahl für simple Modelle bei denen die Ausführungszeit der Simulation eine untergeordnete Rolle spielt. Außerdem eignet sich NetLogo zur Erstellung eines Modellprototyps. Dieser Prototyp kann anschließend in anderen ABM-Plattformen erweitert werden.
+	\item \textbf{Mason:} Mason ist eine gute Wahl für erfahrene Programmierer, die an rechenintensiven Modellen mit vielen Agenten und Iterationen arbeiten. Ein Vorteil von Mason ist die Reproduzierbarkeit der Simulationsergebnisse auf verschiedenen Betriebssystemen.
+	\item \textbf{Swarm:} Swarm ist stabil, klein, gut organisiert und unterstützt komplexe Modelle. Voraussetzung für einen schnellen Einstieg ist Programmiererfahrung mit Objective-C.
+	\item \textbf{Repast:} Repast ist die vollständigste ABM-Plattform und hat eine vergleichsweise schnelle Ausführungszeit der Simulationen. Die Dokumentation ist teilweise unvollständig.
+\end{itemize}
 
+\subsubsection{Auswahl}
+ 
 \section{Implementierung}
 \section{Zusammenfassung}
 
 \newpage
 \begin{thebibliography}{sotief}
+	\bibitem{1}A. Aulinger. Kollektive Intelligenz: Methoden, Erfahrungen und Perspektiven. Entstehungsjahr: 2009.
+	\bibitem{2}C. Macal, M. North. Tutorial on agent-based modelling and simulation. Journal of Simulation 4, Nr. 1, Seite 151-162. Entstehungsjahr: 2010.
+	\bibitem{3}L. Pintscher. Schwarmintelligenz. Universität Karlsruhe. Entstehungsjahr: ohne Jahr.\newline\newline
+	Weblink: http://lydiapintscher.de/uni/schwarmintelligenz.pdf \newline Einsichtnahme: 14.01.2018
+	\bibitem{4}S. Russel, P. Norvig. Artificial Intelligence: A Modern Approach. Upper Saddle River. Entstehungsjahr: 2009.
 	\bibitem{1}W.M. Wheeler. The Ant Colony as an Organism. Journal of Morphology Volume 22, Issue 2, Seite 307-325. Entstehungsjahr: 1911.\newline\newline
-	Weblink: http://www3.interscience.wiley.com/journal/109914213/abstract. Einsichtnahme: 25.02.2018
+	Weblink: http://www3.interscience.wiley.com/journal/109914213/abstract \newline Einsichtnahme: 04.01.2018
+	\bibitem{5}M. Wooldridge, N. Jennings. Intelligent Agents: Theory and Practice. Knowledge Engineering Review 10, Nr. 2, Seite 115-152. Entstehungsjahr: 1995.
+	\bibitem{6}Y. Liu. Partikelschwarmoptimierung für diskrete Probleme. Technische Universität München. Entstehungsjahr: 2014.\newline\newline
+	Weblink: http://lydiapintscher.de/uni/schwarmintelligenz.pdf \newline Einsichtnahme: 14.01.2018
+	
 \end{thebibliography}
 \newpage
 %\appendix

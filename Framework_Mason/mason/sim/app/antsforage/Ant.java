@@ -217,7 +217,6 @@ public class Ant extends OvalPortrayal2D implements Steppable {
 		    
 	    }
 	
-
 	    private Color noFoodColor = Color.black;
 	    private Color foodColor = Color.ORANGE;
 	    

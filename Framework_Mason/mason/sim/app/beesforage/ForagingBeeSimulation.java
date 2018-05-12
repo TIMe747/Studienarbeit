@@ -93,7 +93,7 @@ public abstract class ForagingBeeSimulation extends SimState implements
 		hive.setEntrance(entrance);
 		addAgent(entrance);
 					
-		FoodSource f1 = new FoodSource(this, new Point3d(300, 300, MIDDLE_LENGTH), 4, new Color(0xd0, 0x00, 0x00));
+		FoodSource f1 = new FoodSource(this, new Point3d(300, 300, MIDDLE_LENGTH), 20, new Color(0xd0, 0x00, 0x00));
 		addAgent(f1);
 	}
 

@@ -1,0 +1,160 @@
+
+MASON
+
+MASON ("Multiagenten-Simulator von Nachbarschaften / Netzwerken") ist eine allgemeine
+se ABM-Bibliothek, die auf Geschwindigkeit und große Chargen von Simulationen ausgerichtet ist [Luke
+ al. 2005]. MASON ist wie Repast Java-basiert und bietet viele der gleichen Funktionen.
+res als Repast, aber es fehlen einige wichtige Funktionen. Dies war ein bewusster Entwurf
+Denn eine bereits existierende Bibliothek war mehr als fähig, die Rolle zu erfüllen. Für die Prüfung-
+e, die ausgezeichnete JFreeChart Graphikbibliothek wird mit den zusätzlichen verfügbaren Bibliotheken gebündelt
+ die MASON-Website. Es gibt ein evolutionäres Berechnungspaket, das als a bereitgestellt wird
+Parate-Projekt vom selben Labor, ECJ und dies, zusammen mit der JFreeChart-Bibliothek, ist
+Als Teil von MASON für diese Rezension betrachtet.
+Der Vorteil von MASON liegt primär in der Geschwindigkeit, ist jedoch schneller als bei Repast
+eine kleine Menge, und für einige Modelle ist etwas langsamer als Repast, wie berichtet
+ Railsback, Lytinen & Jackson [2006]. Der andere Vorteil, den MASON auch hat
+Ates zu Batch-Läufen, indem eine Simulation auf einer Maschine gestoppt und dann kopiert werden kann
+ und auf einer anderen Maschine neu gestartet. MASON fehlt ein Teil der Batch-Parameterdatei
+Matte Unterstützung, die Repast hat. Es ist ein wenig schwieriger als Repast, eine GUI einzurichten
+raphische Benutzeroberfläche) angezeigt und Agenten angezeigt, da dies in
+raffinierter (wohl besser) Weg. Es ist auch etwas schwierig, Symbole zu zeichnen
+Theres als die geometrischen Vektorformen zur Verfügung gestellt) für Agenten auf dem Bildschirm. Es bietet gut
+Kontrolle der Agentenzustände auf dem Bildschirm. Wo MASON sich auszeichnet (durch die ECJ-Bibliothek) ist
+Anpassung - viele Arten von evolutionären Algorithmen werden unterstützt, zusammen mit verschiedenen
+Pes des Agentenlernens. Die Netzwerkbibliotheken kombiniert mit der gebotenen Flexibilität
+Die grobe Tugend, eine Java-Bibliothek zu sein, würde die Implementierung einer vernetzten Kausalität ermöglichen
+sy.
+MASON sollte dort eingesetzt werden, wo Geschwindigkeit und / oder anspruchsvolle Chargenläufe erforderlich sind.
+ASON ist auch eine ausgezeichnete Wahl für die Erforschung der Anpassung (sowohl Evolution als auch Lernen)
+ sowie vernetzte Kausalität und hebt sich damit in diesem Bericht als klarer Gewinner ab.
+
+NetLogo
+
+Der Name NetLogo kommt von "Network Logo" und ist eine funktionale Programmiersprache.
+guage [Finkel 1996] mit "Schildkröten", die die Agenten repräsentieren und einen Zustand haben (einzigartig
+Identität, Position und benutzerdefinierte Attribute) [Wilensky 1999]. Es ist eine einfach zu bedienende Plattform
+Form und Sprache, die langsamer ist als Repast und auch schwer zu erweitern. dennoch
+die Benutzerfreundlichkeit und die Unterstützung für das automatische Zeichnen von Agenten in 2D oder 3D2 macht dies zu einem geeignete Plattform für Anfänger Programmierer.
+Nur in der 3D-Vorschauversion, die sehr stabil ist und die 3D-Funktionalität einfach zu bedienen ist.
+In der Praxis bedeutet die Tatsache, dass es sich um eine funktionale Programmiersprache handelt
+Es ist relativ einfach zu lernen und zu benutzen. Es bedeutet auch, dass einige Programmiersprachen
+Aussagen fast als Sätze gelesen, und in Kombination mit dem Satz von Befehlen, die
+NetLogo bietet bestimmte Algorithmen (z. B. das Finden aller Nachbarn in einer Region)
+einfach zu schreiben. Das Fehlen von echten objektorientierten Features macht jedoch manchmal Dinge
+schwer. Zum Beispiel kann unklar sein, welche Methoden welchen Agenten zugeordnet sind.
+Manchmal können die Aktionen einer Klasse von Agenten als Teil einer Liste von ausgeführten Aktionen geschrieben werden
+durch eine andere Klasse von Agenten. Obwohl es keine explizite Unterstützung für die Strukturbildung gibt, ist die
+Eigenschaften der Sprache selbst sowie einige spezifische eingebaute Konstrukte ermöglichen effektiv
+Feedback zwischen Agenten, Agentengruppen und der Umgebung; NetLogo ist also gut
+Umgebung für die Erforschung der Strukturbildung. Es ist umständlich, ein Netzwerk zu implementieren
+Kommunikation zwischen Agenten, insbesondere von mehreren Variablen, obwohl NetLogo
+unterstützt Verknüpfungen zwischen Agenten. NetLogo bietet relativ gute Möglichkeiten für Batch-Läufe
+über einen Parameterraum. Es ist nicht einfach, einige einfache NetLogo-Modelle zu erweitern. Zum
+Zum Beispiel erfordert das Hinzufügen von GIS - Daten schwierige Programmieranweisungen und den kreativen Einsatz von
+NetLogo-Funktionen. Die Dokumentation und Anzahl der Beispielmodelle für NetLogo sind
+Beide sind exzellent, ebenso wie die Benutzergemeinschaft, die neuen Benutzern viel Unterstützung bietet
+Netlogo.
+
+REPAST
+
+Repast (REcursive Porous Agent Simulation Toolkit) ist eine etablierte Plattform
+mit vielen erweiterten Funktionen [North, Collier & Vos 2006]. Es begann als Java-Implementierung
+Entwicklung des Swarm-Toolkits, wurde jedoch schnell erweitert, um ein sehr umfangreiches Toolkit bereitzustellen
+für ABMs. Obwohl die volle Nutzung des Toolkits Java-Programmierfähigkeiten erfordert, ist das RepastPy
+Einrichtung (und die Funktionen in der neuen Repast Symphony-Plattform) bedeuten diese einfachen Modelle
+kann mit wenig Programmiererfahrung implementiert werden.
+Repast ist leicht auf große, komplizierte Modelle zu erweitern. Es bietet eine Fülle von nützlichen
+Einrichtungen von 2D (und in der neuen Repast Symphony, 3D) -Displays, zu Charting-Modellen,
+Protokollierungsergebnisse und statistische Pakete. Der aktuelle Repast-Stable enthält das Colt Java
+Bibliotheken für Statistiken enthält die neuere Repast Symphony die R-Statistiksuite. Dies
+Abschnitt beschreibt die Repast Stable Library, weil (wie es geschrieben wurde) Repast Symphony war
+immer noch unvollständig.
+Eine bemerkenswerte Eigenschaft der Repast-Bibliothek ist ihre Methoden zum Lesen von Eingabeparametern,
+mit spezifischen Funktionen für Batch-Läufe und Unterstützung von zwei Formaten: benutzerdefinierte Nur-Text-Dateien oder
+XML-Dateien, die ein benutzerdefiniertes Schema verwenden Repast hat auch ein Modul zum Erstellen neuraler Netzwerke,
+Dies kann nützlich sein beim Implementieren von Agentenlernen, und es gibt einige Bibliotheken, die nützlich sind
+in genetischen Algorithmen [Fogel 2000, Fogel 2005], gibt es jedoch keine ernsthafte Unterstützung für
+entweder. Die Dokumentation ist insgesamt gut und die Benutzergemeinschaft ist gut, obwohl
+Einige der Diskussionen sind etwas technischer als die auf der NetLogo-Liste, aufgrund
+die erweiterten Funktionen, die die Verwendung von Java bieten kann (z. B. das Einfädeln des Programms in
+make Abschnitte parallel laufen lassen und planen). Ein Teil der API benötigt deutlich mehr
+Dokumentation, aber insgesamt ist es gut. Wie bei MASON, die Netzwerkbibliotheken kombiniert
+Mit der Flexibilität, eine Java-Bibliothek zu sein, würde die Implementierung einer vernetzten Kausalität erfolgen
+einfach.
+
+SWARM
+
+Swarm wurde ursprünglich am Santa Fe Institute entwickelt [Minar et al. 1996] und
+wird jetzt von der Swarm Development Group entwickelt. Es ist der "Vorfahre" vieler der
+aktuelle ABM-Plattformen. Die grundlegende Architektur von Swarm ist die Simulation von Sammlungen von
+gleichzeitig interagierende Agenten, und dieses Paradigma wird in die Codierung einschließlich erweitert
+Agenteninspektoraktionen als Teil der Agentengruppe. Also um einen Agenten zu inspizieren
+In der Anzeige müssen Sie einen anderen versteckten, nicht interaktiven Agenten verwenden.
+Swarm ist eine stabile Plattform und scheint besonders für hierarchische Modelle geeignet zu sein. Wie
+So unterstützt es gute Mechanismen für die Strukturbildung durch den Einsatz von Multi-Level
+Feedback zwischen Agenten, Agentengruppen und der Umgebung (alles als Agenten behandelt).
+Der Objective C Swarm erfordert Lernziel C, was eine schwierige Sprache sein kann
+unerfahrene Programmierer. Ziel C macht das Schreiben von vernetzter Kausalität ein wenig leichter
+Aufgrund seines Message-Passing-Stils gibt es jedoch keine direkte Bibliotheksunterstützung für das Netzwerk
+Agenten. Es gibt auch keine direkte Unterstützung für Anpassungsmechanismen. SWARM tut es
+bieten jedoch einige gute statistische Maßnahmen. Die Dokumentation scheint ein wenig knapp
+in der API, ist aber im Allgemeinen gut und hat ein einfaches, aber effektiv funktionierendes Beispiel. Einige
+Die Links im Swarm-Wiki sind zur Zeit kaputt oder zeigen in den falschen Bereich. Ziel c
+Swarm war unter Mac OS X schwer zu installieren und unter Windows schwer einzurichten. Zu machen
+effektive Nutzung von Softwarebibliotheken und effektives Verwalten, Schreiben und Debuggen von Software,
+Es sollte eine einfach zu verwendende integrierte Entwicklungsumgebung (IDE) verwendet werden. Obwohl die
+Emacs-Software kann verwendet werden (und wird von der Swarm Development Group empfohlen) als
+Eine IDE auf allen Plattformen ist schwierig einzurichten. Mac OS X hat eine IDE
+(XCode), die Objective C unterstützt. Die Java-Version von Swarm fühlt sich umständlich an, und
+ist in Bezug auf Dokumentation und Codebeispiele schlechter als der Objective-C-Schwarm.
+Swarm sollte berücksichtigt werden, wenn der Programmierer fortgeschrittene Fähigkeiten besitzt und hierarchisch ist
+Modelle oder Strukturbildung sind von Interesse.
+
+
+4.4
+ Vorherige Analysen
+Railsback, Lytinen & Jackson [2006] entwickelte ebenfalls ein einfaches ABM und implementierte
+Es verwendet eine Vielzahl von verschiedenen Plattformen. Ihre Ergebnisse können wie folgt zusammengefasst werden:
+• MASON ist eine gute Wahl für erfahrene Programmierer, die an
+tativ intensive Modelle.
+• NetLogo ist einfach zu bedienen und verfügt über eine hervorragende Dokumentation. Es ist eine gute Wahl für
+Modelle, die nicht zu kompliziert sind und bei denen Simulationszeit keine Rolle spielt.
+Es ist auch eine gute Wahl für Prototyping-Modelle, die später erweitert werden können und
+implementiert in Repast (zum Beispiel).
+• Repast ist die vollständigste Plattform und hat eine vergleichsweise gute Ausführung
+Zeit der Simulationen. Es hat teilweise schlechte Dokumentation und auch einige "durchschnittliche"
+Software-Engineering-Design-Entscheidungen, aber ist insgesamt die beste ABM-Plattform.
+• Swarm (Objective-C-Version) ist stabil, klein und gut organisiert und kann unterstützen
+sehr komplexe Modelle, aber leidet unter einigen der Fehler von Objective C, einschließlich
+ein Mangel an Novizen-freundlichen Entwicklungstools und Müllsammlung.
+Der Artikel von Castle & Crooks [2006] überprüfte ABM-Plattformen einschließlich MASON, Repast
+und StarLogo (eine Variante von Logo, ähnlich der hier untersuchten NetLogo-Plattform) innerhalb von
+Geographischer Informationswissenschaft (GIS) Kontext. Viele ihrer Ergebnisse gelten jedoch
+allgemeiner:
+• MASON hat einen Mangel an Dokumentation und hat eine relativ kleine Benutzergemeinschaft. Es
+Es fehlte spezifische Funktionalität, die die Autoren in Bezug auf GIS-Integra-
+tion. Es fehlten auch andere, allgemeinere Funktionen, insbesondere Charts
+Wie bereits erwähnt, gibt es auf der MASON-Website ein gutes Charting-Paket.
+• Repast bietet eine Menge Werkzeuge und hat gute Dokumentation, gute Beispiele und a
+große, aktive Benutzergemeinschaft.
+• StarLogo ist einfach zu verwenden, hat jedoch eingeschränkte Funktionalität. Die Autoren erheben legitime
+Bedenken im Zusammenhang mit StarLogo und anderen Nicht-Open-Source-Plattformen (die ab
+Schreiben beinhaltet NetLogo) über die verborgene Natur von Algorithmen, das Fehlen von ernsthaften Fähigkeiten
+Erweiterung und mögliche Unwiederholbarkeit von wissenschaftlichen (Modellierungs-) Experimenten.
+Die Autoren weisen auch darauf hin, dass in nicht objektorientierten Programmiersprachen, wie z
+wie NetLogo und StarLogo, die funktionale Programmiersprachen, die dort
+ist keine klare Zuordnung zwischen Agenten im konzeptionellen Rahmen und im Code,
+wie es bei objektorientierten Sprachen der Fall ist.
+
+
+4.5
+ Vergleich mit früheren Analysen
+Wie unten zu sehen ist, war die Erfahrung dieses Autors mit den Plattformen grob
+im Einklang mit Railsback, Lytinen & Jackson [2006], jedoch wird MASON empfohlen
+Repastieren aufgrund von Kriterien, die sich auf CS- und CAS-Modellierungsanforderungen konzentrieren
+GIS-Integration. NetLogo punktete auch sehr, und laut Railsback, Lytinen & Jackson
+[2006] Diese einfach zu bedienende Software wäre für Benutzer geeignet, bei denen die Programmierung eingeschränkt ist
+Erfahrung. Die vorherigen Unterabschnitte geben mehr Details zu jeder der bewerteten Plattformen.
+Beachten Sie, dass einige Beispiele für Java und NetLogo-Code in Anhang A zu finden sind
+Diese dienen nur der Veranschaulichung und sind kein Code für SimpleArmy.
+
