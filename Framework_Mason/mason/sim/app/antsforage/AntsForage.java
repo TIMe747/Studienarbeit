@@ -1,7 +1,5 @@
 package sim.app.antsforage;
 
-
-
 import sim.engine.*;
 import sim.field.grid.*;
 import sim.util.*;

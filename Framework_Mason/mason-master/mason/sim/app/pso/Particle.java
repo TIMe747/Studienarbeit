@@ -82,7 +82,7 @@ public class Particle
         double pWeight = Math.random() + 0.4;
         double nWeight = Math.random() + 0.4;
         double gWeight = Math.random() + 0.4;
-        double vx = (0.9*inertia + pWeight*pDelta + nWeight*nDelta + gWeight*gDelta) / (1+pWeight+nWeight+gWeight);
+        double vx = (0.9*inertia + pWeight*pDelta + gWeight*gDelta) / (1+pWeight+nWeight+gWeight);
                  
         // calc y component
         inertia = velocity.y;
@@ -92,7 +92,7 @@ public class Particle
         pWeight = Math.random() + 0.4;
         nWeight = Math.random() + 0.4;
         gWeight = Math.random() + 0.4;
-        double vy = (0.9*inertia + pWeight*pDelta + nWeight*nDelta + gWeight*gDelta) / (1+pWeight+nWeight+gWeight);
+        double vy = (0.9*inertia + pWeight*pDelta + gWeight*gDelta) / (1+pWeight+nWeight+gWeight);
 
         vx *= pso.velocityScalar;
         vy *= pso.velocityScalar;
