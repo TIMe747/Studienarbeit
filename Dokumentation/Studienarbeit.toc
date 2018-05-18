@@ -27,38 +27,63 @@
 \contentsline {subsubsection}{\numberline {3.3.3}Algorithmus}{10}
 \contentsline {section}{\numberline {4}Modelle und Frameworks}{11}
 \contentsline {subsection}{\numberline {4.1}Modelle}{11}
-\contentsline {subsubsection}{\numberline {4.1.1}Finden des globalen Minimums einer Funktion mit \acs {PSO}}{11}
+\contentsline {subsubsection}{\numberline {4.1.1}Finden des globalen Minimums einer Funktion mit der \acs {PSO}}{11}
 \contentsline {paragraph}{Modellbeschreibung}{11}
 \contentsline {paragraph}{Methode}{11}
-\contentsline {paragraph}{Parameter}{11}
-\contentsline {subsubsection}{\numberline {4.1.2}Futtersuche mit \acs {ACO} und \acs {PSO}}{12}
+\contentsline {paragraph}{Parameter}{12}
+\contentsline {subsubsection}{\numberline {4.1.2}Die Futtersuche von Ameisen und Bienen}{12}
 \contentsline {paragraph}{Modellbeschreibung}{12}
-\contentsline {paragraph}{Methode\acs {ACO}}{12}
-\contentsline {paragraph}{Parameter \acs {ACO}}{12}
-\contentsline {paragraph}{Methode \acs {BCO}}{13}
-\contentsline {paragraph}{Parameter \acs {BCO}}{13}
-\contentsline {subsection}{\numberline {4.2}Framework}{14}
-\contentsline {subsubsection}{\numberline {4.2.1}Anforderungen}{14}
+\contentsline {paragraph}{Methode der Ameisen}{12}
+\contentsline {paragraph}{Parameter Ameisen}{12}
+\contentsline {paragraph}{Methode der Bienen}{12}
+\contentsline {paragraph}{Parameter Bienen}{13}
+\contentsline {subsection}{\numberline {4.2}Framework}{13}
+\contentsline {subsubsection}{\numberline {4.2.1}Anforderungen}{13}
 \contentsline {subsubsection}{\numberline {4.2.2}\IeC {\"U}bersicht}{14}
 \contentsline {paragraph}{NetLogo}{14}
-\contentsline {paragraph}{Mason}{14}
+\contentsline {paragraph}{MASON}{14}
 \contentsline {paragraph}{Swarm}{14}
 \contentsline {paragraph}{Repast}{14}
-\contentsline {paragraph}{Zusammenfassung}{15}
+\contentsline {paragraph}{Zusammenfassung}{14}
 \contentsline {subsubsection}{\numberline {4.2.3}Auswahl}{15}
 \contentsline {section}{\numberline {5}Implementierung}{16}
-\contentsline {subsection}{\numberline {5.1}Mason}{16}
-\contentsline {subsection}{\numberline {5.2}Finden des globalen Minimums einer Funktion mit \acs {PSO}}{16}
-\contentsline {subsubsection}{\numberline {5.2.1}Initalisiere Partikelschwarm im Suchraum}{16}
-\contentsline {subsubsection}{\numberline {5.2.2}Bestimme Position und Geschwindigkeit}{16}
-\contentsline {subsubsection}{\numberline {5.2.3}Bestimme den Fitnesswert}{16}
-\contentsline {subsubsection}{\numberline {5.2.4}Bestimme beste Position}{17}
-\contentsline {subsubsection}{\numberline {5.2.5}Berechne neue Position}{17}
-\contentsline {subsubsection}{\numberline {5.2.6}Berechne neue Geschwindigkeit}{17}
-\contentsline {subsection}{\numberline {5.3}Futtersuche mit \acs {ACO}}{18}
-\contentsline {subsection}{\numberline {5.4}Futtersuche mit \acs {BCO}}{18}
-\contentsline {section}{\numberline {6}Experimente}{18}
-\contentsline {section}{\numberline {7}Zusammenfassung}{18}
-\contentsline {section}{\numberline {8}Anhang}{21}
-\contentsline {subsection}{\numberline {8.1}Quellcode Futtersuche mit \acs {ACO}}{21}
-\contentsline {subsubsection}{\numberline {8.1.1}Kehre zum Ameisenbau zur\IeC {\"u}ck + (Folge Heimatpheromonen)}{21}
+\contentsline {subsection}{\numberline {5.1}Finden des globalen Minimums der Rastrigin-Funktion mit der \acs {PSO}}{16}
+\contentsline {subsubsection}{\numberline {5.1.1}Initalisiere Partikelschwarm im Suchraum}{16}
+\contentsline {subsubsection}{\numberline {5.1.2}Bestimme Position und Geschwindigkeit}{16}
+\contentsline {subsubsection}{\numberline {5.1.3}Bestimme den Fitnesswert}{17}
+\contentsline {subsubsection}{\numberline {5.1.4}Bestimme beste Position}{17}
+\contentsline {subsubsection}{\numberline {5.1.5}Berechne neue Geschwindigkeit}{17}
+\contentsline {subsubsection}{\numberline {5.1.6}Berechne neue Position}{18}
+\contentsline {subsection}{\numberline {5.2}Die Futtersuche von Ameisen}{18}
+\contentsline {subsubsection}{\numberline {5.2.1}Kehre zum Ameisenbau zur\IeC {\"u}ck}{18}
+\contentsline {subsubsection}{\numberline {5.2.2}Hinterlasse Futterpheromone}{19}
+\contentsline {subsubsection}{\numberline {5.2.3}Finde Futterquelle}{19}
+\contentsline {subsubsection}{\numberline {5.2.4}Hinterlasse Heimatpheromone}{20}
+\contentsline {subsubsection}{\numberline {5.2.5}Parameter $\beta $}{20}
+\contentsline {subsubsection}{\numberline {5.2.6}Parameter $\alpha $}{20}
+\contentsline {subsubsection}{\numberline {5.2.7}Verdunstung der Pheromone}{21}
+\contentsline {subsection}{\numberline {5.3}Die Futtersuche von Bienen}{21}
+\contentsline {subsubsection}{\numberline {5.3.1}Zuf\IeC {\"a}llige Suche nach der Futterquelle}{21}
+\contentsline {subsubsection}{\numberline {5.3.2}Bewegung in Richtung der Futterquelle}{22}
+\contentsline {subsubsection}{\numberline {5.3.3}Finden der Futterquelle}{22}
+\contentsline {subsubsection}{\numberline {5.3.4}R\IeC {\"u}ckkehr zum Bienenstock}{22}
+\contentsline {subsubsection}{\numberline {5.3.5}Der Tanz}{23}
+\contentsline {subsubsection}{\numberline {5.3.6}Beobachtung des Tanzes}{23}
+\contentsline {section}{\numberline {6}Experimente}{24}
+\contentsline {subsection}{\numberline {6.1}Finden des globalen Minimums der Rastrigin-Funktion mit \acs {PSO}}{24}
+\contentsline {subsubsection}{\numberline {6.1.1}Auswirkungen der Parameter auf die Ergebnisse der Simulation}{24}
+\contentsline {subsection}{\numberline {6.2}Futtersuche von Ameisen}{24}
+\contentsline {subsubsection}{\numberline {6.2.1}Auswirkungen der Parameter auf die Ergebnisse der Simulation}{24}
+\contentsline {subsection}{\numberline {6.3}Futtersuche von Bienen}{25}
+\contentsline {section}{\numberline {7}Zusammenfassung}{26}
+\appendixattoc 
+\contentsline {section}{\numberline {A}Anhang}{30}
+\contentsline {subsection}{\numberline {A.1}Experimente \acs {PSO}}{30}
+\contentsline {subsubsection}{\numberline {A.1.1}Globaler Vertrauenskoeffizient = 0.3, lokaler Vertrauenskoeffizient = 0.7}{30}
+\contentsline {subsubsection}{\numberline {A.1.2}Globaler Vertrauenskoeffizient = 0.5, lokaler Vertrauenskoeffizient = 0.5}{31}
+\contentsline {subsubsection}{\numberline {A.1.3}Globaler Vertrauenskoeffizient = 0.7, lokaler Vertrauenskoeffizient = 0.3}{32}
+\contentsline {subsection}{\numberline {A.2}Experimente Futtersuche von Ameisen}{33}
+\contentsline {subsubsection}{\numberline {A.2.1}$\alpha $ = 0.3, $\beta $ = 0.7}{33}
+\contentsline {subsubsection}{\numberline {A.2.2}$\alpha $ = 0.5, $\beta $ = 0.5}{34}
+\contentsline {subsubsection}{\numberline {A.2.3}$\alpha $ = 0.7, $\beta $ = 0.3}{35}
+\contentsline {subsection}{\numberline {A.3}Experimente Futtersuche von Bienen}{36}

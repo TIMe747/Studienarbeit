@@ -1,0 +1,71 @@
+
+ACO
+Ameisen = 1000
+Steps = 5000
+alpha = 0.3
+beta = 0.7
+
+27190
+25918
+25535
+25841
+
+Ameisen = 100
+Steps = 5000
+alpha = 0.3
+beta = 0.7
+
+2453
+2465
+2528
+2529
+
+Ameisen = 1000
+Steps = 5000
+alpha = 0.7
+beta = 0.3
+
+9951
+9628
+9428
+8923
+
+Ameisen = 100
+Steps = 5000
+alpha = 0.7
+beta = 0.3
+
+709
+595
+812
+772
+
+Ameisen = 1000
+Steps = 5000
+alpha = 0.5
+beta = 0.5
+
+16106
+16758
+16504
+15972
+
+Ameisen = 100
+Steps = 5000
+alpha = 0.5
+beta = 0.5
+
+1110
+1428
+996
+1277
+
+Ameisen = 1000
+Steps = 5000
+alpha = 0.1
+beta = 0.9
+
+38740
+
+
+

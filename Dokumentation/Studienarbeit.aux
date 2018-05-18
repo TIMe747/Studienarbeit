@@ -7,23 +7,25 @@
 \@writefile{toc}{\select@language{ngerman}}
 \@writefile{lof}{\select@language{ngerman}}
 \@writefile{lot}{\select@language{ngerman}}
+\acronymused{ABM}
 \acronymused{PSO}
-\acronymused{ACO}
 \acronymused{PSO}
 \acronymused{PSO}
-\acronymused{ACO}
-\acronymused{BCO}
-\acronymused{ACO}
+\acronymused{PSO}
+\acronymused{PSO}
+\acronymused{PSO}
+\acronymused{PSO}
+\acronymused{PSO}
+\acronymused{PSO}
 \acronymused{PSO}
 \newacro{ABM}[\AC@hyperlink{ABM}{ABM}]{Agentebasierte Modellierung}
 \newacro{ACO}[\AC@hyperlink{ACO}{ACO}]{Ameisenkolonieoptimierung}
 \newacro{BCO}[\AC@hyperlink{BCO}{BCO}]{Bienenkolonieoptimierung}
+\newacro{MASON}[\AC@hyperlink{MASON}{MASON}]{Multi-Agent Simulator Of Networks}
 \newacro{PSO}[\AC@hyperlink{PSO}{PSO}]{Partikelschwarmoptimierung}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Projektbeschreibung}{1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Motivation}{1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Ziel der Arbeit}{1}}
-\acronymused{ACO}
-\acronymused{BCO}
 \acronymused{PSO}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Kapitel\IeC {\"u}bersicht}{1}}
 \acronymused{PSO}
@@ -36,6 +38,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Entstehungsbedingung und Definition kollektiver Intelligenz bei Tierschw\IeC {\"a}rmen}}{2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Ameisen}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Bienen}{3}}
+\newlabel{defabb}{{2.1.3}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Der Bienentanz}}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Agentenbasierte Modellierung}{4}}
 \AC@undonewlabel{acro:ABM}
 \newlabel{acro:ABM}{{2.2}{4}}
@@ -45,11 +49,19 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Agenten-Beziehungen}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Agenten-Umgebung}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Schwarmintelligente Algorithmen}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Particle Swarm Optimization}{5}}
 \AC@undonewlabel{acro:PSO}
-\newlabel{acro:PSO}{{3.1}{5}}
+\newlabel{acro:PSO}{{3}{5}}
 \acronymused{PSO}
+\AC@undonewlabel{acro:ACO}
+\newlabel{acro:ACO}{{3}{5}}
+\acronymused{ACO}
+\AC@undonewlabel{acro:BCO}
+\newlabel{acro:BCO}{{3}{5}}
+\acronymused{BCO}
 \acronymused{PSO}
+\acronymused{ACO}
+\acronymused{BCO}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Particle Swarm Optimization}{5}}
 \acronymused{PSO}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Suchraum}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Partikel}{5}}
@@ -58,12 +70,11 @@
 \newlabel{psoalgo}{{1}{6}}
 \acronymused{PSO}
 \acronymused{PSO}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \acs {PSO}, Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$}}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \acs {PSO}, Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$}}{6}}
 \newlabel{psoabb}{{3.1.3}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Ant Colony Optimization}{7}}
-\AC@undonewlabel{acro:ACO}
-\newlabel{acro:ACO}{{3.2}{7}}
 \acronymused{ACO}
+\acronymused{PSO}
 \acronymused{ACO}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Suchraum}{7}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Modellierte Ameise}{7}}
@@ -72,8 +83,6 @@
 \newlabel{acoalgo}{{2}{8}}
 \acronymused{ACO}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Bee Colony Optimization}{9}}
-\AC@undonewlabel{acro:BCO}
-\newlabel{acro:BCO}{{3.3}{9}}
 \acronymused{BCO}
 \acronymused{PSO}
 \acronymused{ACO}
@@ -92,92 +101,186 @@
 \acronymused{ACO}
 \acronymused{BCO}
 \acronymused{PSO}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Finden des globalen Minimums einer Funktion mit \acs {PSO}}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Finden des globalen Minimums einer Funktion mit der \acs {PSO}}{11}}
 \@writefile{toc}{\contentsline {paragraph}{Modellbeschreibung}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Rastrigin-Funktion}}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces zweidimensionale Rastrigin-Funktion}}{11}}
 \newlabel{rastabb}{{4.1.1}{11}}
 \@writefile{toc}{\contentsline {paragraph}{Methode}{11}}
 \acronymused{PSO}
 \acronymused{PSO}
-\@writefile{toc}{\contentsline {paragraph}{Parameter}{11}}
-\acronymused{ACO}
-\acronymused{PSO}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Futtersuche mit \acs {ACO} und \acs {PSO}}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Parameter}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Die Futtersuche von Ameisen und Bienen}{12}}
 \@writefile{toc}{\contentsline {paragraph}{Modellbeschreibung}{12}}
-\acronymused{ACO}
-\@writefile{toc}{\contentsline {paragraph}{Methode\acs {ACO}}{12}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Futtersuche mit \acs {ACO}}}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Methode der Ameisen}{12}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Futtersuche Ameisen}}{12}}
 \newlabel{futtersucheaco}{{4}{12}}
-\acronymused{ACO}
-\acronymused{ACO}
-\@writefile{toc}{\contentsline {paragraph}{Parameter \acs {ACO}}{12}}
-\acronymused{ACO}
-\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Futtersuche mit \acs {ACO}}}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Parameter Ameisen}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Methode der Bienen}{12}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Futtersuche Bienen}}{13}}
 \newlabel{futtersuchebco}{{5}{13}}
-\acronymused{ACO}
-\acronymused{BCO}
-\@writefile{toc}{\contentsline {paragraph}{Methode \acs {BCO}}{13}}
-\acronymused{BCO}
-\@writefile{toc}{\contentsline {paragraph}{Parameter \acs {BCO}}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Framework}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Anforderungen}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Parameter Bienen}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Framework}{13}}
+\acronymused{ABM}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Anforderungen}{13}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}\IeC {\"U}bersicht}{14}}
 \@writefile{toc}{\contentsline {paragraph}{NetLogo}{14}}
-\@writefile{toc}{\contentsline {paragraph}{Mason}{14}}
+\AC@undonewlabel{acro:MASON}
+\newlabel{acro:MASON}{{4.2.2}{14}}
+\@writefile{toc}{\contentsline {paragraph}{MASON}{14}}
+\acronymused{MASON}
 \acronymused{ABM}
 \@writefile{toc}{\contentsline {paragraph}{Swarm}{14}}
 \acronymused{ABM}
 \@writefile{toc}{\contentsline {paragraph}{Repast}{14}}
 \acronymused{ABM}
 \acronymused{ABM}
-\@writefile{toc}{\contentsline {paragraph}{Zusammenfassung}{15}}
+\@writefile{toc}{\contentsline {paragraph}{Zusammenfassung}{14}}
 \acronymused{ABM}
 \acronymused{ABM}
 \acronymused{ABM}
 \acronymused{ABM}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Auswahl}{15}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Auswahl des Frameworks}}{15}}
-\newlabel{tabframework}{{1}{15}}
+\newlabel{tabframework1}{{1}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Implementierung}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Mason}{16}}
 \acronymused{PSO}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Finden des globalen Minimums einer Funktion mit \acs {PSO}}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Finden des globalen Minimums der Rastrigin-Funktion mit der \acs {PSO}}{16}}
 \acronymused{PSO}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Initalisiere Partikelschwarm im Suchraum}{16}}
-\newlabel{xxxx}{{1}{16}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}xxxxxxx}{16}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Bestimme Position und Geschwindigkeit}{16}}
-\newlabel{xxxx}{{2}{16}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}xxxxxxx}{16}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}Bestimme den Fitnesswert}{16}}
-\newlabel{xxxx}{{3}{16}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}xxxxxxx}{16}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}Bestimme beste Position}{17}}
-\newlabel{xxxx}{{4}{17}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}xxxxxxx}{17}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5}Berechne neue Position}{17}}
-\newlabel{xxxx}{{5}{17}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}xxxxxxx}{17}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.6}Berechne neue Geschwindigkeit}{17}}
-\newlabel{xxxx}{{6}{17}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}xxxxxxx}{17}}
-\acronymused{ACO}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Futtersuche mit \acs {ACO}}{18}}
-\acronymused{BCO}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Futtersuche mit \acs {BCO}}{18}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Experimente}{18}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Zusammenfassung}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Initalisiere Partikelschwarm im Suchraum}{16}}
+\newlabel{psomod1}{{1}{16}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}PSO: Initalisierte Partikelschwarm im Suchraum}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Bestimme Position und Geschwindigkeit}{16}}
+\newlabel{psomod2}{{2}{16}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}PSO: Bestimme Position und Geschwindigkeit}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Bestimme den Fitnesswert}{17}}
+\newlabel{psomod3}{{3}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}PSO: Bestimme Fitnesswert}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}Bestimme beste Position}{17}}
+\newlabel{psomod4}{{4}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}PSO: Bestimme beste Position}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.5}Berechne neue Geschwindigkeit}{17}}
+\newlabel{psomod5}{{5}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}PSO: Berechne neue Geschwindigkeit}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.6}Berechne neue Position}{18}}
+\newlabel{psomod6}{{6}{18}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}PSO: Berechne neue Position}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Die Futtersuche von Ameisen}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Kehre zum Ameisenbau zur\IeC {\"u}ck}{18}}
+\newlabel{acomod1}{{7}{18}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}Ameisen: Kehre zum Ameisenbau zur\IeC {\"u}ck}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Hinterlasse Futterpheromone}{19}}
+\newlabel{acomod2}{{8}{19}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {8}Ameisen: Hinterlasse Futterpheromone}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}Finde Futterquelle}{19}}
+\newlabel{acomod3}{{9}{19}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}Ameisen: Finde Futterquelle}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}Hinterlasse Heimatpheromone}{20}}
+\newlabel{acomod4}{{10}{20}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}Ameisen: Hinterlasse Heimatpheromone}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5}Parameter $\beta $}{20}}
+\newlabel{acomod5}{{11}{20}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {11}Ameisen: Parameter beta}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.6}Parameter $\alpha $}{20}}
+\newlabel{acomod6}{{12}{20}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {12}Ameisen: Parameter alpha}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.7}Verdunstung der Pheromone}{21}}
+\newlabel{acomod7}{{13}{21}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {13}Ameisen: Verdunstung der Pheromone}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Die Futtersuche von Bienen}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Zuf\IeC {\"a}llige Suche nach der Futterquelle}{21}}
+\newlabel{bcomod1}{{14}{21}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {14}Bienen: Zuf\IeC {\"a}llige Suche nach der Futterquelle}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Bewegung in Richtung der Futterquelle}{22}}
+\newlabel{bcomod2}{{15}{22}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {15}Bienen: Bewegung in Richtung der Futterquelle}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}Finden der Futterquelle}{22}}
+\newlabel{bcomod3}{{16}{22}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {16}Bienen: Finden der Futterquelle}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.4}R\IeC {\"u}ckkehr zum Bienenstock}{22}}
+\newlabel{bcomod4}{{17}{22}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {17}Bienen:R\IeC {\"u}ckkehr zum Bienenstock}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.5}Der Tanz}{23}}
+\newlabel{bcomod5}{{18}{23}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {18}Bienen: Der Tanz}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.6}Beobachtung des Tanzes}{23}}
+\newlabel{bcomod6}{{19}{23}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {19}Bienen: Beobachtung des Tanzes}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experimente}{24}}
+\acronymused{PSO}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Finden des globalen Minimums der Rastrigin-Funktion mit \acs {PSO}}{24}}
+\acronymused{PSO}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Auswirkungen der Parameter auf die Ergebnisse der Simulation}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Futtersuche von Ameisen}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bildung einer Ameisenstra\IeC {\ss }e in der Simulation der Futtersuche von Ameisen}}{24}}
+\newlabel{acomodabb1}{{6.2}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Auswirkungen der Parameter auf die Ergebnisse der Simulation}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Einfluss des Parameters $\alpha $ in der Simulation der Futtersuche von Ameisen}}{25}}
+\newlabel{acomodabb2}{{6.2.1}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Futtersuche von Bienen}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Abbau der Futterquelle in der Simulation der Futtersuche von Bienen}}{25}}
+\newlabel{bcomodabb}{{6.3}{25}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Zusammenfassung}{26}}
+\acronymused{PSO}
 \bibcite{1}{1}
 \bibcite{2}{2}
-\bibcite{6}{3}
-\bibcite{2}{4}
-\bibcite{3}{5}
-\bibcite{4}{6}
-\bibcite{1}{7}
-\bibcite{5}{8}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Anhang}{21}}
-\acronymused{ACO}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Quellcode Futtersuche mit \acs {ACO}}{21}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1}Kehre zum Ameisenbau zur\IeC {\"u}ck + (Folge Heimatpheromonen)}{21}}
-\newlabel{xxxx}{{7}{21}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}xxxxxxx}{21}}
+\bibcite{3}{3}
+\bibcite{4}{4}
+\bibcite{5}{5}
+\bibcite{6}{6}
+\bibcite{7}{7}
+\bibcite{8}{8}
+\bibcite{9}{9}
+\bibcite{10}{10}
+\bibcite{11}{11}
+\bibcite{12}{12}
+\bibcite{13}{13}
+\bibcite{14}{14}
+\@writefile{toc}{\appendixattoc }
+\acronymused{PSO}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Anhang}{30}}
+\acronymused{PSO}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Experimente \acs {PSO}}{30}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.1.1}Globaler Vertrauenskoeffizient = 0.3, lokaler Vertrauenskoeffizient = 0.7}{30}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 1000 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.3, lokaler Vertrauenskoeffizient = 0.7}}{30}}
+\acronymused{PSO}
+\newlabel{tabframework}{{2}{30}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 100 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.3, lokaler Vertrauenskoeffizient = 0.7}}{30}}
+\acronymused{PSO}
+\newlabel{tabframework}{{3}{30}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.1.2}Globaler Vertrauenskoeffizient = 0.5, lokaler Vertrauenskoeffizient = 0.5}{31}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 1000 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.5, lokaler Vertrauenskoeffizient = 0.5}}{31}}
+\acronymused{PSO}
+\newlabel{tabframework}{{4}{31}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 100 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.5, lokaler Vertrauenskoeffizient = 0.5}}{31}}
+\acronymused{PSO}
+\newlabel{tabframework}{{5}{31}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.1.3}Globaler Vertrauenskoeffizient = 0.7, lokaler Vertrauenskoeffizient = 0.3}{32}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 1000 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.7, lokaler Vertrauenskoeffizient = 0.3}}{32}}
+\acronymused{PSO}
+\newlabel{tabframework}{{6}{32}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 100 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.7, lokaler Vertrauenskoeffizient = 0.3}}{32}}
+\acronymused{PSO}
+\newlabel{tabframework}{{7}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Experimente Futtersuche von Ameisen}{33}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.1}$\alpha $ = 0.3, $\beta $ = 0.7}{33}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 1000 Ameisen, 5000 Iterationen, $\alpha $ = 0.3, $\beta $ = 0.7}}{33}}
+\newlabel{tabframework}{{8}{33}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 100 Ameisen, 5000 Iterationen, $\alpha $ = 0.3, $\beta $ = 0.7}}{33}}
+\newlabel{tabframework}{{9}{33}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.2}$\alpha $ = 0.5, $\beta $ = 0.5}{34}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 1000 Ameisen, 5000 Iterationen, $\alpha $ = 0.5, $\beta $ = 0.5}}{34}}
+\newlabel{tabframework}{{10}{34}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 100 Ameisen, 5000 Iterationen, $\alpha $ = 0.5, $\beta $ = 0.5}}{34}}
+\newlabel{tabframework}{{11}{34}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.3}$\alpha $ = 0.7, $\beta $ = 0.3}{35}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 1000 Ameisen, 5000 Iterationen, $\alpha $ = 0.7, $\beta $ = 0.3}}{35}}
+\newlabel{tabframework}{{12}{35}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 100 Ameisen, 5000 Iterationen, $\alpha $ = 0.7, $\beta $ = 0.3}}{35}}
+\newlabel{tabframework}{{13}{35}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Experimente Futtersuche von Bienen}{36}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Ergebnisse Simulation der Futtersuche von Bienen: 2000 Bienen, 5000 Iterationen}}{36}}
+\newlabel{tabframework}{{14}{36}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Ergebnisse Simulation der Futtersuche von Bienen: 1000 Bienen, 5000 Iterationen}}{36}}
+\newlabel{tabframework}{{15}{36}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Ergebnisse Simulation der Futtersuche von Bienen: 100 Bienen, 5000 Iterationen}}{36}}
+\newlabel{tabframework}{{16}{36}}

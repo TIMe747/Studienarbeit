@@ -69,7 +69,7 @@ public abstract class ForagingBeeSimulation extends SimState implements
 	
 	public void step(SimState state) {
 		STEPS = STEPS + 1;
-		if(STEPS == 20000)
+		if(STEPS == 5000)
 		{
     		System.out.println(FOODUNITS);
 	    	System.exit(0);
@@ -114,20 +114,20 @@ public abstract class ForagingBeeSimulation extends SimState implements
 		switch(numObstacles)
         {
         case 1:
-        	Obstacle o;
-    		o = new Obstacle(this, new Point3d(155, 130, MIDDLE_LENGTH),
-    				20);
-    		addAgent(o);
-            break;
+//        	Obstacle o;
+//    		o = new Obstacle(this, new Point3d(155, 130, MIDDLE_LENGTH),
+//    				20);
+//    		addAgent(o);
+           break;
         case 2:
-    		Obstacle o1;
-    		o1 = new Obstacle(this, new Point3d(155, 130, MIDDLE_LENGTH),
-   				20);
-    		addAgent(o1);
-    		Obstacle o2;
-    		o2 = new Obstacle(this, new Point3d(200, 50, MIDDLE_LENGTH), 20);
-    		addAgent(o2);
-            break;
+//    		Obstacle o1;
+//    		o1 = new Obstacle(this, new Point3d(155, 130, MIDDLE_LENGTH),
+//   				20);
+//    		addAgent(o1);
+//    		Obstacle o2;
+//    		o2 = new Obstacle(this, new Point3d(200, 50, MIDDLE_LENGTH), 20);
+//    		addAgent(o2);
+           break;
         }
 
 		ListIterator<IMovingAgent> li;

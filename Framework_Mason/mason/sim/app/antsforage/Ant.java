@@ -56,8 +56,9 @@ public class Ant extends OvalPortrayal2D implements Steppable {
 		            
 		                af.toFoodGrid.field[x][y] = max;
 		                
-		         /*ant follow food pheromones and ant drop home pheromones*/
+
 	             } else {
+			         /*ant follow food pheromones and ant drop home pheromones*/
 	            	 		
 			                double max = af.toHomeGrid.field[x][y];
 			                

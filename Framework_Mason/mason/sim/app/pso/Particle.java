@@ -1,5 +1,6 @@
 package sim.app.pso;
 
+import sim.app.antsforage.AntsForage;
 import sim.util.Double2D;
 import sim.util.MutableDouble2D;
 
@@ -55,31 +56,22 @@ public class Particle
     	
         double x = position.x;
         double y = position.y;
-                
-        MutableDouble2D nBestPos = new MutableDouble2D(); 
-        pso.getNeighborhoodBest(index, nBestPos);       // updates the location of nBestPos
-                
-        // calc new velocity
-        
+    
         // calc x component
         double inertia = velocity.x;
         double pDelta = bestPosition.x - x;
-        double nDelta = nBestPos.x - x;
         double gDelta = pso.bestPosition.x - x;
-        double pWeight = Math.random() + 0.4;
-        double nWeight = Math.random() + 0.4;
-        double gWeight = Math.random() + 0.4;
-        double vx = (0.9*inertia + pWeight*pDelta + nWeight*nDelta + gWeight*gDelta) / (1+pWeight+nWeight+gWeight);
+        double pWeight = pso.lokalerVertrauenskoeffizient;
+        double gWeight = pso.globalerVertrauenskoeffizient;
+        double vx = (0.9*inertia + pWeight*pDelta + gWeight*gDelta) / (1+pWeight+gWeight);
                  
         // calc y component
         inertia = velocity.y;
         pDelta = bestPosition.y - y;
-        nDelta = nBestPos.y - y;
         gDelta = pso.bestPosition.y - y;
-        pWeight = Math.random() + 0.4;
-        nWeight = Math.random() + 0.4;
-        gWeight = Math.random() + 0.4;
-        double vy = (0.9*inertia + pWeight*pDelta + nWeight*nDelta + gWeight*gDelta) / (1+pWeight+nWeight+gWeight);
+        pWeight = pso.lokalerVertrauenskoeffizient;
+        gWeight = pso.globalerVertrauenskoeffizient;
+        double vy = (0.9*inertia + pWeight*pDelta +  gWeight*gDelta) / (1+pWeight+gWeight);
 
         vx *= pso.velocityScalar;
         vy *= pso.velocityScalar;
@@ -94,6 +86,7 @@ public class Particle
         //              "Best: " + n.bestVal + " (" + n.bestPosition.x + ", " + n.bestPosition.y + ")");
         position.addIn(velocity);
         pso.space.setObjectLocation(this, new Double2D(position));
+        
         }
 
     }

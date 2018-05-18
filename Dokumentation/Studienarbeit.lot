@@ -1,2 +1,17 @@
 \select@language {ngerman}
 \contentsline {table}{\numberline {1}{\ignorespaces Auswahl des Frameworks}}{15}
+\contentsline {table}{\numberline {2}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 1000 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.3, lokaler Vertrauenskoeffizient = 0.7}}{30}
+\contentsline {table}{\numberline {3}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 100 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.3, lokaler Vertrauenskoeffizient = 0.7}}{30}
+\contentsline {table}{\numberline {4}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 1000 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.5, lokaler Vertrauenskoeffizient = 0.5}}{31}
+\contentsline {table}{\numberline {5}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 100 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.5, lokaler Vertrauenskoeffizient = 0.5}}{31}
+\contentsline {table}{\numberline {6}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 1000 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.7, lokaler Vertrauenskoeffizient = 0.3}}{32}
+\contentsline {table}{\numberline {7}{\ignorespaces Ergebnisse Simulation \acs {PSO}: 100 Partikel, 100 Iterationen, Globaler Vertrauenskoeffizient = 0.7, lokaler Vertrauenskoeffizient = 0.3}}{32}
+\contentsline {table}{\numberline {8}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 1000 Ameisen, 5000 Iterationen, $\alpha $ = 0.3, $\beta $ = 0.7}}{33}
+\contentsline {table}{\numberline {9}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 100 Ameisen, 5000 Iterationen, $\alpha $ = 0.3, $\beta $ = 0.7}}{33}
+\contentsline {table}{\numberline {10}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 1000 Ameisen, 5000 Iterationen, $\alpha $ = 0.5, $\beta $ = 0.5}}{34}
+\contentsline {table}{\numberline {11}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 100 Ameisen, 5000 Iterationen, $\alpha $ = 0.5, $\beta $ = 0.5}}{34}
+\contentsline {table}{\numberline {12}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 1000 Ameisen, 5000 Iterationen, $\alpha $ = 0.7, $\beta $ = 0.3}}{35}
+\contentsline {table}{\numberline {13}{\ignorespaces Ergebnisse Simulation der Futtersuche von Ameisen: 100 Ameisen, 5000 Iterationen, $\alpha $ = 0.7, $\beta $ = 0.3}}{35}
+\contentsline {table}{\numberline {14}{\ignorespaces Ergebnisse Simulation der Futtersuche von Bienen: 2000 Bienen, 5000 Iterationen}}{36}
+\contentsline {table}{\numberline {15}{\ignorespaces Ergebnisse Simulation der Futtersuche von Bienen: 1000 Bienen, 5000 Iterationen}}{36}
+\contentsline {table}{\numberline {16}{\ignorespaces Ergebnisse Simulation der Futtersuche von Bienen: 100 Bienen, 5000 Iterationen}}{36}

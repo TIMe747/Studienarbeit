@@ -1,4 +1,8 @@
 \select@language {ngerman}
 \contentsline {figure}{\numberline {1}{\ignorespaces Entstehungsbedingung und Definition kollektiver Intelligenz bei Tierschw\IeC {\"a}rmen}}{2}
-\contentsline {figure}{\numberline {2}{\ignorespaces \acs {PSO}, Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$}}{6}
-\contentsline {figure}{\numberline {3}{\ignorespaces Rastrigin-Funktion}}{11}
+\contentsline {figure}{\numberline {2}{\ignorespaces Der Bienentanz}}{3}
+\contentsline {figure}{\numberline {3}{\ignorespaces \acs {PSO}, Berechnung von $x_{i}(t+1)$ und $v_{i}(t+1)$}}{6}
+\contentsline {figure}{\numberline {4}{\ignorespaces zweidimensionale Rastrigin-Funktion}}{11}
+\contentsline {figure}{\numberline {5}{\ignorespaces Bildung einer Ameisenstra\IeC {\ss }e in der Simulation der Futtersuche von Ameisen}}{24}
+\contentsline {figure}{\numberline {6}{\ignorespaces Einfluss des Parameters $\alpha $ in der Simulation der Futtersuche von Ameisen}}{25}
+\contentsline {figure}{\numberline {7}{\ignorespaces Abbau der Futterquelle in der Simulation der Futtersuche von Bienen}}{25}

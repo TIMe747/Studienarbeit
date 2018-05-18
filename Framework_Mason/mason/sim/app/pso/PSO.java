@@ -4,6 +4,7 @@ import sim.engine.Schedule;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 import sim.field.continuous.Continuous2D;
+import sim.util.Interval;
 import sim.util.MutableDouble2D;
 
 public class PSO extends SimState 
@@ -11,28 +12,30 @@ public class PSO extends SimState
     private static final long serialVersionUID = 1;
 
     public Continuous2D space;
-        
+    public static int STEPS = -1;
     public double width = 10.24;
     public double height = 10.24;
     public Particle[] particles;
-    int prevSuccessCount = -1;      
-        
+    int prevSuccessCount = -1; 
+    public double lokalerVertrauenskoeffizient = 0.5;
+    public double globalerVertrauenskoeffizient = 0.5;
+    
     // public modifier values
-    public int numParticles = 1000;
+    public int numParticles = 100;
     public int getNumParticles() { return numParticles; }
     public void setNumParticles(int val) { if (val >= 0) numParticles = val; }
-
-    public int neighborhoodSize = 10;
-    public int getNeighborhoodSize() { return neighborhoodSize; }
-    public void setNeighborhoodSize(int val) { if ((val >= 0) && (val <= numParticles)) neighborhoodSize = val; }
-
-    public double initialVelocityRange = 1.0;
-    public double getInitialVelocityRange() { return initialVelocityRange; }
-    public void setInitialVelocityRange(double val) { if (val >= 0.0) initialVelocityRange = val; }
     
+    public double getlokalerVertrauenskoeffizient() { return lokalerVertrauenskoeffizient; }
+    public void setLlokalerVertrauenskoeffizient(double val) {if (val >= 0 && val <= 1.0) lokalerVertrauenskoeffizient = val; }
+    public Object domLlokalerVertrauenskoeffizient() { return new Interval(0.0, 1.0); }
+    
+    public double getGlobalglobalerVertrauenskoeffizient() { return globalerVertrauenskoeffizient;}
+    public void setglobalerVertrauenskoeffizient(double val) {if (val >= 0 && val <= 1.0) globalerVertrauenskoeffizient = val; }
+    public Object domglobalerVertrauenskoeffizient() { return new Interval(0.0, 1.0); }
+    
+    public double initialVelocityRange = 1.0;
+
     public double velocityScalar = 2.7;
-    public double getVelocityScalar() { return velocityScalar; }
-    public void setVelocityScalar(double val) { if (val >= 0.0) velocityScalar = val; }
 
     public int fitnessFunction = 0;
     public int getFitnessFunction() { return fitnessFunction; }
@@ -55,10 +58,7 @@ public class PSO extends SimState
         200
         };
     
-    public double successThreshold = 1.0e-8;
-    public double getSuccessThreshold() { return successThreshold; }
-    public void setSuccessThreshold(double val) { if (val >= 0.0) successThreshold = val; }
-    
+    public double successThreshold = 1.0e-8; 
     public double bestVal = 0;
     MutableDouble2D bestPosition = new MutableDouble2D();
         
@@ -76,26 +76,7 @@ public class PSO extends SimState
             }               
         }
         
-    public double getNeighborhoodBest(int index, MutableDouble2D pos)
-        {
-        double bv = Double.NEGATIVE_INFINITY;
-        Particle p;     
-
-        int start = (index - neighborhoodSize / 2);
-        if (start < 0)
-            start += numParticles;
-                
-        for (int i = 0; i < neighborhoodSize; i++)
-            {
-            p = particles[(start + i) % numParticles];
-            if (p.bestVal > bv)
-                {
-                bv = p.bestVal;
-                pos.setTo(p.bestPosition);
-                }
-            }
-        return 1.0;             
-        }
+    
         
     public void start()
         {
@@ -119,7 +100,7 @@ public class PSO extends SimState
                         
             schedule.scheduleRepeating(Schedule.EPOCH,1,new Steppable()
                 {
-                public void step(SimState state) { p.stepUpdateFitness(); }
+                public void step(SimState state) { p.stepUpdateFitness();}
                 });
                         
             schedule.scheduleRepeating(Schedule.EPOCH,2,new Steppable()
@@ -129,14 +110,23 @@ public class PSO extends SimState
                         
             schedule.scheduleRepeating(Schedule.EPOCH,3,new Steppable()
                 {
-                public void step(SimState state) { p.stepUpdatePosition(); }
+                public void step(SimState state) { 
+                	p.stepUpdatePosition(); 
+                	}
                 });
             }                       
                 
         schedule.scheduleRepeating(Schedule.EPOCH, 4, new Steppable()
             {
+        	
             public void step(SimState state)
                 {
+            	STEPS = STEPS+1;
+            	if(STEPS == 1000) {
+            		System.out.println(bestPosition);
+        	    	System.exit(0);
+            	}
+            	
                 int successCount = 0;
                 for (int i = 0; i < space.allObjects.numObjs; i++)
                     {

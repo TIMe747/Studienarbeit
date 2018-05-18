@@ -1,0 +1,77 @@
+
+PSO
+Partikel = 1000
+Steps = 100
+trägheitskoeffizient = 0.9
+globalervertrauenkoeffizient = 0.3
+lokalervertrauenskoeffzient = 0.7
+
+MutableDouble2D[0,0005734846787426306,-0,0004954380442026007]
+MutableDouble2D[0.002483999011857918,-0.0028029545883487827]
+MutableDouble2D[0.003852735471959079,-0.00880798246138248]
+MutableDouble2D[0.0011472796970857235,-0.003921083919339263]
+
+
+
+Partikel = 100
+Steps = 100
+trägheitskoeffizient = 0.9
+globalervertrauenkoeffizient = 0.3
+lokalervertrauenskoeffzient = 0.7
+
+MutableDouble2D[-0.026180337930124642,1.0153858318628477]
+MutableDouble2D[-0.0009620309262103888,-0.003178806021452374]
+MutableDouble2D[0.0020762692740596833,0.02230856364475109]
+MutableDouble2D[0.0024885037516817476,-0.04081993993521138]
+
+
+Partikel = 1000
+Steps = 100
+trägheitskoeffizient = 0.9
+globalervertrauenkoeffizient = 0.7
+lokalervertrauenskoeffzient = 0.3
+
+MutableDouble2D[0.013027339735202759,0.0055160080223974894]
+MutableDouble2D[-0.02283444401462198,0.020646094627217337]
+MutableDouble2D[0.006535791062017959,-0.0037923985230328694]
+MutableDouble2D[-0.04584471843773419,-0.007835181522813872]
+
+
+Partikel = 100
+Steps = 100
+trägheitskoeffizient = 0.9
+globalervertrauenkoeffizient = 0.7
+lokalervertrauenskoeffzient = 0.3
+
+MutableDouble2D[0.9772663170332931,-0.015964212524956722]
+MutableDouble2D[-0.012299255721850477,-0.033490171619710574]
+MutableDouble2D[-0.012308005422580148,0.9809504459943033]
+MutableDouble2D[-0.050978886961883685,0.9850664961084877]
+
+
+Partikel = 1000
+Steps = 100
+trägheitskoeffizient = 0.9
+globalervertrauenkoeffizient = 0.5
+lokalervertrauenskoeffzient = 0.5
+
+MutableDouble2D[0.01262632028506161,-0.013384001669769718]
+MutableDouble2D[0.0019848665525268316,5.28938028764081E-4]
+MutableDouble2D[8.120558872288797E-4,4.7645837213217135E-4]
+MutableDouble2D[0.001151650858115083,0.002847968150353708]
+
+Partikel = 100
+Steps = 100
+trägheitskoeffizient = 0.9
+globalervertrauenkoeffizient = 0.5
+lokalervertrauenskoeffzient = 0.5
+
+MutableDouble2D[-0.020958980636341273,-0.01571132254960461]
+MutableDouble2D[-0.032716891537396986,-0.008106273053844149]
+MutableDouble2D[-0.01916372314789072,-0.9962361142871572]
+MutableDouble2D[0.005898689367579202,-0.025737966396528478]
+
+Partikel = 10000
+Iterationen = 1000
+
+[-0.00008982866531770384,0.000016933455843570755]

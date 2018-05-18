@@ -27,6 +27,16 @@ public /*strictfp*/ class AntsForage extends SimState
     public static final int FOOD_XMAX = 25;
     public static final int FOOD_YMIN = 25;
     public static final int FOOD_YMAX = 25;
+    
+    public static final int FOOD1_XMIN = 25;
+    public static final int FOOD1_XMAX = 25;
+    public static final int FOOD1_YMIN = 75;
+    public static final int FOOD1_YMAX = 75;
+    
+    public static final int FOOD2_XMIN = 75;
+    public static final int FOOD2_XMAX = 75;
+    public static final int FOOD2_YMIN = 25;
+    public static final int FOOD2_YMAX = 25;
 
     public static final int NO_OBSTACLES = 0;
     public static final int ONE_OBSTACLE = 1;
@@ -44,6 +54,8 @@ public /*strictfp*/ class AntsForage extends SimState
         
     public static final int HOME = 1;
     public static final int FOOD = 2;
+    public static final int FOOD1 = 3;
+    public static final int FOOD2 = 4;
         
         
     public int numAnts = 1000;
@@ -80,6 +92,8 @@ public /*strictfp*/ class AntsForage extends SimState
 
 
     public IntGrid2D sites = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
+    public IntGrid2D sites1 = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
+    public IntGrid2D sites2 = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
     public DoubleGrid2D toFoodGrid = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
     public DoubleGrid2D toHomeGrid = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
     public SparseGrid2D buggrid = new SparseGrid2D(GRID_WIDTH, GRID_HEIGHT);
@@ -96,6 +110,8 @@ public /*strictfp*/ class AntsForage extends SimState
 
         // make new grids
         sites = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
+        sites1 = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
+        sites2 = new IntGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
         toFoodGrid = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
         toHomeGrid = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT,0);
         //valgrid2 = new DoubleGrid2D(GRID_WIDTH, GRID_HEIGHT, 0);
@@ -148,6 +164,12 @@ public /*strictfp*/ class AntsForage extends SimState
         for( int x = FOOD_XMIN ; x <= FOOD_XMAX ; x++ )
             for( int y = FOOD_YMIN ; y <= FOOD_YMAX ; y++ )
                 sites.field[x][y] = FOOD;
+        for( int x = FOOD1_XMIN ; x <= FOOD1_XMAX ; x++ )
+            for( int y = FOOD1_YMIN ; y <= FOOD1_YMAX ; y++ )
+                sites1.field[x][y] = FOOD1;
+        for( int x = FOOD2_XMIN ; x <= FOOD2_XMAX ; x++ )
+            for( int y = FOOD2_YMIN ; y <= FOOD2_YMAX ; y++ )
+                sites2.field[x][y] = FOOD2;
 
         for(int x=0; x < numAnts; x++)
             {

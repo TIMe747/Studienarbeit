@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  15 MAY 2018 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.2.15)  18 MAY 2018 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1450,28 +1450,49 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) (./Studienarbeit.aux
 
-LaTeX Warning: Label `xxxx' multiply defined.
+LaTeX Warning: Label `defabb' multiply defined.
 
 
-LaTeX Warning: Label `xxxx' multiply defined.
+LaTeX Warning: Label `tabframework' multiply defined.
 
 
-LaTeX Warning: Label `xxxx' multiply defined.
+LaTeX Warning: Label `tabframework' multiply defined.
 
 
-LaTeX Warning: Label `xxxx' multiply defined.
+LaTeX Warning: Label `tabframework' multiply defined.
 
 
-LaTeX Warning: Label `xxxx' multiply defined.
+LaTeX Warning: Label `tabframework' multiply defined.
 
 
-LaTeX Warning: Label `2' multiply defined.
+LaTeX Warning: Label `tabframework' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `tabframework' multiply defined.
 
 
-LaTeX Warning: Label `xxxx' multiply defined.
+LaTeX Warning: Label `tabframework' multiply defined.
+
+
+LaTeX Warning: Label `tabframework' multiply defined.
+
+
+LaTeX Warning: Label `tabframework' multiply defined.
+
+
+LaTeX Warning: Label `tabframework' multiply defined.
+
+
+LaTeX Warning: Label `tabframework' multiply defined.
+
+
+LaTeX Warning: Label `tabframework' multiply defined.
+
+
+LaTeX Warning: Label `tabframework' multiply defined.
+
+
+LaTeX Warning: Label `tabframework' multiply defined.
 
 )
 \openout1 = `Studienarbeit.aux'.
@@ -1609,11 +1630,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pg>]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 223.
- [1] [2]
+ [1]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 252.
+(Font)              scaled to size 10.0pt on input line 241.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 252.
+(Font)              scaled to size 10.0pt on input line 241.
  [1]
 (./Studienarbeit.toc
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
@@ -1627,144 +1648,364 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 \openout8 = `Studienarbeit.lot'.
 
 
-[5] [6]
-Overfull \hbox (7.08052pt too wide) in paragraph at lines 275--276
+[5] (./Studienarbeit.lol)
+\tf@lol=\write9
+\openout9 = `Studienarbeit.lol'.
+
+ [6] [7]
+Overfull \hbox (7.08052pt too wide) in paragraph at lines 270--271
 \T1/LinuxLibertineT-TLF/m/n/10.95 Kapitel 2 er-läu-tert den Be-griff schwar-min
 -tel-li-gen-te Su-per-or-ga-nis-men, de-fi-niert den Be-griff Schwar-
  []
 
 [1]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 281.
+(Font)              scaled to size 8.0pt on input line 274.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 281.
+(Font)              scaled to size 9.0pt on input line 274.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 281.
+(Font)              scaled to size 6.0pt on input line 274.
  <schwarmintelligenz.png, id=45, 682.80093pt x 434.37282pt>
 File: schwarmintelligenz.png Graphic file (type png)
 
 <use schwarmintelligenz.png>
-Package pdftex.def Info: schwarmintelligenz.png used on input line 284.
-(pdftex.def)             Requested size: 426.79135pt x 271.51547pt.
+Package pdftex.def Info: schwarmintelligenz.png used on input line 280.
+(pdftex.def)             Requested size: 341.43437pt x 217.21237pt.
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 291.
+ input line 287.
 
 (/usr/share/texmf/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 291.
- [2 <./schwarmintelligenz.png (PNG copy)>] [3]
-Package acronym Info: Label `acro:ABM' newly defined as it shall be overridden
-although it is yet undefined on input line 304.
+(Font)              scaled to size 10.95pt on input line 287.
+ [2 <./schwarmintelligenz.png (PNG copy)>] <bienentanz.png, id=50, 331.2375pt x
+ 228.855pt>
+File: bienentanz.png Graphic file (type png)
 
-Overfull \hbox (3.57408pt too wide) in paragraph at lines 308--309
+<use bienentanz.png>
+Package pdftex.def Info: bienentanz.png used on input line 299.
+(pdftex.def)             Requested size: 213.39568pt x 147.43747pt.
+ [3 <./bienentanz.png (PNG copy)>]
+Package acronym Info: Label `acro:ABM' newly defined as it shall be overridden
+although it is yet undefined on input line 307.
+
+Overfull \hbox (3.57408pt too wide) in paragraph at lines 311--312
 []\T1/LinuxLibertineT-TLF/b/n/10.95 Agenten-Umgebung: \T1/LinuxLibertineT-TLF/m
 /n/10.95 Agen-ten in-ter-a-gie-ren in-ner-halb ei-ner Um-ge-bung mit an-de-ren 
 Agen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Overfull \hbox (0.58833pt too wide) in paragraph at lines 314--315
+\T1/LinuxLibertineT-TLF/m/n/10.95 M. Woold-ridge und N. Jen-nings[] wei-sen Age
+n-ten die Cha-rak-terei-gen-schaf-ten Au-to-no-mie, Proak-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
 [4]
 Package acronym Info: Label `acro:PSO' newly defined as it shall be overridden
-although it is yet undefined on input line 319.
+although it is yet undefined on input line 321.
+Package acronym Info: Label `acro:ACO' newly defined as it shall be overridden
+although it is yet undefined on input line 321.
+Package acronym Info: Label `acro:BCO' newly defined as it shall be overridden
+although it is yet undefined on input line 321.
  [5]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 352.
- <pso.png, id=63, 466.74374pt x 279.29344pt>
+(Font)              scaled to size 10.95pt on input line 356.
+ <pso.png, id=64, 466.74374pt x 279.29344pt>
 File: pso.png Graphic file (type png)
  <use pso.png>
-Package pdftex.def Info: pso.png used on input line 366.
-(pdftex.def)             Requested size: 213.39568pt x 127.69238pt.
- [6 <./pso.png (PNG copy)>]
-Package acronym Info: Label `acro:ACO' newly defined as it shall be overridden
-although it is yet undefined on input line 373.
- [7] [8]
-Package acronym Info: Label `acro:BCO' newly defined as it shall be overridden
-although it is yet undefined on input line 418.
- [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
+Package pdftex.def Info: pso.png used on input line 370.
+(pdftex.def)             Requested size: 247.53976pt x 148.12709pt.
+ [6 <./pso.png (PNG copy)>] [7] [8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
 
-<rastrigin.png, id=86, 673.76718pt x 375.65344pt>
+<rastrigin.png, id=87, 701.62125pt x 400.49625pt>
 File: rastrigin.png Graphic file (type png)
  <use rastrigin.png>
-Package pdftex.def Info: rastrigin.png used on input line 485.
-(pdftex.def)             Requested size: 341.43437pt x 190.36552pt.
- [11 <./rastrigin.png (PNG copy)>]
-Underfull \vbox (badness 10000) detected at line 555
- []
+Package pdftex.def Info: rastrigin.png used on input line 489.
+(pdftex.def)             Requested size: 426.79135pt x 243.62402pt.
+ [11 <./rastrigin.png (PNG copy)>] [12] [13]
+Package acronym Info: Label `acro:MASON' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 578.
 
-[12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 592--592
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Open-
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 592--592
+Underfull \hbox (badness 1983) in paragraph at lines 596--596
 \T1/LinuxLibertineT-TLF/m/n/10.95 Source +
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--592
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Aktuali-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--592
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Einsetz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--592
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Visuali-
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 592--592
+Underfull \hbox (badness 1838) in paragraph at lines 596--596
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Doku +
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--592
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Geschwindig-
  []
 
-[15]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 608.
- (/usr/share/texmf/tex/latex/psnfss/t1pcr.fd
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 612.
+(/usr/share/texmf/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [16] [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 706--708
+)
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 709--711
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--714
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
 
  []
 
-[19] (./Studienarbeit.toc)
-\tf@toc=\write9
-\openout9 = `Studienarbeit.toc'.
 
- [20] [21] [22] (./Studienarbeit.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 681--682
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 742--743
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 789--790
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
+
+ []
+
+
+Overfull \hbox (9.93745pt too wide) in paragraph at lines 814--815
+\T1/LinuxLibertineT-TLF/m/n/10.95 Zu je-der Ite-ra-ti-on des Mo-dells ver-duns-
+ten die Phe-ro-mon-mar-kie-run-gen auf der Agenten-Umgebung.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 814--815
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 825--826
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 860--861
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--872
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 886--887
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 896--897
+
+ []
+
+[23] <ameisenmod1.png, id=130, 401.5pt x 401.5pt>
+File: ameisenmod1.png Graphic file (type png)
+ <use ameisenmod1.png>
+Package pdftex.def Info: ameisenmod1.png used on input line 931.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+
+<ameisenmod2.png, id=131, 401.5pt x 401.5pt>
+File: ameisenmod2.png Graphic file (type png)
+ <use ameisenmod2.png>
+Package pdftex.def Info: ameisenmod2.png used on input line 932.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+
+<ameisenmod3.png, id=132, 401.5pt x 401.5pt>
+File: ameisenmod3.png Graphic file (type png)
+ <use ameisenmod3.png>
+Package pdftex.def Info: ameisenmod3.png used on input line 933.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 928--938
+
+ []
+
+<ameisenmod4.png, id=133, 401.5pt x 401.5pt>
+File: ameisenmod4.png Graphic file (type png)
+ <use ameisenmod4.png>
+Package pdftex.def Info: ameisenmod4.png used on input line 942.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+
+<ameisenmod5.png, id=134, 401.5pt x 401.5pt>
+File: ameisenmod5.png Graphic file (type png)
+ <use ameisenmod5.png>
+Package pdftex.def Info: ameisenmod5.png used on input line 943.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+
+<ameisenmod6.png, id=135, 401.5pt x 401.5pt>
+File: ameisenmod6.png Graphic file (type png)
+ <use ameisenmod6.png>
+Package pdftex.def Info: ameisenmod6.png used on input line 944.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+ [24 <./ameisenmod1.png (PNG copy)> <./ameisenmod2.png (PNG copy)> <./ameisenmo
+d3.png (PNG copy)>] <bienenmod1.png, id=139, 401.5pt x 401.5pt>
+File: bienenmod1.png Graphic file (type png)
+ <use bienenmod1.png>
+Package pdftex.def Info: bienenmod1.png used on input line 953.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+
+<bienenmod2.png, id=140, 401.5pt x 401.5pt>
+File: bienenmod2.png Graphic file (type png)
+ <use bienenmod2.png>
+Package pdftex.def Info: bienenmod2.png used on input line 954.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+
+<bienenmod3.png, id=141, 401.5pt x 401.5pt>
+File: bienenmod3.png Graphic file (type png)
+ <use bienenmod3.png>
+Package pdftex.def Info: bienenmod3.png used on input line 955.
+(pdftex.def)             Requested size: 128.0387pt x 128.04152pt.
+ [25 <./ameisenmod4.png (PNG copy)> <./ameisenmod5.png (PNG copy)> <./ameisenmo
+d6.png (PNG copy)> <./bienenmod1.png (PNG copy)> <./bienenmod2.png (PNG copy)> 
+<./bienenmod3.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 962--964
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 974--976
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 979--981
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 990--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 993--996
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 993--996
+\T1/LinuxLibertineT-TLF/m/n/10.95 Weblink:https://de.wikipedia.org/w/index.php?
+title=Rastrigin-
+ []
+
+[27] [28]
+! Undefined control sequence.
+\appendix ...n {\@Alph \c@section } \if@openright 
+                                                  \cleardoublepage \else \cl...
+l.1000 \appendix
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra \else.
+\appendix ...\if@openright \cleardoublepage \else 
+                                                  \clearpage \fi \addtoconte...
+l.1000 \appendix
+                
+I'm ignoring this; it doesn't match any \if.
+
+! Extra \fi.
+\appendix ...cleardoublepage \else \clearpage \fi 
+                                                  \addtocontents {toc}{\prot...
+l.1000 \appendix
+                
+I'm ignoring this; it doesn't match any \if.
+
+(./Studienarbeit.toc)
+\tf@toc=\write10
+\openout10 = `Studienarbeit.toc'.
+
+ [29
+
+
+] [30] [31] [32] [33] [34] [35] [36]
+(./Studienarbeit.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1774,13 +2015,13 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 29259 strings out of 493014
- 548291 string characters out of 6141613
- 829081 words of memory out of 5000000
- 32276 multiletter control sequences out of 15000+600000
- 85234 words of font info for 74 fonts, out of 8000000 for 9000
+ 29442 strings out of 493014
+ 550790 string characters out of 6141613
+ 802081 words of memory out of 5000000
+ 32445 multiletter control sequences out of 15000+600000
+ 85644 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,16n,73p,10429b,12254s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,16n,73p,10429b,12257s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf
 /fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texmf/fonts/enc/dvips/li
 bertine/lbtn_naooyc.enc}{/usr/share/texmf/fonts/enc/dvips/libertine/lbtn_nh77jq
@@ -1798,10 +2039,10 @@ ic/amsfonts/cm/cmr8.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10
 mf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/urw/courier/ucrr8a.
 pfb>
-Output written on Studienarbeit.pdf (31 pages, 1379814 bytes).
+Output written on Studienarbeit.pdf (45 pages, 1256882 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 239 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
