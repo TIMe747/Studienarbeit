@@ -820,7 +820,7 @@ schedule.scheduleRepeating(Schedule.EPOCH,1, new Steppable(){
 \end{lstlisting}
 
 \subsection{Die Futtersuche von Bienen}
-Die Implementierung des Modells der Futtersuche von Bienen wird anhand der in Kapitel 4.1.2 definierten Methode beschrieben.
+Die Implementierung des Modells orientiert sich an der Implementierung der Futtersuche von Bienen von Jörg Höhne und wird anhand der in Kapitel 4.1.2 definierten Methode beschrieben.
 \subsubsection{Zufällige Suche nach der Futterquelle}
 Befindet sich die modellierte Biene im Bienenstock und hat keine Information über die Futterquelle begibt sie sich mit einer niedrigen Wahrscheinlichkeit auf die zufallsgesteuerte Suche nach der Futterquelle. Die Suche ist begrenzt auf eine maximale Anzahl von Suchschritten. Findet die modellierte Biene die Futterquelle innerhalb der maximalen Anzahl an Suchschritten nicht, kehrt sie zum Bienenstock zurück. Listing \ref{bcomod1} zeigt den Programmcode der zufallsgesteuerten Suche nach der Futterquelle.\newline
 \begin{lstlisting}[caption= Bienen: Zufällige Suche nach der Futterquelle,label = bcomod1]
